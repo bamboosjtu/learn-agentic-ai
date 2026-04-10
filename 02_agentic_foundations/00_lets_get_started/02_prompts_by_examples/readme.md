@@ -1,473 +1,471 @@
-# Prompt By Examples for Agentic AI Developers (non-native English speakers)
+# 面向 Agentic AI 开发者的示例提示词（非英语母语者）
 
-[GPT-4.1 Prompting Guide](https://cookbook.openai.com/examples/gpt4-1_prompting_guide)
+[GPT-4.1 提示词指南](https://cookbook.openai.com/examples/gpt4-1_prompting_guide)
 
-### Key Points
-- Writing effective LLM prompts is a skill that can be learned with practice, especially for non-native English speakers.
-- It seems likely that starting with simple, clear prompts and gradually increasing complexity helps build expertise.
-- Research suggests that providing context, examples, and specifying tone or audience improves prompt quality.
-- The evidence leans toward using simple language and avoiding idioms to ensure clarity for non-native speakers.
+### 关键要点
+- 编写有效的 LLM 提示词是一项可以通过练习掌握的技能，尤其适合非英语母语者。
+- 先从简单、清晰的提示词开始，再逐步增加复杂度，似乎有助于建立熟练度。
+- 研究表明，提供上下文、示例，并明确语气或受众，能提升提示词质量。
+- 证据倾向于使用简单语言并避免习语，以确保非英语母语者也能清晰理解。
 
-### Introduction
-Learning to write effective prompts for Large Language Models (LLMs) is an essential skill, particularly for non-native English speakers who may face additional challenges in crafting precise and grammatically correct prompts. This tutorial provides a series of exercises designed to help you develop this skill, starting from basic examples and progressing to more complex scenarios. Each exercise includes a scenario, an effective prompt, and an explanation to guide your learning process.
+### 引言
+学习为大语言模型（LLM）编写有效提示词是一项基础技能，尤其对非英语母语者来说更是如此，因为他们在构造精准且语法正确的提示词时可能面临额外挑战。本教程提供了一系列练习，帮助你从基础示例开始，逐步提升到更复杂的场景，从而培养这项技能。每个练习都包含一个场景、一个有效提示词，以及一段解释，用来引导你的学习过程。
 
-### Exercises Overview
-The exercises are structured to build your confidence and expertise, covering various techniques such as specifying audiences, providing examples, and avoiding biases. They are ordered by increasing difficulty, ensuring a gradual learning curve. Below, you'll find detailed exercises to practice and refine your prompt-writing abilities.
+### 练习概览
+这些练习的结构旨在帮助你建立信心和熟练度，覆盖了指定受众、提供示例、避免偏见等多种技巧。它们按难度递增排列，确保学习曲线平缓。下面你会看到详细练习，用来实践并打磨你的提示词编写能力。
 
-### Detailed Exercises
-Here are the exercises, each with a scenario, an effective prompt, and an explanation to help you understand the principles behind effective prompt writing:
+### 详细练习
+下面是这些练习，每个练习都包含一个场景、一个有效提示词和一段解释，帮助你理解有效提示词编写背后的原则：
 
-#### Exercise 1: Basic Definition
-- **Scenario:** You want to know what "machine learning" is.
-- **Effective Prompt:** "What is machine learning?"
-- **Explanation:** This prompt is direct and straightforward, using simple language to get to the point. It's ideal for non-native speakers to start with clear, concise queries, avoiding unnecessary complexity or politeness.
+#### 练习 1：基础定义
+- **场景：** 你想知道“machine learning”是什么。
+- **有效提示词：** “什么是机器学习？”
+- **解释：** 这个提示词直接明了，使用简单语言直奔主题。对于非英语母语者来说，这是一个很好的起点，可以先从清晰、简洁的问题开始，避免不必要的复杂性或客套。
 
-#### Exercise 2: Specifying the Audience
-- **Scenario:** You need an explanation of photosynthesis suitable for a 10-year-old.
-- **Effective Prompt:** "Explain photosynthesis in a way that a 10-year-old can understand."
-- **Explanation:** Specifying the audience ensures the response is tailored to the right complexity level, using age-appropriate language. This technique helps non-native speakers focus on clarity and relevance.
+#### 练习 2：指定受众
+- **场景：** 你需要一个适合 10 岁孩子理解的光合作用解释。
+- **有效提示词：** “请用一个 10 岁孩子能理解的方式解释光合作用。”
+- **解释：** 指定受众能确保回复的复杂度与目标相匹配，并使用适合年龄的语言。这个技巧有助于非英语母语者聚焦于清晰度和相关性。
 
-#### Exercise 3: Providing Examples
-- **Scenario:** You want the LLM to generate synonyms for the word "happy."
-- **Effective Prompt:** "Give me five synonyms for the word 'happy.' For example, 'joyful' and 'content.'"
-- **Explanation:** Providing examples guides the LLM to understand the desired output format, which is particularly helpful for non-native speakers to ensure the response meets their expectations.
+#### 练习 3：提供示例
+- **场景：** 你希望 LLM 为单词 “happy” 生成同义词。
+- **有效提示词：** “给我五个‘happy’的同义词。例如，‘joyful’ 和 ‘content’。”
+- **解释：** 提供示例可以引导 LLM 理解你想要的输出格式，这对非英语母语者尤其有帮助，因为它能确保回复符合预期。
 
-#### Exercise 4: Setting the Tone
-- **Scenario:** You need a formal email to a colleague about a meeting.
-- **Effective Prompt:** "Write a formal email to my colleague inviting them to a meeting next Tuesday at 10 AM."
-- **Explanation:** Specifying "formal" ensures the email uses appropriate professional language, a useful technique for controlling the tone, which can be challenging for non-native speakers.
+#### 练习 4：设置语气
+- **场景：** 你需要一封正式的邮件给同事，关于一次会议。
+- **有效提示词：** “写一封正式邮件给我的同事，邀请他们参加下周二上午 10 点的会议。”
+- **解释：** 指定“正式”可以确保邮件使用恰当的职业语言，这是控制语气的有用技巧，而这对非英语母语者来说有时比较难。
 
-#### Exercise 5: Assigning a Role
-- **Scenario:** You need advice on how to start learning programming.
-- **Effective Prompt:** "You are a programming instructor. What advice would you give to someone who wants to start learning programming?"
-- **Explanation:** Assigning a role, like a programming instructor, provides context for the LLM to give authoritative advice, helping non-native speakers frame prompts effectively.
+#### 练习 5：分配角色
+- **场景：** 你需要关于如何开始学习编程的建议。
+- **有效提示词：** “你是一名编程讲师。你会给想开始学习编程的人什么建议？”
+- **解释：** 分配一个角色，例如编程讲师，可以为 LLM 提供上下文，帮助它给出更权威的建议，也帮助非英语母语者更有效地构造提示词。
 
-#### Exercise 6: Avoiding Biases
-- **Scenario:** You want a description of a typical day for a software engineer without gender assumptions.
-- **Effective Prompt:** "Describe a typical day in the life of a software engineer. Use gender-neutral language."
-- **Explanation:** Specifying gender-neutral language prevents biases, promoting inclusivity, which is important for non-native speakers to learn for ethical prompt writing.
+#### 练习 6：避免偏见
+- **场景：** 你想描述软件工程师的一天，但不希望包含性别假设。
+- **有效提示词：** “描述一名软件工程师的典型一天。请使用性别中立的语言。”
+- **解释：** 指定性别中立语言可以避免偏见，促进包容性；这也是非英语母语者在学习伦理型提示词编写时需要掌握的重要内容。
 
-#### Exercise 7: Leading the Model with Step-by-Step Thinking
-- **Scenario:** You have a logic puzzle to solve.
-- **Effective Prompt:** "Solve this puzzle step by step: [puzzle description]"
-- **Explanation:** Asking for step-by-step reasoning helps the LLM break down problems logically, a technique that aids non-native speakers in getting detailed, understandable responses.
+#### 练习 7：用逐步思维引导模型
+- **场景：** 你有一个逻辑谜题需要解决。
+- **有效提示词：** “一步一步解决这个谜题：[谜题描述]”
+- **解释：** 要求逐步推理有助于 LLM 逻辑拆解问题，这种方法能帮助非英语母语者获得更详细、更容易理解的回复。
 
-#### Exercise 8: Using Output Primers
-- **Scenario:** You want to write a haiku about autumn.
-- **Effective Prompt:** "Write a haiku about autumn. Start with 'Leaves falling gently'"
-- **Explanation:** Starting with part of the desired output guides the LLM's style, which can help non-native speakers shape creative responses more effectively.
+#### 练习 8：使用输出引导词
+- **场景：** 你想写一首关于秋天的俳句。
+- **有效提示词：** “写一首关于秋天的俳句。以 ‘Leaves falling gently’ 开头。”
+- **解释：** 用期望输出的一部分作为开头，可以引导 LLM 的风格，这有助于非英语母语者更有效地塑造创意输出。
 
-#### Exercise 9: Requesting Detailed Responses
-- **Scenario:** You need an in-depth analysis of the economic impacts of climate change.
-- **Effective Prompt:** "Provide a detailed analysis of the economic impacts of climate change, including both short-term and long-term effects."
-- **Explanation:** Specifying "detailed" and listing aspects ensures a comprehensive response, a technique that helps non-native speakers get thorough answers.
+#### 练习 9：请求详细回复
+- **场景：** 你需要对气候变化的经济影响进行深入分析。
+- **有效提示词：** “请详细分析气候变化的经济影响，包括短期和长期影响。”
+- **解释：** 指定“详细”并列出分析方面，可以确保回复更全面，这种技巧能帮助非英语母语者获得更充分的答案。
 
-#### Exercise 10: Correcting a Prompt
-- **Scenario:** You have the following prompt: "Please can you telling me what is the capital of France?"
-- **Task:** Identify and correct any language mistakes in this prompt.
-- **Corrected Prompt:** "What is the capital of France?"
-- **Explanation:** The original prompt had unnecessary words and grammatical errors. Simplifying it improves clarity, which is crucial for non-native speakers to communicate effectively with LLMs.
+#### 练习 10：纠正提示词
+- **场景：** 你有以下提示词：“Please can you telling me what is the capital of France?”
+- **任务：** 找出并纠正这个提示词中的语言错误。
+- **修正后的提示词：** “What is the capital of France?”
+- **解释：** 原始提示词有多余词汇和语法错误。简化它可以提升清晰度，这对非英语母语者与 LLM 有效沟通至关重要。
 
-#### Exercise 11: Comparing Prompts
-- **Scenario:** You want to know the population of Tokyo.
-- **Prompt 1:** "Tokyo population"
-- **Prompt 2:** "What is the current population of Tokyo, Japan?"
-- **Explanation:** Prompt 1 is brief and may lead to ambiguous responses, while Prompt 2 is clearer and specific, reducing the chance of outdated information. This comparison helps non-native speakers see the value of precision.
+#### 练习 11：比较提示词
+- **场景：** 你想知道东京的人口。
+- **提示词 1：** “Tokyo population”
+- **提示词 2：** “What is the current population of Tokyo, Japan?”
+- **解释：** 提示词 1 很简短，可能导致含糊回复；提示词 2 更清晰、更具体，也降低了获得过时信息的概率。这个比较能帮助非英语母语者理解精确表达的价值。
 
 ---
 
-### Comprehensive Analysis and Detailed Insights
+### 综合分析与深入洞察
 
-This section provides a detailed exploration of the process behind creating the tutorial for non-native English speakers to learn writing effective LLM prompts. It includes all the considerations, techniques, and resources used to develop the exercises, ensuring a thorough understanding of the approach.
+这一部分详细探讨了为非英语母语者创建本教程的过程。它包含了设计这些练习所用到的所有考虑因素、技巧和资源，确保你能全面理解这种方法。
 
-#### Background and Methodology
-The task was to create a detailed tutorial with multiple exercises, each covering different scenarios, starting from basic and increasing in difficulty. Each exercise was designed with three parts: a scenario with background information, an effective prompt, and an explanation of the principles behind the prompt. The focus was on helping non-native English speakers, considering their potential challenges with English language proficiency.
+#### 背景与方法
+任务是创建一个详细教程，包含多个练习，每个练习覆盖不同场景，从基础开始并逐步增加难度。每个练习都由三部分组成：带背景信息的场景、一个有效提示词，以及对该提示词背后原则的解释。重点是帮助非英语母语者，并考虑到他们可能在英语能力上遇到的挑战。
 
-To develop the tutorial, I began by understanding what makes a good LLM prompt, drawing on general knowledge and seeking additional resources. I searched for information on writing effective prompts, particularly for non-native speakers, and found several relevant articles, such as "Best Prompt Techniques for Best LLM Responses" ([Best Prompt Techniques for Best LLM Responses](https://medium.com/the-modern-scientist/best-prompt-techniques-for-best-llm-responses-24d2ff4f6bca)) and "26 prompting tricks to improve LLMs" ([26 prompting tricks to improve LLMs](https://www.superannotate.com/blog/llm-prompting-tricks)). These resources provided insights into techniques like specificity, providing examples, and setting the tone, which were incorporated into the exercises.
+为了开发这个教程，我先了解什么构成一个好的 LLM 提示词，既依赖常识，也查找了额外资源。我搜索了关于如何编写有效提示词的信息，尤其关注非英语母语者，并找到了几篇相关文章，例如 “Best Prompt Techniques for Best LLM Responses”（[Best Prompt Techniques for Best LLM Responses](https://medium.com/the-modern-scientist/best-prompt-techniques-for-best-llm-responses-24d2ff4f6bca)）和 “26 prompting tricks to improve LLMs”（[26 prompting tricks to improve LLMs](https://www.superannotate.com/blog/llm-prompting-tricks)）。这些资源提供了关于具体性、提供示例和设置语气等技巧的见解，并被纳入这些练习中。
 
-#### Exercise Development Process
-The exercises were designed to cover a range of difficulties, from basic definitions to complex, multi-step prompts. I considered the needs of non-native English speakers, emphasizing simple language, avoiding idioms, and ensuring grammatical correctness. The process involved:
+#### 练习开发过程
+这些练习被设计成覆盖从基础定义到复杂多步骤提示词的一系列难度。我考虑了非英语母语者的需求，强调使用简单语言、避免习语，并确保语法正确。整个过程包括：
 
-1. **Identifying Key Techniques:** From the resources, I extracted techniques such as being specific, providing examples (few-shot prompting), setting the tone, using delimiters, and avoiding biases. For instance, the SuperAnnotate blog listed 26 tricks, including "No need to be polite with LLMs" and "The audience is ...," which informed the exercise design.
+1. **识别关键技巧：** 从这些资源中，我提取了具体化、提供示例（few-shot prompting）、设置语气、使用分隔符以及避免偏见等技巧。例如，SuperAnnotate 的博客列出了 26 个技巧，包括“没必要对 LLM 客气”和“受众是……”，这些都影响了练习设计。
 
-2. **Creating Scenarios:** Scenarios were crafted to reflect common tasks, such as asking for definitions, generating content, or solving problems. For example, a basic scenario was asking for the definition of "machine learning," while a more advanced one involved analyzing the economic impacts of climate change.
+2. **创建场景：** 场景被设计成反映常见任务，例如请求定义、生成内容或解决问题。比如，一个基础场景是询问 “machine learning” 的定义，而更高级的场景则涉及分析气候变化的经济影响。
 
-3. **Developing Effective Prompts:** Each scenario was paired with an effective prompt that applied one or more techniques. For instance, for specifying the audience, the prompt "Explain photosynthesis in a way that a 10-year-old can understand" was used, reflecting the technique from the resources.
+3. **设计有效提示词：** 每个场景都配有一个有效提示词，应用了一种或多种技巧。例如，在指定受众的练习中，使用了 “请用一个 10 岁孩子能理解的方式解释光合作用” 这样的提示词，体现了资源中的技巧。
 
-4. **Explaining Principles:** Explanations highlighted why each prompt was effective, focusing on language considerations for non-native speakers. For example, in Exercise 1, the explanation emphasized using simple language to avoid complexity, which is crucial for non-native speakers.
+4. **解释原则：** 解释部分强调每个提示词为什么有效，重点放在非英语母语者的语言考虑上。例如，在练习 1 中，解释强调使用简单语言来避免复杂性，这对非英语母语者至关重要。
 
-#### Detailed Exercise Breakdown
-Below is a table summarizing the exercises, their scenarios, effective prompts, and key techniques, providing a structured overview:
+#### 详细练习拆解
+下面的表格总结了这些练习、场景、有效提示词和关键技巧，提供了一个结构化概览：
 
-| Exercise No. | Scenario                                                                 | Effective Prompt                                                                 | Key Technique(s)                     |
+| 练习编号 | 场景 | 有效提示词 | 关键技巧 |
 |--------------|--------------------------------------------------------------------------|----------------------------------------------------------------------------------|---------------------------------------|
-| 1            | Know what "machine learning" is                                         | "What is machine learning?"                                                     | Basic, direct query                   |
-| 2            | Explain photosynthesis for a 10-year-old                                | "Explain photosynthesis in a way that a 10-year-old can understand."            | Specifying audience                   |
-| 3            | Generate synonyms for "happy"                                           | "Give me five synonyms for the word 'happy.' For example, 'joyful' and 'content.'" | Providing examples (few-shot prompting)|
-| 4            | Write a formal email to a colleague about a meeting                     | "Write a formal email to my colleague inviting them to a meeting next Tuesday at 10 AM." | Setting the tone                     |
-| 5            | Get advice on starting programming                                      | "You are a programming instructor. What advice would you give to someone who wants to start learning programming?" | Assigning a role                     |
-| 6            | Describe a software engineer's day, gender-neutral                      | "Describe a typical day in the life of a software engineer. Use gender-neutral language." | Avoiding biases                      |
-| 7            | Solve a logic puzzle step by step                                       | "Solve this puzzle step by step: [puzzle description]"                          | Leading with step-by-step thinking    |
-| 8            | Write a haiku about autumn, starting with a line                       | "Write a haiku about autumn. Start with 'Leaves falling gently'"                | Using output primers                  |
-| 9            | Analyze economic impacts of climate change in detail                    | "Provide a detailed analysis of the economic impacts of climate change, including both short-term and long-term effects." | Requesting detailed responses        |
-| 10           | Correct a prompt with language mistakes                                 | Corrected from "Please can you telling me what is the capital of France?" to "What is the capital of France?" | Correcting grammar for clarity        |
-| 11           | Compare prompts for knowing Tokyo's population                         | Prompt 1: "Tokyo population"; Prompt 2: "What is the current population of Tokyo, Japan?" | Comparing specificity                 |
+| 1 | 知道“machine learning”是什么 | “什么是机器学习？” | 基础、直接提问 |
+| 2 | 为 10 岁孩子解释光合作用 | “请用一个 10 岁孩子能理解的方式解释光合作用。” | 指定受众 |
+| 3 | 为“happy”生成同义词 | “给我五个‘happy’的同义词。例如，‘joyful’ 和 ‘content’。” | 提供示例（few-shot prompting） |
+| 4 | 给同事写一封关于会议的正式邮件 | “写一封正式邮件给我的同事，邀请他们参加下周二上午 10 点的会议。” | 设置语气 |
+| 5 | 获取关于开始学习编程的建议 | “你是一名编程讲师。你会给想开始学习编程的人什么建议？” | 分配角色 |
+| 6 | 描述软件工程师的一天，使用性别中立表达 | “描述一名软件工程师的典型一天。请使用性别中立的语言。” | 避免偏见 |
+| 7 | 逐步解决一个逻辑谜题 | “一步一步解决这个谜题：[谜题描述]” | 用逐步思维引导 |
+| 8 | 写一首关于秋天的俳句，并以一行开头 | “写一首关于秋天的俳句。以 ‘Leaves falling gently’ 开头。” | 使用输出引导词 |
+| 9 | 详细分析气候变化的经济影响 | “请详细分析气候变化的经济影响，包括短期和长期影响。” | 请求详细回复 |
+| 10 | 纠正一个有语言错误的提示词 | 将 “Please can you telling me what is the capital of France?” 纠正为 “法国的首都是哪里？” | 通过语法修正提升清晰度 |
+| 11 | 比较用于了解东京人口的提示词 | 提示词 1：“Tokyo population”；提示词 2：“日本东京当前的人口是多少？” | 比较具体性 |
 
-This table organizes the exercises, making it easy to see the progression and techniques applied, which is particularly helpful for non-native speakers to follow.
+这个表格把练习组织得很清楚，便于看出难度的递进以及应用的技巧，这对非英语母语者尤其有帮助。
 
-#### Additional Considerations for Non-Native Speakers
-Throughout the tutorial, I included tips for non-native English speakers, such as using simple sentence structures, avoiding idioms (e.g., instead of "hit the nail on the head," use "exactly correct"), and ensuring grammatical correctness. For example, in the explanation for Exercise 10, I highlighted the importance of simplifying prompts to improve clarity, which addresses common language challenges.
+#### 面向非英语母语者的额外考虑
+在整个教程中，我加入了给非英语母语者的提示，例如使用简单句式、避免习语（比如不用 “hit the nail on the head”，而改用 “exactly correct”），以及确保语法正确。例如，在练习 10 的解释中，我强调了简化提示词以提升清晰度的重要性，这回应了常见的语言挑战。
 
-I also considered adding an exercise on translating thoughts from their native language, but opted for English-based scenarios to keep the tutorial accessible. However, I suggested in the conclusion that users double-check their prompts for language errors, which is a practical tip for non-native speakers.
-
-
-# Prompt Practice Examples for Agentic AI Developers
-
-### Key Points
-- Writing effective prompts for agentic AI systems is a critical skill that improves with practice, especially for developers building autonomous agents.
-- Starting with clear, simple prompts and progressively incorporating complexity enhances reasoning ability and tool-calling proficiency.
-- Research indicates that context, structured output, and specificity improve accuracy and cost efficiency in agent responses.
-- Focusing on five key factors—reasoning ability, tool-calling proficiency, accuracy, cost efficiency, structured output, and context size—ensures optimal agent performance.
-
-### Introduction
-Crafting prompts for agentic AI—systems capable of reasoning, calling tools, and acting autonomously—is a vital skill for developers. Unlike traditional LLMs, agentic AI hinges on five key factors: reasoning ability, tool-calling proficiency, accuracy, cost efficiency, structured output, and context size. This tutorial offers exercises to help developers master prompt writing, starting with basic examples and advancing to complex scenarios tailored to these factors. Each exercise includes a scenario, an effective prompt, and an explanation to deepen your understanding.
-
-### Exercises Overview
-The exercises are designed to build your expertise in crafting prompts that optimize agentic AI performance. They cover techniques like specifying tools, structuring output, and managing context, progressing in difficulty for a structured learning experience. Below are detailed exercises to refine your prompt-writing skills for agentic AI development.
-
-### Detailed Exercises
-Here are the exercises, each with a scenario, an effective prompt, and an explanation highlighting how the prompt addresses the five key factors:
-
-#### Exercise 1: Basic Reasoning Task
-- **Scenario:** You want the agent to determine if a number is even or odd.
-- **Effective Prompt:** "Determine if 42 is even or odd. Think step by step and explain your reasoning."
-- **Explanation:** This prompt emphasizes reasoning ability by requiring a step-by-step explanation, ensuring the agent processes logically. It’s simple and cost-efficient, with minimal context size, focusing on accuracy.
-
-#### Exercise 2: Tool-Calling Specification
-- **Scenario:** You need the agent to fetch the current weather for London using a weather API tool.
-- **Effective Prompt:** "Use the weather API tool to get the current weather in London, UK. Return the temperature and condition."
-- **Explanation:** This targets tool-calling proficiency by explicitly naming the tool and specifying output (temperature, condition), promoting accuracy and cost efficiency with a concise context.
-
-#### Exercise 3: Structured Output with Examples
-- **Scenario:** You want the agent to list three project ideas in a table format.
-- **Effective Prompt:** "Generate three project ideas for an AI app. Format the output as a table with columns 'Name' and 'Description.' Example: | Name | Description | | AI Chat | A chatbot for customer support |"
-- **Explanation:** Structured output is enforced with a table format and example, enhancing accuracy and clarity. Reasoning is minimal, keeping costs low, while context size includes the example for guidance.
-
-#### Exercise 4: Cost-Efficient Tone Setting
-- **Scenario:** You need a brief, professional response to a user query about AI ethics.
-- **Effective Prompt:** "Respond to this query in a concise, professional tone: 'What are the ethical concerns of AI?' Limit to 50 words."
-- **Explanation:** This optimizes cost efficiency with a word limit and tone specification, ensuring accuracy in a small context size. Reasoning is straightforward, focusing on a clear, professional output.
-
-#### Exercise 5: Role Assignment for Tool Use
-- **Scenario:** You want the agent to act as a data analyst and use a database query tool to find sales trends.
-- **Effective Prompt:** "Act as a data analyst. Use the database query tool to analyze sales data and identify trends for Q1 2025. Return results in bullet points."
-- **Explanation:** Assigning a role enhances reasoning ability and tool-calling proficiency. Structured output (bullet points) ensures clarity, balancing accuracy with moderate context size and cost.
-
-#### Exercise 6: Avoiding Overcomplication for Accuracy
-- **Scenario:** You need a summary of a 500-word article without excessive detail.
-- **Effective Prompt:** "Summarize this 500-word article in 100 words: [article text]. Focus on key points only, avoiding unnecessary details."
-- **Explanation:** This promotes accuracy by limiting scope and output length, reducing reasoning complexity and cost. Context size is managed by the article input, ensuring efficient processing.
-
-#### Exercise 7: Step-by-Step Tool Integration
-- **Scenario:** You want the agent to calculate shipping costs using a logistics API and explain the process.
-- **Effective Prompt:** "Calculate shipping costs for a 5kg package from New York to Paris using the logistics API. Show your steps: 1) query API, 2) process data, 3) return cost."
-- **Explanation:** Reasoning ability is boosted with step-by-step instructions, while tool-calling proficiency is tested with the API. Structured output ensures accuracy, with moderate context size and cost.
-
-#### Exercise 8: Output Priming for Efficiency
-- **Scenario:** You need a JSON response for a user profile summary.
-- **Effective Prompt:** "Summarize this user profile in JSON: [profile data]. Start with: {'summary':"
-- **Explanation:** Output priming with JSON structure enhances structured output and cost efficiency by guiding the agent directly. Reasoning is minimal, accuracy is high, and context size is limited to the profile data.
-
-#### Exercise 9: Detailed Reasoning with Large Context
-- **Scenario:** You need an in-depth plan for a marketing campaign using multiple tools.
-- **Effective Prompt:** "Develop a detailed marketing campaign plan using the analytics tool and budget calculator tool. Include strategy, timeline, and costs for a 3-month period. Explain your reasoning step by step."
-- **Explanation:** This tests reasoning ability and tool-calling proficiency with a large context size. Structured output (strategy, timeline, costs) ensures accuracy, though cost efficiency decreases due to complexity.
-
-#### Exercise 10: Correcting a Prompt for Clarity
-- **Scenario:** You have this prompt: "Use tool get data about sales fast."
-- **Task:** Identify and correct issues for agentic AI use.
-- **Corrected Prompt:** "Use the sales data tool to retrieve sales figures for March 2025. Return results quickly in a list."
-- **Explanation:** The original lacks specificity and structure. The corrected version improves tool-calling proficiency, accuracy, and structured output, keeping reasoning simple and cost low.
-
-#### Exercise 11: Comparing Prompts for Context Management
-- **Scenario:** You want the agent to analyze a dataset’s trends.
-- **Prompt 1:** "Analyze trends in this dataset: [dataset]"
-- **Prompt 2:** "Analyze trends in this dataset using the stats tool: [dataset]. Limit to top 3 trends in a table, keeping context under 500 tokens."
-- **Explanation:** Prompt 1 is vague, risking accuracy and high cost with large context. Prompt 2 specifies the tool, limits output, and manages context size, optimizing all five factors.
+我也考虑过加入一个关于把母语思路翻译成英文的练习，但最终选择了英文场景，以保持教程的易用性。不过，在结论中，我建议用户在提交前再次检查提示词中的语言错误，这对非英语母语者来说是一个实用建议。
 
 
------
+# 面向 Agentic AI 开发者的提示词练习示例
 
-# 🚀 Advanced Prompt Engineering for Agentic AI Developers: A Practical Tutorial
+### 关键要点
+- 编写有效的 agentic AI 提示词是一项关键技能，会随着练习不断提升，尤其适合正在构建自主 agents 的开发者。
+- 从清晰、简单的提示词开始，再逐步加入复杂性，可以提升推理能力和工具调用能力。
+- 研究表明，上下文、结构化输出和具体性有助于提升 agent 回复的准确性和成本效率。
+- 聚焦五个关键因素，即推理能力、工具调用能力、准确性、成本效率、结构化输出和上下文长度，可以确保 agent 发挥最佳表现。
 
-Welcome, developers\! As you venture into building **agentic AI systems** – AIs that can autonomously plan, reason, use tools, and achieve complex goals – you'll find that **prompt engineering** is more crucial and nuanced than ever. An agent's capabilities are profoundly shaped by how you instruct it.
+### 引言
+为 agentic AI 编写提示词，也就是为能够推理、调用工具并自主行动的系统编写提示词，是开发者的一项核心技能。与传统 LLM 不同，agentic AI 依赖五个关键因素：推理能力、工具调用能力、准确性、成本效率、结构化输出和上下文长度。本教程提供了一系列练习，帮助开发者掌握提示词编写技巧，从基础示例逐步过渡到围绕这些因素设计的复杂场景。每个练习都包含场景、有效提示词和解释，以加深你的理解。
 
-This tutorial will guide you through the core principles and techniques for crafting effective prompts for your AI agents, complete with practical examples.
+### 练习概览
+这些练习旨在帮助你掌握能优化 agentic AI 表现的提示词编写方法。它们覆盖了指定工具、结构化输出、上下文管理等技巧，并按难度递增排列，形成结构化的学习体验。下面是帮助你打磨 agentic AI 开发提示词能力的详细练习。
 
------
+### 详细练习
+下面是这些练习，每个练习都包含一个场景、一个有效提示词，以及一段解释，说明该提示词如何对应五个关键因素：
 
-### 🎯 What is Agentic AI and Why is Prompting Key?
+#### 练习 1：基础推理任务
+- **场景：** 你希望 agent 判断一个数字是偶数还是奇数。
+- **有效提示词：** “判断 42 是偶数还是奇数。一步一步思考，并解释你的推理。”
+- **解释：** 这个提示词通过要求逐步解释来强调推理能力，确保 agent 进行逻辑处理。它很简单且成本低，上下文长度需求也很小，重点放在准确性上。
 
-**Agentic AI** refers to systems designed to pursue goals with a degree of autonomy. Unlike simpler models that might only generate text or classify data, an agent can:
+#### 练习 2：指定工具调用
+- **场景：** 你需要 agent 使用天气 API 工具获取伦敦当前天气。
+- **有效提示词：** “使用天气 API 工具获取英国伦敦当前天气。返回温度和天气状况。”
+- **解释：** 这针对工具调用能力，明确指出工具名称和输出内容（温度、天气状况），在简洁上下文中促进准确性和成本效率。
 
-  * **Decompose** a complex goal into smaller, manageable tasks.
-  * **Select and utilize** tools (e.g., code interpreters, search engines, APIs).
-  * **Reason** about its actions and the environment.
-  * **Adapt** its plan based on new information or feedback.
-  * **Maintain context** over extended interactions.
+#### 练习 3：带示例的结构化输出
+- **场景：** 你希望 agent 以表格格式列出三个项目想法。
+- **有效提示词：** “为一个 AI 应用生成三个项目想法。将输出格式化为一个表格，列名为 ‘Name’ 和 ‘Description’。示例：| Name | Description | | AI Chat | 一个用于客户支持的聊天机器人 |”
+- **解释：** 通过表格格式和示例强制使用结构化输出，提升准确性和清晰度。推理需求很低，因此成本保持较低，而上下文长度则包含了示例以提供引导。
 
-**Effective prompting** is the bridge between your high-level intent and the agent's autonomous execution. A well-crafted prompt empowers the agent, while a poor one can lead to confusion, inefficiency, or failure.
+#### 练习 4：面向成本效率的语气设定
+- **场景：** 你需要对用户关于 AI 伦理的问题给出简短、专业的回复。
+- **有效提示词：** “请以简洁、专业的语气回答这个问题：‘AI 的伦理问题有哪些？’ 限制在 50 个词以内。”
+- **解释：** 通过限制字数和指定语气，这个提示词优化了成本效率，同时在较小上下文中确保准确性。推理过程直接明了，重点是清晰、专业的输出。
+
+#### 练习 5：为工具使用分配角色
+- **场景：** 你希望 agent 扮演数据分析师，并使用数据库查询工具找出销售趋势。
+- **有效提示词：** “扮演一名数据分析师。使用数据库查询工具分析销售数据并识别 2025 年第一季度的趋势。请以要点形式返回结果。”
+- **解释：** 分配角色可以提升推理能力和工具调用能力。结构化输出（要点）确保清晰，在准确性、中等上下文长度和成本之间取得平衡。
+
+#### 练习 6：避免为了准确性而过度复杂化
+- **场景：** 你需要一篇 500 字文章的摘要，但不希望有过多细节。
+- **有效提示词：** “请将这篇 500 字的文章总结为 100 字：[article text]。只关注关键点，避免不必要的细节。”
+- **解释：** 这通过限制范围和输出长度来提高准确性，降低推理复杂度和成本。上下文长度由文章输入控制，确保高效处理。
+
+#### 练习 7：逐步工具集成
+- **场景：** 你希望 agent 使用物流 API 计算运费并解释过程。
+- **有效提示词：** “使用物流 API 计算从纽约到巴黎的 5kg 包裹运费。请展示你的步骤：1）查询 API，2）处理数据，3）返回费用。”
+- **解释：** 通过逐步指令增强推理能力，同时通过 API 测试工具调用能力。结构化输出确保准确性，同时上下文长度和成本处于中等水平。
+
+#### 练习 8：输出引导以提高效率
+- **场景：** 你需要一个用户资料摘要的 JSON 回复。
+- **有效提示词：** “请将这个用户资料总结为 JSON：[profile data]。以以下内容开头：{'summary':”
+- **解释：** 使用 JSON 结构作为输出引导能增强结构化输出和成本效率，因为它直接为 agent 提供了输出方向。推理需求很低，准确性很高，而上下文长度仅限于资料数据。
+
+#### 练习 9：大上下文下的详细推理
+- **场景：** 你需要一个使用多个工具的营销活动详细计划。
+- **有效提示词：** “使用分析工具和预算计算器工具，制定一个详细的营销活动计划。包括 3 个月期间的策略、时间线和成本。一步一步解释你的推理。”
+- **解释：** 这个练习在大上下文下测试推理能力和工具调用能力。结构化输出（策略、时间线、成本）确保准确性，不过由于复杂性增加，成本效率会下降。
+
+#### 练习 10：为清晰度纠正提示词
+- **场景：** 你有这样的提示词：“Use tool get data about sales fast.”
+- **任务：** 找出并纠正这个提示词在 agentic AI 使用中的问题。
+- **修正后的提示词：** “Use the sales data tool to retrieve sales figures for March 2025. Return results quickly in a list.”
+- **解释：** 原始提示词缺乏具体性和结构。修正版本提升了工具调用能力、准确性和结构化输出，同时保持推理简单、成本低。
+
+#### 练习 11：比较提示词的上下文管理
+- **场景：** 你希望 agent 分析某个数据集的趋势。
+- **提示词 1：** “Analyze trends in this dataset: [dataset]”
+- **提示词 2：** “使用 stats 工具分析这个数据集的趋势：[dataset]。仅以表格形式列出前 3 个趋势，并将上下文控制在 500 tokens 以内。”
+- **解释：** 提示词 1 太模糊，可能导致准确性下降和在大上下文下成本过高。提示词 2 指定了工具、限制了输出，并管理了上下文长度，从而优化了全部五个因素。
+
+---
+
+#  面向 Agentic AI 开发者的高级提示词工程：实用教程
+
+欢迎，开发者们！当你开始构建 **agentic AI 系统** 时，也就是那些能够自主规划、推理、使用工具并达成复杂目标的 AI，你会发现 **提示词工程** 比以往任何时候都更关键，也更讲究细节。一个 agent 的能力在很大程度上取决于你如何指挥它。
+
+本教程将引导你了解为 AI agents 编写有效提示词的核心原则和技巧，并附带实用示例。
 
 -----
 
-### foundational\_principles Principles of Prompting for Agents
+### 什么是 Agentic AI，为什么提示词如此关键？
 
-1.  **Clarity and Specificity:** Ambiguity is the enemy. Clearly define the agent's role, goal, constraints, and available tools.
-2.  **Context is King:** Provide all necessary background information the agent needs to operate effectively.
-3.  **Explicit Instructions:** Don't assume the agent "knows" something. If it's important, state it.
-4.  **Structured Prompts:** Use formatting (like headings, bullet points, or XML-like tags) to organize information within the prompt, making it easier for the agent to parse.
-5.  **Define Success:** How will the agent (and you) know when the task is successfully completed?
-6.  **Iterative Refinement:** Your first prompt is rarely perfect. Test, observe, and refine.
+**Agentic AI** 指的是旨在以一定自主性追求目标的系统。与只会生成文本或分类数据的简单模型不同，agent 可以：
 
------
+  * **拆解** 一个复杂目标为更小、更易管理的任务。
+  * **选择并使用** 工具（例如代码解释器、搜索引擎、API）。
+  * **推理** 自己的行动和所处环境。
+  * **根据** 新信息或反馈调整计划。
+  * **在较长交互中** 保持上下文。
 
-### 🧱 Key Components of an Agentic Prompt
-
-A comprehensive prompt for an AI agent often includes:
-
-  * **`Persona/Role`**: Define the character or role the AI should adopt. This influences its tone, knowledge domain, and decision-making style.
-      * *Example:* "You are a meticulous research assistant specializing in renewable energy technologies."
-  * **`Goal/Objective`**: The primary task the agent must accomplish. This should be clear, concise, and actionable.
-      * *Example:* "Your goal is to identify the top 3 emerging solar panel technologies based on efficiency and cost-effectiveness, and provide a brief report."
-  * **`Context`**: Relevant background information, data, or state.
-      * *Example:* "The current year is 2025. We are interested in technologies that have shown significant progress in the last 18 months."
-  * **`Available Tools`**: Explicitly list the tools the agent can use and, if necessary, basic instructions on how or when to use them.
-      * *Example:* "You have access to a `search_engine` tool for Browse the web and a `document_analyzer` tool to extract key information from research papers you find."
-  * **`Constraints & Guardrails`**: Rules, limitations, or boundaries the agent must adhere to.
-      * *Example:* "Focus only on peer-reviewed sources or reputable industry reports. Do not consider technologies still in the purely theoretical stage. The final report should not exceed 500 words."
-  * **`Step-by-Step Thinking / Reasoning Guidance`**: Encourage the agent to articulate its plan or thought process. This is crucial for complex tasks and for debugging.
-      * *Example:* "Before presenting the final report, outline your research plan, the keywords you will use for searching, and how you will evaluate the sources."
-  * **`Output Format`**: Specify the desired structure and format of the agent's response or final output.
-      * *Example:* "Present your findings as a JSON object with a main key 'solar\_technologies', containing a list of objects. Each object should have 'name', 'efficiency\_metric', 'cost\_metric', and 'summary' keys."
-  * **`Memory/History Snippet (if applicable)`**: For ongoing tasks, a summary of previous interactions or key learnings can be vital.
-      * *Example:* "Recall from our previous discussion that we are prioritizing commercially viable solutions over purely academic ones."
+**有效提示词** 是你高层意图与 agent 自主执行之间的桥梁。精心设计的提示词能赋能 agent，而糟糕的提示词则可能导致混乱、低效甚至失败。
 
 -----
 
-### 🛠️ Prompt Engineering Techniques for Agentic AI
+### foundational\_principles 面向 agents 的提示原则
 
-#### 1\. Role Prompting
+1.  **清晰与具体：** 模糊是最大的敌人。明确定义 agent 的角色、目标、约束和可用工具。
+2.  **上下文为王：** 提供 agent 高效运作所需的全部背景信息。
+3.  **显式指令：** 不要假设 agent “知道”某些内容。如果重要，就明确写出来。
+4.  **结构化提示：** 使用格式化方式（如标题、项目符号或类似 XML 的标签）组织提示词中的信息，让 agent 更容易解析。
+5.  **定义成功标准：** 你和 agent 如何判断任务已经成功完成？
+6.  **迭代改进：** 你的第一版提示词通常不会完美。测试、观察、再优化。
 
-Assigning a role helps the agent adopt a specific persona and behavior.
+-----
 
-  * **Less Effective:** "Find information about X."
-  * **More Effective (Agentic):** "You are a Senior Financial Analyst. Your task is to analyze the Q1 performance of Company X based on their latest earnings report (provided as context). Identify key financial health indicators, risks, and opportunities. Use the `financial_data_extractor` tool to parse the report if needed."
+### Agentic 提示词的关键组成部分
 
-#### 2\. Task Decomposition Encouragement
+一个完整的 AI agent 提示词通常包括：
 
-Prompt the agent to break down complex goals.
+  * **`Persona/Role`**：定义 AI 应当扮演的角色或人格。这会影响它的语气、知识领域和决策风格。
+      * *示例：* “你是一名细致的研究助理，专注于可再生能源技术。”
+  * **`Goal/Objective`**：agent 必须完成的主要任务。它应该清晰、简洁、可执行。
+      * *示例：* “你的目标是找出基于效率和成本效益最具潜力的 3 项新兴太阳能电池板技术，并提供简短报告。”
+  * **`Context`**：相关背景信息、数据或状态。
+      * *示例：* “当前年份是 2025 年。我们关注的是在过去 18 个月中取得显著进展的技术。”
+  * **`Available Tools`**：明确列出 agent 可用的工具，必要时还要说明如何或何时使用。
+      * *示例：* “你可以使用 `search_engine` 工具浏览网页，也可以使用 `document_analyzer` 工具提取你找到的研究论文中的关键信息。”
+  * **`Constraints & Guardrails`**：agent 必须遵守的规则、限制或边界。
+      * *示例：* “只关注同行评审来源或可信的行业报告。不要考虑仍停留在纯理论阶段的技术。最终报告不应超过 500 个词。”
+  * **`Step-by-Step Thinking / Reasoning Guidance`**：鼓励 agent 说明自己的计划或思考过程。这对复杂任务和调试尤其重要。
+      * *示例：* “在展示最终报告之前，请先列出你的研究计划、搜索时会使用的关键词，以及你将如何评估来源。”
+  * **`Output Format`**：明确 agent 回复或最终输出所需的结构和格式。
+      * *示例：* “请将你的发现以 JSON 对象形式呈现，主键为 `solar_technologies`，其中包含一个对象列表。每个对象应包含 `name`、`efficiency_metric`、`cost_metric` 和 `summary` 字段。”
+  * **`Memory/History Snippet (if applicable)`**：对于持续性任务，前序交互或关键结论的摘要非常重要。
+      * *示例：* “请记住，在我们之前的讨论中，我们更重视商业可行性，而不是纯学术方案。”
 
-  * **Less Effective:** "Plan a marketing campaign for our new app."
-  * **More Effective (Agentic):**
-    ```
-    You are a Marketing Strategist AI. Your goal is to create a comprehensive marketing campaign plan for a new productivity app called 'TaskMaster Pro'.
+-----
 
-    To achieve this, you should:
-    1.  **Understand the Target Audience:** Define the primary and secondary target users for a productivity app.
-    2.  **Identify Key Marketing Channels:** Suggest suitable channels (e.g., social media, content marketing, email, partnerships).
-    3.  **Develop Core Messaging:** What are the key benefits and unique selling propositions of TaskMaster Pro?
-    4.  **Outline Campaign Phases:** Propose a timeline with key activities for pre-launch, launch, and post-launch.
-    5.  **Suggest Key Performance Indicators (KPIs):** How will we measure the success of this campaign?
+### Agentic AI 的提示词工程技巧
 
-    Think step-by-step to address each of these points. You can use the `web_search` tool to research competitor strategies or current marketing trends if needed.
-    ```
+#### 1. 角色提示（Role Prompting）
 
-#### 3\. Explicit Tool Usage Specification
+分配角色有助于让 agent 采用特定的人设和行为模式。
 
-Clearly tell the agent what tools it has and when/how to use them.
+  * **较弱：** “查找关于 X 的信息。”
+  * **更有效（Agentic）：** “你是一名高级金融分析师。你的任务是基于公司 X 最新的财报（作为上下文提供）分析其 2025 年第一季度表现。识别关键财务健康指标、风险和机会。如有需要，请使用 `financial_data_extractor` 工具解析报告。”
 
-  * **Less Effective:** "Search for recent news on AI." (Agent might not know it *can* search or *how*).
-  * **More Effective (Agentic):**
-    ```
-    You are a News Aggregator Bot. Your task is to find the top 5 news articles published in the last 24 hours regarding breakthroughs in generative AI.
+#### 2. 鼓励任务拆解
 
-    **Available Tools:**
-    - `internet_search`: Use this tool to search for news articles. You can specify queries like "generative AI breakthroughs news".
-    - `article_summarizer`: Once you find relevant articles, use this tool to get a brief summary of each.
+提示 agent 将复杂目标拆分开来。
 
-    **Process:**
-    1. Formulate search queries to find relevant news.
-    2. Use `internet_search` to retrieve a list of articles.
-    3. For each potentially relevant article, use `article_summarizer`.
-    4. Select the top 5 based on relevance and significance.
-    5. List the title, source, and your summary for each.
-    ```
+  * **较弱：** “为我们的新应用规划一个营销活动。”
+  * **更有效（Agentic）：**
+    ````
+    你是一名营销策略 AI。你的目标是为一款名为 'TaskMaster Pro' 的新生产力应用制定一份完整的营销活动计划。
+    
+    为实现这一目标，你应该：
+    1.  **了解目标受众：** 定义该生产力应用的主要和次要目标用户。
+    2.  **识别关键营销渠道：** 建议合适的渠道（例如社交媒体、内容营销、电子邮件、合作伙伴关系）。
+    3.  **制定核心信息：** TaskMaster Pro 的关键优势和独特卖点是什么？
+    4.  **规划活动阶段：** 为预热、发布和发布后阶段提出带有关键活动的时间线。
+    5.  **建议关键绩效指标（KPIs）：** 我们如何衡量这次活动的成功？
+    
+    请一步一步思考并回答上述每一点。如果需要，你可以使用 `web_search` 工具研究竞品策略或当前营销趋势。
+    ````
 
-#### 4\. Chain-of-Thought (CoT) / ReAct (Reasoning + Action) Prompting
+#### 3. 明确指定工具使用
 
-Encourage the agent to "think out loud" or explain its reasoning before taking action. This is invaluable for complex problem-solving and debugging.
+清楚告诉 agent 它有哪些工具，以及何时、如何使用。
 
-  * **Prompt Snippet:** "Before you use any tool, state your reasoning for choosing that tool and the specific parameters you will use. For example:
-    *Thought:* I need to find the current weather in London.
-    *Action:* `weather_tool.get_current_weather(location='London, UK')`"
+  * **较弱：** “搜索最近关于 AI 的新闻。”（agent 可能不知道自己*可以*搜索，也不知道该怎么做。）
+  * **更有效（Agentic）：**
+    ````
+    你是一名新闻聚合机器人。你的任务是找出过去 24 小时内发布的、关于生成式 AI 突破的前 5 篇新闻文章。
+    
+    **可用工具：**
+    - `internet_search`：使用此工具搜索新闻文章。你可以指定诸如“generative AI breakthroughs news”之类的查询。
+    - `article_summarizer`：找到相关文章后，用此工具生成每篇文章的简要摘要。
+    
+    **流程：**
+    1. 设计搜索查询以找到相关新闻。
+    2. 使用 `internet_search` 获取文章列表。
+    3. 对每篇可能相关的文章，使用 `article_summarizer`。
+    4. 根据相关性和重要性选出前 5 篇。
+    5. 列出每篇文章的标题、来源和摘要。
+    ````
 
-#### 5\. Output Formatting and Structure
+#### 4. Chain-of-Thought（CoT）/ ReAct（推理 + 行动）提示
 
-Requesting structured output (e.g., JSON, XML, Markdown) makes the agent's responses more predictable and easier to parse for downstream tasks or other systems.
+鼓励 agent 在采取行动之前“边想边说”或解释自己的推理。这对复杂问题解决和调试非常有价值。
 
-  * **Less Effective:** "Tell me about the products."
-  * **More Effective (Agentic):**
-    ```
-    You are an e-commerce product information agent. Given the product descriptions below, extract the name, price, and key features for each.
-    Return the information as a JSON array, where each object represents a product and has the keys "product_name", "price_usd", and "features" (an array of strings).
+  * **提示词片段：** “在使用任何工具之前，请先说明你为什么选择该工具，以及你将使用的具体参数。例如：
+    *Thought:* 我需要查找伦敦当前的天气。
+    *Action:* `weather_tool.get_current_weather(location='London, UK')`”
 
-    Product Data:
+#### 5. 输出格式与结构
+
+要求结构化输出（例如 JSON、XML、Markdown）能让 agent 的回复更可预测，也更容易被下游任务或其他系统解析。
+
+  * **较弱：** “告诉我这些产品的信息。”
+  * **更有效（Agentic）：**
+    ````
+    你是一名电商产品信息 agent。根据下面的产品描述，提取每个产品的名称、价格和关键特性。
+    请将信息以 JSON 数组形式返回，其中每个对象代表一个产品，并包含 "product_name"、"price_usd" 和 "features"（字符串数组）这些键。
+    
+    产品数据：
     [Product A: Costs $49.99. Features: Lightweight, waterproof, long battery life.
     Product B: Priced at $79.00. Main attributes: High-speed processing, durable casing, excellent camera.]
-    ```
+    ````
 
-#### 6\. Constraints and Guardrails
+#### 6. 约束与护栏
 
-Define what the agent *should not* do, or the boundaries within which it must operate.
+定义 agent *不应该* 做什么，或者它必须遵守的边界。
 
-  * **Prompt Snippet:** "When researching, only use sources from academic journals or official government websites. Avoid blog posts or opinion pieces. Do not provide financial advice. If asked for financial advice, respond with: 'I am not authorized to provide financial advice. Please consult a qualified professional.'"
+  * **提示词片段：** “在研究时，只使用学术期刊或官方政府网站的来源。避免博客文章或评论性文章。不要提供财务建议。如果被要求提供财务建议，请回复：‘I am not authorized to provide financial advice. Please consult a qualified professional.’”
 
 -----
 
-### 🧪 Prompt Practice Examples
+### 提示词练习示例
 
-Let's put these concepts into practice.
+让我们把这些概念应用到实践中。
 
-#### Example 1: Travel Planning Agent
+#### 示例 1：旅行规划 agent
 
-  * **Goal:** Plan a 3-day trip to Paris for a solo traveler interested in art and history.
+  * **目标：** 为一名对艺术和历史感兴趣的独自旅行者规划一个为期 3 天的巴黎行程。
 
-  * **Initial (Less Effective) Prompt:** "Plan a 3-day trip to Paris for art and history."
+  * **初始（较弱）提示词：** “为艺术和历史规划一个 3 天游巴黎行程。”
 
-      * *Problem:* Too vague. What's the budget? What specific tools can it use? How should it present the plan?
+      * *问题：* 太模糊了。预算是多少？能用什么具体工具？应该如何呈现计划？
 
-  * **Improved (Agentic) Prompt:**
+  * **改进后的（Agentic）提示词：**
 
-    ```
-    **Persona:** You are "Parisian Pathfinder," an expert AI travel planner specializing in cultural trips to Paris.
-
-    **Goal:** Create a detailed 3-day itinerary for a solo traveler visiting Paris, focusing on art museums and historical sites. The traveler has a moderate budget.
-
+    ````
+    **Persona:** 你是 "Parisian Pathfinder"，一位专注于巴黎文化旅行的专家级 AI 旅行规划师。
+    
+    **Goal:** 为一位独自前往巴黎、重点关注艺术博物馆和历史景点的旅行者创建一份详细的 3 天游行程。该旅行者的预算为中等。
+    
     **Context:**
     * Trip Duration: 3 full days (e.g., Day 1, Day 2, Day 3).
     * Interests: Art (Impressionism, Renaissance), History (French Revolution, Medieval Paris).
     * Budget: Moderate (e.g., suggest a mix of free sites, paid attractions with reasonable entry fees, and mid-range dining options).
     * Pace: Balanced, not too rushed.
-
+    
     **Available Tools:**
-    * `map_service(query)`: To find locations, distances, and suggest routes.
-    * `museum_database(name)`: To get information on opening hours, ticket prices, and current exhibitions for museums.
-    * `historical_site_info(name)`: To get details on historical locations.
-
+    * `map_service(query)`: 用于查找地点、距离并建议路线。
+    * `museum_database(name)`: 用于获取博物馆的开放时间、门票价格和当前展览信息。
+    * `historical_site_info(name)`: 用于获取历史景点的详细信息。
+    
     **Instructions & Reasoning:**
-    1.  **Day Planning:** For each day, suggest 2-3 primary activities.
-    2.  **Logistics:** For each activity, use `map_service` to estimate travel time from a central point (assume a hotel near the Louvre) and `museum_database` or `historical_site_info` for practical details.
-    3.  **Food:** Suggest one lunch and one dinner spot per day (type of cuisine, general price range).
-    4.  **Reasoning:** Briefly explain *why* you chose each site or activity in relation to the traveler's interests.
-    5.  **Output Format:** Present the itinerary day by day, using Markdown. For each activity, include:
-        * Name of Site/Activity
-        * Brief Rationale
-        * Estimated time needed
-        * Tool Used (e.g., `museum_database('Louvre')`)
-        * Practical Info (e.g., opening hours, rough cost if applicable)
-
+    1.  **Day Planning:** 每天建议 2-3 个主要活动。
+    2.  **Logistics:** 对每个活动，使用 `map_service` 估算从中心点出发的旅行时间（假设酒店靠近卢浮宫），并使用 `museum_database` 或 `historical_site_info` 获取实用信息。
+    3.  **Food:** 每天建议一个午餐和一个晚餐地点（菜系类型、价格区间）。
+    4.  **Reasoning:** 简要说明为什么选择这些地点或活动，以及它们与旅行者兴趣的关系。
+    5.  **Output Format:** 以 Markdown 的形式按天呈现行程。对于每项活动，包含：
+        * 景点/活动名称
+        * 简要理由
+        * 预计所需时间
+        * 使用的工具（例如 `museum_database('Louvre')`）
+        * 实用信息（例如开放时间、大致费用，如适用）
+    
     **Constraints:**
-    * Do not suggest activities outside Paris city limits.
-    * Prioritize well-known sites but also include one or two "hidden gem" suggestions if appropriate.
-    * Ensure the itinerary is feasible within a 3-day timeframe.
-    ```
+    * 不要推荐巴黎市区范围之外的活动。
+    * 优先推荐知名景点，但如果合适，也加入一两个“隐藏宝藏”。
+    * 确保行程在 3 天内可行。
+    ````
 
-#### Example 2: Code Generation and Debugging Agent
+#### 示例 2：代码生成与调试 agent
 
-  * **Goal:** Write a Python function and then debug it based on an error message.
+  * **目标：** 编写一个 Python 函数，然后根据错误信息调试它。
 
-  * **Initial (Less Effective) Prompt:** "Write a Python function to sort a list. It has a bug, fix it: [error message]."
+  * **初始（较弱）提示词：** “写一个对列表排序的 Python 函数。它有一个 bug，请修复它：[error message].”
 
-      * *Problem:* Lacks context on the function's purpose, expected input/output, and the agent doesn't have a clear framework for using a "code execution" tool or "debugger."
+      * *问题：* 缺少函数用途、输入/输出预期的上下文，而且 agent 没有一个清晰框架来使用“代码执行”工具或“调试器”。
 
-  * **Improved (Agentic) Prompt:**
+  * **改进后的（Agentic）提示词：**
 
     ````
-    **Persona:** You are "Code Companion," an AI assistant that helps write and debug Python code.
-
+    **Persona:** 你是 "Code Companion"，一名帮助编写和调试 Python 代码的 AI 助手。
+    
     **Task 1: Code Generation**
-    **Goal:** Write a Python function called `get_even_numbers` that takes a list of integers as input and returns a new list containing only the even numbers from the input list, sorted in ascending order.
-
+    **Goal:** 编写一个名为 `get_even_numbers` 的 Python 函数，它接受一个整数列表作为输入，并返回一个新列表，其中只包含输入列表中的偶数，且按升序排序。
+    
     **Tool Available for You:**
-    * `python_interpreter(code_string)`: You can use this to mentally validate your code structure, but do not execute it for the generation phase. Just write the code.
-
+    * `python_interpreter(code_string)`: 你可以使用它在脑海中验证代码结构，但在生成阶段不要执行它。只需写出代码。
+    
     **Output Format (for Task 1):**
-    Provide the Python function as a code block.
-
+    请以代码块形式提供 Python 函数。
+    
     ---
-    **(Developer will then notionally run this code and provide feedback for Task 2)**
+    **（开发者随后会在概念上运行这段代码并为任务 2 提供反馈）**
     ---
-
+    
     **Task 2: Debugging**
-    **Context:** The following Python function `get_even_numbers` was generated. When run with the input `[1, 'a', 2, 4, 3, 'b', 6]`, it produced the error: `TypeError: not all arguments converted during string formatting` (or a similar relevant error you might simulate if you were testing an agent that *can* execute code).
-
+    **Context:** 下面这个 Python 函数 `get_even_numbers` 已被生成。当输入 `[1, 'a', 2, 4, 3, 'b', 6]` 时，它报出了错误：`TypeError: not all arguments converted during string formatting`（或者如果你在测试一个*可以*执行代码的 agent，也可以使用一个类似但更相关的错误）。
+    
     **Code with Potential Bug:**
     ```python
-    # (Assume the code generated in Task 1 would be here, perhaps with an intentional subtle bug if you are designing the test)
+    # （假设任务 1 中生成的代码会放在这里，或者如果你正在设计测试，也可以故意加入一个细微 bug）
     def get_even_numbers(numbers):
         evens = []
         for n in numbers:
-            if n % 2 == 0: # Potential TypeError if n is not an int
+            if n % 2 == 0: # 如果 n 不是 int，这里可能出现 TypeError
                 evens.append(n)
         evens.sort()
         return evens
-    ````
-
-    **Error Message:** `TypeError: '%' not all arguments converted during string formatting` (or a more accurate one like `TypeError: unsupported operand type(s) for %: 'str' and 'int'`)
-
-    **Goal:** Identify the bug in the provided Python function and explain the cause. Then, provide the corrected Python function.
-
-    **Available Tools (for debugging):**
-
-      * `code_analyzer(code_string)`: Analyzes code for potential issues, without execution.
-      * `python_interpreter(code_string, input_data)`: Executes the provided code string with given input data and returns the output or error. Use this to test your fix.
-
-    **Debugging Process:**
-
-    1.  **Analyze Error:** Explain what the error message means in the context of the given code.
-    2.  **Hypothesize Cause:** State your hypothesis for the bug.
-    3.  **Propose Fix:** Describe the change you will make.
-    4.  **(Mentally or using `python_interpreter` if enabled for the agent): Test Fix:** Explain how you would test the fix.
-    5.  **Provide Corrected Code:**
-
-    **Output Format (for Task 2):**
-
-    1.  **Error Analysis:** (Your explanation)
-    2.  **Bug Hypothesis:** (Your hypothesis)
-    3.  **Proposed Fix:** (Your description of the fix)
-    4.  **Corrected Code:** (Python code block)
-
-    <!-- end list -->
-
     ```
     
-    ```
+    **Error Message:** `TypeError: '%' not all arguments converted during string formatting`（或者更准确的错误，例如 `TypeError: unsupported operand type(s) for %: 'str' and 'int'`）
+    
+    **Goal:** 找出给定 Python 函数中的 bug，并解释原因。然后提供修正后的 Python 函数。
+    
+    **Available Tools (for debugging):**
+    
+      * `code_analyzer(code_string)`: 分析代码中可能存在的问题，但不执行。
+      * `python_interpreter(code_string, input_data)`: 使用给定输入数据执行代码并返回输出或错误。用它来测试你的修复。
+    
+    **Debugging Process:**
+    
+    1.  **Analyze Error:** 解释错误信息在这段代码语境下意味着什么。
+    2.  **Hypothesize Cause:** 说明你对 bug 原因的假设。
+    3.  **Propose Fix:** 描述你将做的修改。
+    4.  **(Mentally or using `python_interpreter` if enabled for the agent): Test Fix:** 说明你将如何测试这个修复。
+    5.  **Provide Corrected Code:**
+    
+    **Output Format (for Task 2):**
+    
+    1.  **Error Analysis:** （你的解释）
+    2.  **Bug Hypothesis:** （你的假设）
+    3.  **Proposed Fix:** （你对修复方式的描述）
+    4.  **Corrected Code:** （Python 代码块）
+    
+    <!-- end list -->
+    
+    ````
+    
+    ````
 
 -----
 
-### ✨ Advanced Considerations
+### 高级考虑
 
-  * **Few-Shot Prompting:** Include a few examples of desired input-output behavior within the prompt to guide the agent.
-  * **Self-Correction Prompts:** Design prompts that encourage the agent to review its own work or plan, and make corrections before finalizing.
-      * *Example Snippet:* "Before submitting your final plan, review it against the initial requirements. Is anything missing? Are there any inconsistencies? If so, state what you will change and why."
-  * **Dynamic Prompting:** For complex, multi-turn interactions, your application might need to dynamically update parts of the prompt (e.g., adding new information to the context, updating the list of completed sub-tasks).
-  * **Tool Creation/Refinement:** In highly advanced scenarios, you might even prompt agents to help define or refine the specifications for new tools they need.
+  * **Few-Shot Prompting：** 在提示词中加入几个期望输入-输出行为示例，引导 agent。
+  * **自我纠错提示：** 设计能促使 agent 在定稿前自查工作或计划、并修正错误的提示词。
+      * *示例片段：* “在提交最终计划之前，请根据最初需求检查一遍。有没有遗漏？有没有不一致之处？如果有，请说明你将更改什么以及原因。”
+  * **动态提示：** 对于复杂的多轮交互，你的应用可能需要动态更新提示词中的某些部分，例如把新信息加入上下文，或者更新已完成子任务列表。
+  * **工具创建/完善：** 在更高级的场景中，你甚至可以提示 agents 帮助定义或完善它们所需新工具的规范。
 
 -----
 
-### 🏁 Conclusion
+### 结论
 
-Prompt engineering for agentic AI is an art and a science. It requires a deep understanding of your agent's capabilities, clear communication of your goals, and an iterative approach to refinement. By mastering these techniques, you can unlock the full potential of your AI agents to perform complex tasks autonomously and effectively.
+面向 agentic AI 的提示词工程既是一门艺术，也是一门科学。它要求你深入理解 agent 的能力，清晰传达目标，并采用迭代方式持续优化。掌握这些技巧后，你就能释放 AI agents 的全部潜能，让它们自主而高效地完成复杂任务。
 
-Happy prompting\! 💡
-
+祝你提示词编写顺利！💡

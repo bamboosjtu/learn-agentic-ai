@@ -1,208 +1,204 @@
-# Dapr Agentic Cloud Ascent (DACA) Stacks: Free Scalable Intelligence, Simplified
+# Dapr Agentic Cloud Ascent（DACA）技术栈：免费、可扩展的智能，更简单
 
-Agentic AI is reshaping how we approach problem-solving, we’re harnessing its power to deliver scalable, adaptable intelligence solutions. Our focus is on providing developers with the tools to create tailored AI Agent-driven workflows without unnecessary complexity. By leveraging a minimalist yet powerful architecture, we enable everything from simple queries to sophisticated multi-agent systems.
+Agentic AI 正在重塑我们解决问题的方式，我们正在利用它的力量提供可扩展、可适应的智能解决方案。我们的重点是为开发者提供工具，让他们能够创建定制化的 AI Agent 工作流，而不需要不必要的复杂性。通过采用一个极简但强大的架构，我们可以支持从简单查询到复杂多 Agent 系统的一切场景。
 
-![daca](./architecture.png)
+**[Dapr Agentic Cloud Ascent（DACA）设计模式综合指南](https://github.com/panaversity/learn-agentic-ai/blob/main/comprehensive_guide_daca.md)**
 
-**[Comprehensive Guide to Dapr Agentic Cloud Ascent (DACA) Design Pattern](https://github.com/panaversity/learn-agentic-ai/blob/main/comprehensive_guide_daca.md)**
+通过将预定义构件减少到最低限度，我们消除了冗余，并赋能开发者打造定制化的 agentic 解决方案，无论是一个简单查询还是一个复杂的多 Agent 工作流，都可以按我们的具体需求来定制。下面是在分层架构中使用的精简工具集：
 
-By keeping predefined constructs to a minimum, we eliminate excess and empower developers to forge custom agentic solutions—whether that’s a simple query or an intricate multi-agent workflow—tailored to our specific needs. Here’s the streamlined tools we use, in our layered architecture:
+1. **LLM APIs**：支持稳健的 Agent 开发，也是与 LLM 交互的事实标准。
+2. **轻量级 Agents**：内置护栏、工具集成和无缝交接能力。
+3. **REST APIs**：让用户、agent 团队以及团队间交互能够流畅通信。
+4. **无状态 Serverless Docker 容器**：用于高效、可扩展的计算（Agents、API、MCP Servers）。
+5. **异步消息传递**：连接容器化 AI agents 的动态通信方式。
+6. **灵活的容器调用**：通过 HTTP 请求或定时 CronJobs 触发。
+7. **关系型托管数据库服务**：用于稳健的数据处理。
+8. **内存型数据结构存储**：常作为缓存提升应用性能。
+9. **[模型上下文协议（MCP）](https://modelcontextprotocol.io/introduction)**：标准化 agentic 工具调用。
+10. **[分布式应用运行时（Dapr）](https://dapr.io/)**：通过提供标准化构件简化构建具韧性的分布式系统，适用于 agentic 工作流。
 
-1. **LLM APIs** that support robust Agent development, and are the defacto standard for interacting with LLMs. 
-2. **Lightweight Agents** with built-in guardrails, tool integration, and seamless handoff capabilities.  
-3. **REST APIs** enabling fluid communication between users, agent crews, and inter-crew interactions.  
-4. **Stateless Serverless Docker Containers** for efficient, scalable computing (Agents, APIs, MCP Servers).  
-5. **Asynchronous Message Passing** to connect containerize AI agents dynamically.  
-6. **Flexible Container Invocation** via HTTP requests or scheduled CronJobs.  
-7. **Relational Managed Database Services** for robust data handling.
-8. **In-memory data structure store** frequently used as a cache to speed up application performance.
-9. **[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)** standardizes agentic tool calling. 
-10. **[Distributed Application Runtime (Dapr)](https://dapr.io/)** simplifies building resilient, distributed systems by providing standardized building blocks for agentic workflows.
+依托这些核心组件，我们可以部署几乎任何 agentic 工作流，在简洁性与无限可能之间取得平衡。
 
-With these core components, we enable the deployment of virtually any agentic workflow—striking a balance between simplicity and limitless potential.
+### DACA 的基础
 
-### The DACA Foundations
- 
-The OpenAI Responses API serves as a key foundation for developing agentic AI systems, offering advanced capabilities for autonomous task execution. The OpenAI Agents SDK complements this by providing a powerful framework to orchestrate multi-agent workflows using the Responses API. Together, these two components form the core pillars of our technology stack for building agentic AI.
+OpenAI Responses API 是构建 agentic AI 系统的关键基础之一，它提供了用于自主任务执行的高级能力。OpenAI Agents SDK 则通过提供强大的框架来编排基于 Responses API 的多 Agent 工作流，与之形成互补。二者共同构成了我们用于构建 agentic AI 的技术栈核心支柱。
 
 ![Agent Orchestration Layer](./agent-orchestration-layer.png)
 
+---
+
+## DACA 框架构件的详细说明
+
+1. **LLM APIs**
+   - **目的**：作为与大语言模型交互的核心接口，使 agents 能执行从简单查询到复杂多步推理的任务。它们标准化、稳健且被广泛支持。
+   - **选择**：我们选择 **[OpenAI Chat Completion](https://platform.openai.com/docs/guides/text?api-mode=responses)** 和 **Responses API** 作为 LLM APIs。OpenAI 的 Chat Completion API 已成为事实上的行业标准，是兼具通用性和 agent 友好特性的成熟选择，例如 function calling；Responses API 则可提供互补能力。
+   - **重要性**：这些 API 为 agentic 工作流提供可靠基础，让开发者能够轻松接入前沿 AI 能力。
+
+2. **轻量级 Agents**
+   - **目的**：这些是为特定任务设计的模块化 AI 单元，具备护栏（确保安全运行）、工具集成（例如网页搜索、文件解析等）和交接能力（与其他 agents 协作）。
+   - **选择**：我们使用 **[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)** 来构建这些 agents。这个 SDK 提供了一个简洁的方式创建轻量级 agents，并内置记忆管理（[LangMem](https://langchain-ai.github.io/langmem/) 集成）和工具使用能力。**[模型上下文协议（MCP）](https://modelcontextprotocol.io/introduction)** 标准化 agentic 工具调用。
+   - **重要性**：轻量级 agents 以更少资源消耗实现灵活、可扩展的工作流，无论是单独部署还是作为团队的一部分都适用。
+
+3. **REST APIs**
+   - **目的**：REST API 使用户、agents 和 agent 团队之间能够通过 HTTP 无缝通信，提供无状态、标准化的实时交互接口。
+   - **选择**：这里我们使用 **[FastAPI](https://fastapi.tiangolo.com/)**。FastAPI 是一个高性能、基于 Python 的工具，支持异步编程并自动生成 OpenAPI 文档，可加速开发。
+   - **重要性**：它确保低延迟、可扩展的通信，这对面向用户的应用和 agent 间协调都至关重要。
+
+4. **无状态 Serverless Docker 容器**
+   - **目的**：这些容器以可移植、无状态的形式打包应用逻辑，例如 agents、API、Dapr、[模型上下文协议（MCP）](https://modelcontextprotocol.io/introduction) Servers，从而支持自动扩缩容与便捷部署，而无需保留内部持久状态。
+   - **选择**：我们使用 **[Docker 容器](https://www.docker.com/resources/what-container/)**，它提供轻量、一致、可跨平台部署的运行环境。容器托管方面，原型阶段使用 **[Hugging Face Docker Spaces](https://huggingface.co/docs/hub/en/spaces-sdks-docker)**（内置 CI/CD 的免费托管），生产训练则使用运行在 **[永久免费 Oracle VM](https://github.com/nce/oci-free-cloud-k8s)** 上的 [Kubernetes](https://kubernetes.io/)。
+   - **重要性**：容器支持快速部署和高效资源利用，与轻量框架强调的简洁性和可扩展性一致。使用 Docker 部署 AI agents 已被广泛认为是最佳实践，也是事实上的行业标准。Docker 容器提供轻量、可移植且一致的环境，确保 AI 应用能在不同平台上稳定运行。此外，Docker 的广泛采用也形成了丰富的工具与服务生态，进一步增强了它在 AI agent 部署中的价值。总之，Docker 容器为 AI agent 部署提供了标准化且高效的方法，因此是行业中的首选。
+
+   另外，无状态容器不会在会话之间保留数据，这使其能够通过快速复制与分发提升扩展性。它们也可以被部署为 serverless 容器。我们不仅可以把这些无状态容器部署在 Hugging Face Container Spaces 和 Kubernetes 上，也可以部署在大多数云服务中：
+
+   **各云服务提供商总结表**
+
+   | 提供商 / 服务 | 事件驱动容器 | 定时容器 |
+   |-------------|-------------|---------|
+   | **AWS ECS** | 是 | 是 |
+   | **AWS EKS** | 是 | 是 |
+   | **AWS Fargate** | 是 | 是 |
+   | **AWS Lambda** | 是 | 是 |
+   | **AWS Batch** | 间接支持 | 是 |
+   | **Azure Container Apps** | 是 | 是 |
+   | **Azure Container Jobs** | 是 | 是 |
+   | **Azure AKS** | 是 | 是 |
+   | **Azure Functions** | 是 | 是 |
+   | **Azure ACI** | 间接支持 | 间接支持 |
+   | **GCP GKE** | 是 | 是 |
+   | **GCP Cloud Run** | 是 | 间接支持 |
+   | **GCP Cloud Functions** | 是 | 是 |
+   | **GCP Cloud Scheduler** | 否 | 是 |
+   | **IBM IKS** | 是 | 是 |
+   | **IBM Code Engine** | 是 | 是 |
+   | **OCI OKE** | 是 | 是 |
+   | **OCI Functions** | 是 | 是 |
+   | **OCI Container Instances** | 间接支持 | 间接支持 |
+   | **DO DOKS** | 是 | 是 |
+   | **DO App Platform** | 有限 | 是 |
+
+5. **异步消息传递**
+   - **目的**：让容器化 agents 或系统组件之间实现非阻塞、动态通信，非常适合并行或独立的任务处理。
+   - **选择**：原型阶段使用 **[RabbitMQ](https://www.cloudamqp.com/plans.html#rmq)**。生产阶段使用 **[Kubernetes 上的 Kafka](https://www.redhat.com/en/topics/integration/why-run-apache-kafka-on-kubernetes)**。Kafka 是分布式流平台，针对高吞吐、容错消息传递进行了优化，可在复杂工作流中连接 agents。
+   - **重要性**：异步消息传递可以解耦组件，增强韧性，并支持事件驱动架构。
+
+6. **定时容器调用**
+   - **目的**：容器既可以按需触发（通过 HTTP 请求），也可以按计划（通过类似 cron 的作业）触发，提供执行模式上的灵活性。
+   - **选择**：我们会使用 [Dapr Scheduler](https://docs.dapr.io/concepts/dapr-services/scheduler/)。开发阶段还可以使用 Linux/Mac 上的 [python-crontab](https://pypi.org/project/python-crontab/)，Windows 上的 [APSchedule](https://pypi.org/project/APScheduler/)，或者适用于任意系统的进程内调度库 [Schedule](https://pypi.org/project/schedule/)。原型阶段我们使用 **[cron-job.org](https://cron-job.org/en/)** 这个免费的在线调度服务。生产阶段则使用与 Kubernetes 原生集成的 **[Kubernetes CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)**。Dapr 的最新更新中也提供了调度服务。
+   - **重要性**：灵活的调用方式同时支持实时和批处理，能够高效适配多种场景。
+
+7. **关系型托管数据库服务**
+   - **目的**：关系型数据库提供结构化数据存储和 ACID 一致性，可靠地处理用户数据、agent 状态或日志。
+   - **选择**：我们选择 **[CockroachDB](https://www.cockroachlabs.com/)**。CockroachDB 是兼容 Postgres 的分布式 SQL 数据库，旨在实现可扩展性和韧性，并提供托管服务以减少运维负担。为了便于切换数据库提供商，我们会实现抽象层，例如数据库 ORM，这里会使用 SQLModel。
+   - **重要性**：它保证稳健的数据持久化，这对追踪工作流或维护系统完整性至关重要。
+
+8. **内存型数据结构存储**
+   - **目的**：可作为数据库、缓存和消息 broker 使用。由于数据存储在 RAM 中，因此性能极高。
+   - **选择**：**[Upstash Redis](https://upstash.com/pricing)**。Upstash 提供无服务器 Redis，并有免费层。
+   - **重要性**：因为数据存于内存，所以性能非常高，非常适合存储 LLM 会话数据。
+
+9. **[分布式应用运行时（Dapr）](https://dapr.io/)**
+   - **目的**：Dapr（Distributed Application Runtime）通过提供标准化构件，例如服务调用、状态管理、发布/订阅消息，来简化具韧性分布式系统的开发，特别适合 agentic 工作流。它抽象掉分布式计算的复杂性，使开发者能专注于构建智能、可扩展的 AI 方案，而不是与基础设施问题纠缠。
+   - **选择**：我们选择 Dapr，是因为它轻量、语言无关，并且能与无状态 serverless Docker 容器和异步消息传递系统无缝集成。它支持多种编程语言和部署环境，同时符合我们减少预设构件、赋能自定义解决方案的极简理念。
+   - **重要性**：在 agentic AI 生态中，agent 与服务之间的动态交互至关重要，Dapr 能在不增加过多开销的情况下保证可靠性和可扩展性。通过标准化 agent 的通信和状态管理，它可以加速开发、提升容错能力，并让架构面向未来更稳健，帮助我们在保持简单与性能的同时适应演进需求。你也可以选择使用 [Dapr Agents](https://dapr.github.io/dapr-agents/) 和 [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)。在本地以 self-hosted 模式运行 `dapr init` 时，Dapr 会默认启动一个 Redis 实例，用于某些功能，例如状态管理和 pub/sub 消息。
 
 ---
 
-## Detailed Explanation of DACA Framework Constructs
+### 支撑 DACA 框架的两个核心构件
 
-1. **LLM APIs**  
-   - **Purpose**: These serve as the core interface for interacting with large language models (LLMs), enabling agents to perform tasks ranging from simple queries to complex multi-step reasoning. They are standardized, robust, and widely supported.  
-   - **Choice**: We’ve selected **[OpenAI Chat Completion](https://platform.openai.com/docs/guides/text?api-mode=responses)** and **Responses AI** as our LLM APIs. OpenAI’s Chat Completion APIs have become the de facto industry standard and are a proven choice for its versatility and agent-friendly features (e.g., function calling), while Responses API may offer complementary capabilities.  
-   - **Why It Matters**: These APIs provide a reliable foundation for agentic workflows, ensuring developers can tap into cutting-edge AI capabilities with ease.
+整个框架依赖两个关键构件，它们让原型验证和生产部署都成为可能：
+- **事件驱动的容器调用**：由事件触发的容器，例如 HTTP 请求触发，实现实时响应。这是用户发起型工作流或 agent 交互的基础。
+- **定时的容器调用**：按预定义计划（通过 cron 作业）执行的容器，支持批处理或周期性任务，为系统增加灵活性。它们也会被用于从 RabbitMQ 和 Kafka 中**拉取异步消息**。
 
-2. **Lightweight Agents**  
-   - **Purpose**: These are modular AI units designed for specific tasks, equipped with guardrails (to ensure safe operation), tool integration (e.g., web search, file parsing, etc.), and handoff capabilities (to collaborate with other agents).  
-   - **Choice**: We’re using the **[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)** to build these agents. This SDK offers a streamlined way to create lightweight agents with built-in features like memory management **([LangMem](https://langchain-ai.github.io/langmem/)** integration) and tool usage. **[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)** standardizes agentic tool calling.  
-   - **Why It Matters**: Lightweight agents minimize resource use while enabling flexible, scalable workflows, whether deployed individually or as part of a crew.
-
-3. **REST APIs**  
-   - **Purpose**: REST APIs facilitate seamless communication between users, agents, and agent crews over HTTP, providing a stateless, standardized interface for real-time interactions.  
-   - **Choice**: **[FastAPI](https://fastapi.tiangolo.com/)** is our framework here. FastAPI is a high-performance, Python-based tool that supports asynchronous programming and auto-generates OpenAPI documentation, accelerating development.  
-   - **Why It Matters**: It ensures low-latency, scalable communication, critical for user-facing applications and inter-agent coordination.
-
-4. **Stateless Serverless Docker Containers**  
-   - **Purpose**: These containers package our application logic (e.g., agents, APIs, Dapr, [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) Servers) in a portable, stateless format, allowing automatic scaling and easy deployment without persistent internal state.  
-   - **Choice**: We’re using **[Docker Containers](https://www.docker.com/resources/what-container/)**, which provide a lightweight, consistent runtime environment deployable across platforms. For container hosting we use **[Hugging Face Docker Spaces](https://huggingface.co/docs/hub/en/spaces-sdks-docker)** (free hosting with built-in CI/CD) for prototyping, and [Kubernetes](https://kubernetes.io/) on [always free Oracle VMs](https://github.com/nce/oci-free-cloud-k8s) for production training. 
-   - **Why It Matters**: Containers support rapid deployment and efficient resource utilization, aligning with the lean framework’s focus on simplicity and scalability. Deploying AI agents using Docker containers is widely regarded as a best practice and is considered the de facto industry standard. Docker containers offer a lightweight, portable, and consistent environment, ensuring that AI applications run reliably across various platforms. Moreover, Docker's widespread adoption has led to a rich ecosystem of tools and services that further enhance its utility in deploying AI agents. In summary, Docker containers provide a standardized and efficient approach to deploying AI agents, making them a preferred choice in the industry. 
-
-   In addition, stateless containers, which do not retain data between sessions, enhance scalability by enabling rapid replication and distribution across multiple environments. It also allows them to be deployed as serverless containers. We can deploy these stateless containers not in Hugging Face Container Spaces, and Kuberneties but also in most cloud services:
-
-
-   **Summary Table Across Providers**
-
-   | Provider/Service            | Event-Driven Containers | Scheduled Containers |
-   |-----------------------------|-------------------------|----------------------|
-   | **AWS ECS**                 | Yes                     | Yes                  |
-   | **AWS EKS**                 | Yes                     | Yes                  |
-   | **AWS Fargate**             | Yes                     | Yes                  |
-   | **AWS Lambda**              | Yes                     | Yes                  |
-   | **AWS Batch**               | Indirectly              | Yes                  |
-   | **Azure Container Apps**    | Yes                     | Yes                  |
-   | **Azure Container Jobs**    | Yes                     | Yes                  |
-   | **Azure AKS**               | Yes                     | Yes                  |
-   | **Azure Functions**         | Yes                     | Yes                  |
-   | **Azure ACI**               | Indirectly              | Indirectly           |
-   | **GCP GKE**                 | Yes                     | Yes                  |
-   | **GCP Cloud Run**           | Yes                     | Indirectly           |
-   | **GCP Cloud Functions**     | Yes                     | Yes                  |
-   | **GCP Cloud Scheduler**     | No                      | Yes                  |
-   | **IBM IKS**                 | Yes                     | Yes                  |
-   | **IBM Code Engine**         | Yes                     | Yes                  |
-   | **OCI OKE**                 | Yes                     | Yes                  |
-   | **OCI Functions**           | Yes                     | Yes                  |
-   | **OCI Container Instances** | Indirectly              | Indirectly           |
-   | **DO DOKS**                 | Yes                     | Yes                  |
-   | **DO App Platform**         | Limited                 | Yes                  |
+这两个构件共同提供了处理几乎任何 agentic 工作流的灵活性，无论是动态触发还是定期执行，都适用于原型环境与生产环境。
 
 ---
 
+### DACA 开发栈（本地）：开源
 
-5. **Asynchronous Message Passing**  
-   - **Purpose**: This enables non-blocking, dynamic communication between containerized agents or system components, ideal for parallel or independent task processing.  
-   - **Choice**: **[RabbitMQ](https://www.cloudamqp.com/plans.html#rmq)** for prototyping. **[Kafka for Kubernetes](https://www.redhat.com/en/topics/integration/why-run-apache-kafka-on-kubernetes) for production**. It is a distributed streaming platform optimized for high-throughput, fault-tolerant messaging, connecting agents in complex workflows.  
-   - **Why It Matters**: Asynchronous messaging decouples components, enhancing resilience and supporting event-driven architectures.
+开发、原型和生产三套栈在所用工具和技术上是一样的，唯一差别在于部署方式。这样的统一开发方式确保开发者可以使用同一套技术栈在本地或云环境中构建和测试，并无缝过渡到原型或生产部署。
+- **LLM APIs**：OpenAI Chat Completion（Google Gemini - 免费层）、Responses API
+- **轻量级 Agents**：OpenAI Agents SDK（开源）
+- **[模型上下文协议（MCP）](https://modelcontextprotocol.io/introduction)**：标准化 agentic 工具调用。
+- **REST APIs**：FastAPI（开源）
+- **无状态 Serverless Docker 容器**：Docker Desktop 和 Docker Compose（免费层且开源）
+- **异步消息传递**：RabbitMQ Docker 镜像（开源）
+- **定时容器调用**：开发阶段使用 Linux/Mac 上的 python-crontab，Windows 上的 APSchedule，或适用于任何系统的 Schedule。
+- **关系型数据库**：Postgres Docker 镜像（开源）。为了便于切换数据库提供商，我们会实现抽象层，例如数据库 ORM，这里会使用 SQLModel（开源）。
+- **内存型数据存储**：Redis Docker 镜像（开源）。在 Python 中可使用 redis-py，或更高层的 Redis OM Python（开源）。
+- **在容器内开发**：Visual Studio Code Dev Containers 扩展（开源）
+- **本地运行 Dapr**：通过 Docker Compose 运行（开源）。可选地，你也可以使用 [Dapr Agents](https://dapr.github.io/dapr-agents/) 和 [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)
 
-6. **Scheduled Container Invocation**  
-   - **Purpose**: This allows containers to be triggered either on-demand (via HTTP requests) or on a schedule (via cron-like jobs), offering versatility in execution patterns.  
-   - **Choice**: We will use [Dapr Scheduler](https://docs.dapr.io/concepts/dapr-services/scheduler/). Alternatively, we can use [Dapr Scheduler](https://docs.dapr.io/concepts/dapr-services/scheduler/). Alternative for development are [python-crontab](https://pypi.org/project/python-crontab/) on Linux and Mac. [APSchedule](https://pypi.org/project/APScheduler/) for Windows. Or [Schedule](https://pypi.org/project/schedule/) for inprocess scheduling on any system.  For prototyping, we’re using **[cron-job.org](https://cron-job.org/en/)**, a free online scheduling service.  For production, we’re opting for **[Kubernetes CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)**, which integrates with Kubernetes for robust scheduling. Dapr also provides scheduling services in its recent update. 
-   - **Why It Matters**: Flexible invocation supports both real-time and batch processing, accommodating diverse use cases efficiently.
-
-7. **Relational Managed Database Services**  
-   - **Purpose**: A relational database provides structured data storage with ACID compliance, handling user data, agent states, or logs reliably.  
-   - **Choice**: **[CockroachDB](https://www.cockroachlabs.com/)** is our selection. CockroachDB is a distributed SQL database compatiable with Postgres designed for scalability and resilience, with managed services to reduce operational burden. Implement abstraction layers (e.g., ORMs for databases) to ease provider switches, we will use SQLModel for this.   
-   - **Why It Matters**: It ensures robust data persistence, vital for tracking workflows or maintaining system integrity.
-
-8. **In-memory data structure store**
-   - **Purpose**: It's used as a database, cache, and message broker. Because it stores data in RAM, it offers exceptionally high performance.
-   - **Choice**: **[Upstash Redis](https://upstash.com/pricing)** Upstash is known for its serverless Redis offering and provides a free tier. 
-   - **Why It Matters**: Because it stores data in RAM, it offers exceptionally high performance. Ideal for storing LLM session data. 
-
-9. **[Distributed Application Runtime (Dapr)](https://dapr.io/)**
-   - **Purpose**: Dapr (Distributed Application Runtime) simplifies the development of resilient, distributed systems by providing standardized building blocks—such as service invocation, state management, and publish/subscribe messaging—for agentic workflows. It abstracts away the complexities of distributed computing, enabling developers to focus on building intelligent, scalable AI solutions rather than wrestling with infrastructure challenges.
-   - **Choice**: We chose Dapr for its lightweight, language-agnostic design and its ability to seamlessly integrate with our stateless serverless Docker containers and asynchronous message-passing systems. It enhances flexibility by supporting multiple programming languages and deployment environments, while aligning with our minimalist philosophy of reducing predefined constructs and empowering custom solutions.
-   - **Why It Matters**: In an agentic AI ecosystem, where dynamic interactions between agents and services are critical, Dapr ensures reliability and scalability without adding unnecessary overhead. By standardizing how agents communicate and manage state, it accelerates development, improves fault tolerance, and future-proofs our architecture—allowing us to adapt to evolving needs while maintaining simplicity and performance. Optionally, you can use [Dapr Agents](https://dapr.github.io/dapr-agents/) and [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/). When you initialize Dapr locally using the dapr init command in self-hosted mode, it does set up a Redis instance as a default component for certain functionalities, such as state management and pub/sub messaging.
+**[Dapr 2025 年现状研究报告](https://pages.diagrid.io/download-the-state-of-dapr-2025-report)**
 
 ---
 
-### Two Main Constructs Enabling the DACA Framework
+### DACA 原型栈：免费部署
 
-The entire framework hinges on two key constructs, which make both prototyping and production deployments possible:  
-- **Event-Driven Container Invocation**: Containers triggered by events, such as HTTP requests, enable real-time responsiveness. This is the backbone of user-initiated workflows or agent interactions.  
-- **Scheduled Container Invocation**: Containers executed on a predefined schedule (via cron jobs) support batch processing or periodic tasks, adding flexibility to the system. They will also be used to **pull asynchronous messages from RabbitMQ and Kafka**.  
-Together, these constructs provide the versatility to handle virtually any agentic workflow, whether invoked dynamically or routinely, in both prototype and production environments.
+原型栈旨在快速迭代，完全免费或使用免费层，利用低成本工具进行测试与验证。
+- **LLM APIs**：与 OpenAI Chat Completion 兼容的 Google Gemini API，拥有慷慨的免费层，以及 Responses API
+- **轻量级 Agents**：OpenAI Agents SDK
+- **[模型上下文协议（MCP）](https://modelcontextprotocol.io/introduction)** Servers
+- **REST APIs**：FastAPI
+- **无状态 Serverless Docker 容器**：部署在 **[Hugging Face Docker Spaces](https://huggingface.co/docs/hub/en/spaces-sdks-docker)** 上的 Docker 容器（带内置 CI/CD 的免费托管）
+- **异步消息传递**：RabbitMQ（免费层）
+- **灵活的容器调用**：cron-job.org（完全免费的在线调度服务）
+- **关系型托管数据库服务**：CockroachDB Serverless（免费层）。为了便于切换数据库提供商，我们会实现抽象层，例如数据库 ORM，这里会使用 SQLModel（开源）。
+- **内存型数据存储**：[Upstash Redis](https://upstash.com/pricing)
+- **Dapr**：把 Dapr 看作任意一个容器。`daprio/daprd` 镜像只是与你的应用并行部署的标准容器，也就是 Dapr Sidecar（开源）。可选地，你也可以使用 [Dapr Agents](https://dapr.github.io/dapr-agents/) 和 [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)
+- **成本**：原型阶段完全免费，将开发中的财务门槛降到最低。
 
----
+### DACA 的无服务器替代方案：适用于原型与生产
 
-### DACA Development Stack (Local): Open Source
+那些拥有信用卡并能注册 Azure 免费层的开发者，可以选择使用无服务器平台，这类平台本质上就是托管 Kubernetes，既可用于原型也可用于生产，例如 [Azure Container Apps（ACA）](https://azure.microsoft.com/en-us/products/container-apps)（支持 [Dapr](https://learn.microsoft.com/en-us/azure/container-apps/dapr-overview)）以及 [Azure Container Apps Jobs](https://learn.microsoft.com/en-us/azure/container-apps/jobs?tabs=azure-cli)。
 
-The development, prototype and production stacks are identical in terms of the tools and technologies used. The only difference lies in how they are deployed. This unified development approach ensures developers can build and test locally or in a cloud environment using the same stack, transitioning seamlessly to either prototyping or production deployment.  
-- **LLM APIs**: OpenAI Chat Completion (Google Gemini - Free Tier), Responses API 
-- **Lightweight Agents**: OpenAI Agents SDK (Open Source) 
-- **[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)** for standardizing agentic tool calling. 
-- **REST APIs**: FastAPI (Open Source)
-- **Stateless Serverless Docker Containers**: [Docker Desktop](https://www.docker.com/products/docker-desktop/) and [Docker Compose](https://docs.docker.com/compose/) (Free Tier and Open Source)
-- **Asynchronous Message Passing**: [RabbitMQ Docker Image](https://hub.docker.com/_/rabbitmq/) (Open Source) 
-- **Scheduled Container Invocation**: [For development we use [python-crontab](https://pypi.org/project/python-crontab/) on Linux and Mac. [APSchedule](https://pypi.org/project/APScheduler/) for Windows. Or [Schedule](https://pypi.org/project/schedule/) for inprocess scheduling on any system.
-- **Relational Database**: [Postgres Docker Image](https://hub.docker.com/_/postgres) (Open Source). Implement abstraction layers (e.g., ORMs for databases) to ease provider switches, we will use SQLModel (Open Source). 
-- **Inmemory Datastore**: [Redis Docker Image](https://hub.docker.com/_/redis) (Open Source). In Python use [redis-py](https://pypi.org/project/redis/) or higher level [Redis OM Python](https://github.com/redis/redis-om-python) (Open Source). 
-- **Developing inside a Container** [Visual Studio Code Dev Containers Extension](https://code.visualstudio.com/docs/devcontainers/containers) (Open Source)
-- **Run Darp Locally** [Run using Docker-Compose](https://docs.dapr.io/getting-started/install-dapr-selfhost/) (Open Source) Optionally, you can use [Dapr Agents](https://dapr.github.io/dapr-agents/) and [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)
+他们可以从 [免费层](https://azure.microsoft.com/en-us/pricing/free-services) 开始：每月前 180,000 vCPU 秒、360,000 GiB/秒和 200 万次请求是免费的。
 
-**[State of Dapr 2025 Research Report](https://pages.diagrid.io/download-the-state-of-dapr-2025-report)**
+**DACA 真实示例**
 
-### DACA Prototype Stack: Free Deployment
+想象一个运行在 ACA 上的 FastAPI 服务：
 
-The prototype stack is designed for rapid iteration and is completely free of charge or uses free tiers, leveraging cost-effective tools for testing and validation.  
-- **LLM APIs**: OpenAI Chat Completion Compatible Google Gemini APIs which has a generious free tier, and Responses API  
-- **Lightweight Agents**: OpenAI Agents SDK
-- **[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)** Servers.   
-- **REST APIs**: FastAPI  
-- **Stateless Serverless Docker Containers**: Docker Containers deployed on **[Hugging Face Docker Spaces](https://huggingface.co/docs/hub/en/spaces-sdks-docker)** (free hosting with built-in CI/CD)  
-- **Asynchronous Message Passing**: RabbitMQ (Free tier).  
-- **Flexible Container Invocation**: cron-job.org (totally free online scheduling service)  
-- **Relational Managed Database Services**: CockroachDB Serverless (free tier). Implement abstraction layers (e.g., ORMs for databases) to ease provider switches, we will use SQLModel (Open Source). 
-- **In Memory Datastore**: [Upstash Redis](https://upstash.com/pricing) 
-- **Darp** Treat Dapr Like Any Container. The daprio/daprd image is just a standard container you deploy alongside your app i.e. Dapr Sidecar (Open Source). Optionally, you can use [Dapr Agents](https://dapr.github.io/dapr-agents/) and [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)
-- **Cost**: Fully free for prototyping, minimizing financial barriers during development.
+使用 0.5 vCPU 和 1 GB RAM，它通常每分钟可以稳定处理 50-100 个请求，具体取决于工作负载，例如数据库查询还是静态响应。
 
-### DACA Serverless Alternative for both Prototyping and Production 
-
-Those developer who have credit card and can register for the Azure free tier, have a option to use the serverless platform which are basically managed Kubernetes for both prototyping and production. Like [Azure Container Apps (ACA)](https://azure.microsoft.com/en-us/products/container-apps) (with [Dapr](https://learn.microsoft.com/en-us/azure/container-apps/dapr-overview) support) and [Jobs in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/jobs?tabs=azure-cli). 
-
-They can get started with the [free tier](https://azure.microsoft.com/en-us/pricing/free-services): The first 180,000 vCPU per second, 360,000 GiB/s, and 2 million requests each month are free.
-
-**DACA Real-World Example**
-
-Imagine a FastAPI Service running on ACA:
-
-With 0.5 vCPU and 1 GB RAM, it might handle 50-100 requests per minute comfortably, depending on the workload (e.g., database queries vs. static responses).
-
-If traffic spikes, ACA’s autoscaling could spin up another 0.5 vCPU replica rather than over-provisioning a full vCPU, keeping costs down.
+如果流量激增，ACA 的自动扩缩容可以拉起另一个 0.5 vCPU 副本，而不是超配一个完整 vCPU，从而降低成本。
 
 ---
 
-### DACA Production Stack: Cloud Native and Open Source
+### DACA 生产栈：云原生与开源
 
-The production stack is optimized for scalability, reliability, and performance, using enterprise-grade tools while maintaining the same development stack, differing only in deployment.  
-- **LLM APIs**: Any LLM which is compatible with OpenAI Chat Completion API (most are), Responses API  
-- **Lightweight Agents**: OpenAI Agents SDK  
-- **[Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction)** in stateless containers. 
-- **REST APIs**: FastAPI  
-- **Stateless Serverless Docker Containers**: Docker Containers orchestrated by **Kubernetes** (for auto-scaling and resilience)  
-- **Asynchronous Message Passing**: Kafka on Kubernetes (multi-broker, high-availability setup) or RabbitMQ on Kubernetes
-- **Flexible Container Invocation**: Kubernetes CronJob (natively integrated with Kubernetes) The developer will have to migrate from cron-job.org to Kubernetes CronJob.
-- **Relational Managed Database Services**: Postgres for Kubernetes. Implement abstraction layers (e.g., ORMs for databases) to ease provider switches, we will use SQLModel (Open Source). 
-- **In Memory Data Store**: Redis on Kubernetes 
-- **Darp on Kubernetes** [Deploy Dapr on a Kubernetes cluster](https://docs.dapr.io/operations/hosting/kubernetes/) (Open Source). Optionally, you can use [Dapr Agents](https://dapr.github.io/dapr-agents/) and [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)
+生产栈针对可扩展性、可靠性和性能进行了优化，使用企业级工具，同时保持与开发栈一致，差异只在部署方式。
+- **LLM APIs**：任何兼容 OpenAI Chat Completion API 的 LLM（大多数都兼容），以及 Responses API
+- **轻量级 Agents**：OpenAI Agents SDK
+- **[模型上下文协议（MCP）](https://modelcontextprotocol.io/introduction)**：运行在无状态容器中
+- **REST APIs**：FastAPI
+- **无状态 Serverless Docker 容器**：由 **Kubernetes** 编排的 Docker 容器（用于自动扩缩容与韧性）
+- **异步消息传递**：Kubernetes 上的 Kafka（多 broker、高可用）或 Kubernetes 上的 RabbitMQ
+- **灵活的容器调用**：Kubernetes CronJob（与 Kubernetes 原生集成）；开发者需要从 cron-job.org 迁移到 Kubernetes CronJob
+- **关系型托管数据库服务**：Kubernetes 上的 Postgres。为了便于切换数据库提供商，我们会实现抽象层，例如数据库 ORM，这里会使用 SQLModel（开源）。
+- **内存型数据存储**：Kubernetes 上的 Redis
+- **Kubernetes 上的 Dapr**：[在 Kubernetes 集群上部署 Dapr](https://docs.dapr.io/operations/hosting/kubernetes/)（开源）。可选地，你也可以使用 [Dapr Agents](https://dapr.github.io/dapr-agents/) 和 [Dapr Workflows](https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-overview/)
 
-### DACA Serverless Alternative for both Prototyping and Production 
+### DACA 的无服务器替代方案：适用于原型与生产
 
-Those developer who have credit card and can register for the Azure free tier, have a option to use the serverless platform which are basically managed Kubernetes for both prototyping and production. Like [Azure Container Apps (ACA)](https://azure.microsoft.com/en-us/products/container-apps) (with [Dapr](https://learn.microsoft.com/en-us/azure/container-apps/dapr-overview) support) and [Jobs in Azure Container Apps](https://learn.microsoft.com/en-us/azure/container-apps/jobs?tabs=azure-cli). 
+那些拥有信用卡并能注册 Azure 免费层的开发者，可以选择使用无服务器平台，这类平台本质上就是托管 Kubernetes，既可用于原型也可用于生产，例如 [Azure Container Apps（ACA）](https://azure.microsoft.com/en-us/products/container-apps)（支持 [Dapr](https://learn.microsoft.com/en-us/azure/container-apps/dapr-overview)）以及 [Azure Container Apps Jobs](https://learn.microsoft.com/en-us/azure/container-apps/jobs?tabs=azure-cli)。
 
-They can get started with the [free tier](https://azure.microsoft.com/en-us/pricing/free-services): The first 180,000 vCPU per second, 360,000 GiB/s, and 2 million requests each month are free.
+他们可以从 [免费层](https://azure.microsoft.com/en-us/pricing/free-services) 开始：每月前 180,000 vCPU 秒、360,000 GiB/秒和 200 万次请求是免费的。
 
-**DACA Real-World Example**
+**DACA 真实示例**
 
-Imagine a FastAPI Service running on ACA:
+想象一个运行在 ACA 上的 FastAPI 服务：
 
-With 0.5 vCPU and 1 GB RAM, it might handle 50-100 requests per minute comfortably, depending on the workload (e.g., database queries vs. static responses).
+使用 0.5 vCPU 和 1 GB RAM，它通常每分钟可以稳定处理 50-100 个请求，具体取决于工作负载，例如数据库查询还是静态响应。
 
-If traffic spikes, ACA’s autoscaling could spin up another 0.5 vCPU replica rather than over-provisioning a full vCPU, keeping costs down.
-  
+如果流量激增，ACA 的自动扩缩容可以拉起另一个 0.5 vCPU 副本，而不是超配一个完整 vCPU，从而降低成本。
+
 ---
 
-### Training Developers for DACA Production Deployment
+### 为 DACA 生产部署培训开发者
 
-To equip developers with Kubernetes DevOps skills for production deployment, we leverage **Oracle Cloud Infrastructure (OCI)**, which offers a "free forever" tier which Offers 2 AMD VMs (1/8 OCPU, 1 GB RAM each) or up to 4 Arm-based VMs (24 GB RAM total). [These VMs are used to deploy our own Kubernetes cluster](https://github.com/nce/oci-free-cloud-k8s), providing a hands-on environment to learn cluster management, scaling, and deployment. Once developers master these skills, they can confidently deploy our agentic workflows to any cloud Kubernetes platform (e.g., AWS, GCP, Azure), ensuring portability and flexibility. This training bridges the gap between prototyping and production, empowering developers to handle real-world deployments.
+为了让开发者具备用于生产部署的 Kubernetes DevOps 技能，我们利用 **Oracle Cloud Infrastructure（OCI）**，它提供“永久免费”层，包含 2 台 AMD VM（每台 1/8 OCPU，1 GB RAM）或最多 4 台 Arm VM（总计 24 GB RAM）。[这些 VM 被用来部署我们自己的 Kubernetes 集群](https://github.com/nce/oci-free-cloud-k8s)，为学习集群管理、扩缩容和部署提供实践环境。一旦开发者掌握这些技能，他们就可以自信地把我们的 agentic 工作流部署到任何云 Kubernetes 平台，例如 AWS、GCP、Azure，从而保证可移植性和灵活性。这种培训弥合了原型与生产之间的鸿沟，帮助开发者处理真实世界的部署。
 
-References:
+参考：
 
 https://www.ronilsonalves.com/articles/how-to-deploy-a-free-kubernetes-cluster-with-oracle-cloud-always-free-tier
 
@@ -210,6 +206,7 @@ https://medium.com/@Phoenixforge/a-weekend-project-with-k3s-and-oracle-cloud-fre
 
 ---
 
-### Summary
+### 总结
 
-This DACA framework balances simplicity and power, with a unified development stack that adapts to free prototyping (via Hugging Face Docker Spaces, cron-job.org) or robust production (via Kubernetes, OCI-trained DevOps). The two core constructs—event-driven and scheduled container invocation—underpin its versatility, enabling any short-term or long-term workflow in any environment. 
+这个 DACA 框架在简洁性与能力之间取得平衡，拥有统一的开发栈，既能适配免费原型（通过 Hugging Face Docker Spaces、cron-job.org），也能适配稳健的生产环境（通过 Kubernetes、OCI 训练过的 DevOps）。两个核心构件——事件驱动的容器调用和定时的容器调用——支撑了其灵活性，使其可以在任何环境中处理短期或长期工作流。
+

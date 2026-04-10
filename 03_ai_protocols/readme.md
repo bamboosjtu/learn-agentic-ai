@@ -1,38 +1,38 @@
-# AI Protocols for Agentic Systems
+# 面向智能体系统的 AI 协议
 
-This module outlines the various communication protocols foundational to building robust, scalable, and interoperable agentic AI systems, particularly within the Dapr Agentic Cloud Ascent (DACA) design pattern.
+本模块概述了构建健壮、可扩展且可互操作的智能体式 AI 系统所依赖的各类通信协议，尤其是在 Dapr Agentic Cloud Ascent（DACA）设计模式中。
 
-The protocols are organized in a layered approach, starting from fundamental communication mechanisms and moving towards more specialized AI-centric protocols.
+这些协议采用分层方式组织：从基础通信机制开始，逐步过渡到更专门面向 AI 的协议。
 
-## Directory Structure and Protocols
+## 目录结构与协议
 
-### `01_mcp_concepts/`: Foundational Communication Protocols
+### `01_mcp_concepts/`：基础通信协议
 
-This directory contains the underlying communication technologies that serve as the transport layer for more complex interactions, organized in a suggested learning path. Understanding these is crucial for designing efficient and reliable data exchange in distributed agent systems. See the `01_base/readme.md` for the detailed learning progression.
+该目录包含支撑更复杂交互的底层通信技术，可视作传输层，并按照建议的学习路径进行组织。理解这些内容对于在分布式智能体系统中设计高效、可靠的数据交换至关重要。详细学习顺序请参见 `01_base/readme.md`。
 
-- **[`01_Http/`] Defines standards and best practices for using Hypertext Transfer Protocol.
-- **[`02_REST/`]**: Focuses on the architectural principles of REST for building scalable web services.
-- **[`03_Streamable_HTTP/`]**: Covers protocols and techniques for streaming data over HTTP.
-- **[`03_JSON_RPC/`]**: Outlines the use of JSON Remote Procedure Call for simple and efficient inter-service communication.
+- **[`01_Http/`]**：定义使用超文本传输协议（HTTP）的标准和最佳实践。
+- **[`02_REST/`]**：聚焦 REST 的架构原则，用于构建可扩展的 Web 服务。
+- **[`03_Streamable_HTTP/`]**：涵盖通过 HTTP 进行流式数据传输的协议与技术。
+- **[`03_JSON_RPC/`]**：介绍 JSON Remote Procedure Call（JSON-RPC）的用法，以实现简单高效的服务间通信。
 
-### `02_model_context_protocol/` (MCP)
+### `02_model_context_protocol/`（MCP）
 
-This section details the Model Context Protocol (MCP). MCP is designed to standardize how Large Language Models (LLMs) and other AI models access and interact with external tools, services, and data sources. It provides a structured way to manage context, capabilities, and function calling, enabling more effective and reliable tool integration for agents.
+本部分介绍 Model Context Protocol（MCP，模型上下文协议）。MCP 旨在标准化大型语言模型（LLM）及其他 AI 模型访问和交互外部工具、服务与数据源的方式。它提供了一种结构化方法来管理上下文、能力以及函数调用，从而为智能体实现更高效、更可靠的工具集成。
 
-### `03_a2a/` (Agent2Agent Protocol)
+### `03_a2a/`（Agent2Agent 协议）
 
-The Agent2Agent (A2A) Protocol defines a standardized framework for secure and interoperable communication directly between autonomous AI agents. This is fundamental for enabling complex collaboration, task delegation, and emergent behaviors in multi-agent systems, paving the way for the "Agentia World" vision. A2A often leverages one or more of the base protocols (e.g., HTTP/REST) for its transport.
+Agent2Agent（A2A）协议定义了一套标准化框架，用于自主 AI 智能体之间直接进行安全且可互操作的通信。这是实现多智能体系统中复杂协作、任务委派以及涌现行为的基础，也为“Agentia World”的愿景铺平道路。A2A 通常会借助一种或多种基础协议（例如 HTTP/REST）作为其传输方式。
 
 ### `04_llms_txt/`
 
-This directory focuses on `llms.txt` (and `llms-full.txt`), a proposed standard for website owners to declare permissions and guidelines for how LLMs and other AI agents should interact with their content. It's akin to `robots.txt` but specifically for AI crawlers and agents, promoting responsible AI interactions with web content.
+该目录聚焦于 `llms.txt`（以及 `llms-full.txt`），这是一个提议中的标准，用于让网站所有者声明 LLM 和其他 AI 智能体应如何与其内容交互的权限和指南。它类似于 `robots.txt`，但专门面向 AI 爬虫和智能体，以促进 AI 与网页内容之间更负责任的交互。
 
-## Alignment with DACA Principles
+## 与 DACA 原则的契合
 
-This structured approach to protocols directly supports the core DACA principles:
+这种结构化的协议组织方式直接支持 DACA 的核心原则：
 
-- **Simplicity**: By clearly defining and separating protocol layers, the complexity of the overall system is managed, making it easier to understand and develop.
-- **Scalability & Resilience**: Choosing the right base protocols (e.g., gRPC for internal high-throughput, HTTP/REST for interoperable A2A) and layering specialized protocols on top allows for optimized performance and robustness, which Dapr further enhances.
-- **Open Core**: The use of well-established open standards and the definition of new open protocols like MCP and A2A foster interoperability and prevent vendor lock-in.
+- **简单性（Simplicity）**：通过清晰定义并分离协议层，整体系统的复杂性得到控制，使其更易于理解和开发。
+- **可扩展性与韧性（Scalability & Resilience）**：选择合适的基础协议（例如面向内部高吞吐场景的 gRPC，以及面向可互操作 A2A 场景的 HTTP/REST），并在其上叠加专用协议，可以实现更优的性能与稳健性，而 Dapr 会进一步增强这些能力。
+- **开放核心（Open Core）**：采用成熟的开放标准，并定义像 MCP 和 A2A 这样的新型开放协议，有助于促进互操作性并避免厂商锁定。
 
-This organization provides a clear roadmap for developers to understand and implement the communication backbone of sophisticated agentic AI systems.
+这样的组织方式为开发者提供了一条清晰路线图，帮助其理解并实现复杂智能体式 AI 系统的通信骨干。

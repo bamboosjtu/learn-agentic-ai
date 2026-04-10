@@ -1,201 +1,194 @@
-# From LLMs to Stateful Long Running Multi-Agent Systems
+# 从 LLM 到有状态的长期运行多 Agent 系统
 
-This document has been split into three separate set of articles, each tackling a unique question:
+本文档被拆分为三组独立文章，每一组都回答一个独特的问题：
 
-1. What are AI agents, and what features and functionalities can we anticipate they’ll have? What should be the Guiding Principles for Crafting Agentic AI?
-2. What Architecture to use to for Multi-Agent Systems (AgentiaCloud)?
-3. What technological components and infrastructure are needed to build and implement these Multi-Agent Systems (AgentiaCloud)? We will discuss in detail our AgentiaCloud technology stack.
+1. 什么是 AI agents？我们可以预期它们会具备哪些特性和功能？构建 Agentic AI 的指导原则应该是什么？
+2. 多 Agent 系统应该使用什么架构（AgentiaCloud）？
+3. 构建和实施这些多 Agent 系统（AgentiaCloud）需要哪些技术组件和基础设施？我们会详细讨论我们的 AgentiaCloud 技术栈。
 
-Note: These questions are answered in topics 01, 02, and 03 in this directory.
+注意：这些问题分别在本目录的主题 01、02 和 03 中回答。
 
-## Agentic AI Development and Use Cases
+## Agentic AI 开发与用例
 
-In 2025, Agentic AI emerges as a global focal point. Leading tech giants such as OpenAI, Microsoft, Google, AWS, Oracle, DeepSeek, Anthropic, Alibaba, Baidu, Huawei, ByteDance, and others are driving this trend.
+2025 年，Agentic AI 正在成为全球关注焦点。OpenAI、Microsoft、Google、AWS、Oracle、DeepSeek、Anthropic、Alibaba、Baidu、Huawei、ByteDance 等领先科技巨头都在推动这一趋势。
 
-Insha Allah, we aim to revolutionize Pakistan and the world through Agentic AI, with an emphasis on creating specialized Vertical Agentic solutions.
+Insha Allah，我们希望通过 Agentic AI 改变巴基斯坦和世界，重点打造垂直领域的专用 Agentic 解决方案。
 
-We have developed detailed documentation outlining Multi-Agent Systems, including their architecture, which will enable us to build AI Agents on a global scale. Most notably, it highlights the key vertical sectors that our thousands of students will initially target:
+我们已经编写了关于多 Agent 系统及其架构的详细文档，这将使我们能够在全球范围内构建 AI Agents。最重要的是，它强调了我们成千上万名学生最初要聚焦的关键垂直行业：
 
-Here’s a comprehensive list of all the agents we’ve explored, spanning various domains and showcasing the application of **event-driven architecture (EDA)**, **three-tier architecture**, **stateless computing**, **scheduled computing (CronJobs)**, **human-in-the-loop (HITL)**, and, in some cases, **LLM intelligence**. 
+下面是一份我们探索过的 agents 的完整清单，涵盖多个领域，并展示了 **事件驱动架构（EDA）**、**三层架构**、**无状态计算**、**定时计算（CronJobs）**、**人类在回路中（HITL）**，以及在某些情况下的 **LLM 智能** 的应用。
 
-## Dapr Agentic Cloud Ascent (DACA) Design Pattern
+## Dapr Agentic Cloud Ascent（DACA）设计模式
 
-Let's understand and learn about ""Dapr Agentic Cloud Ascent" (DACA)", our winning design pattern for developing and deploying planet scale multi-agent systems:
+让我们来理解并学习 “Dapr Agentic Cloud Ascent”（DACA），这是我们用于开发和部署行星级多 Agent 系统的获胜设计模式：
 
 https://grok.com/share/bGVnYWN5_c41dc0f7-8fcb-4d31-bbc0-1414d0a4e294
 
-![DACA](./architecture.png)
+## Agent 领域
 
+每个 agent 都针对其所属领域中的一个独特用例：
 
-## Agent Domains
+1. **邮件 Agent**（邮件管理领域）
+   - **目的**：监控收到的邮件，过滤它们，建议回复，并在用户批准后发送回复；还会检查并纠正用户新写的邮件。
+   - **领域**：个人生产力 / 沟通。
 
-Each agent addresses a unique use case within its domain:
+2. **供应链优化 Agent**（物流领域）
+   - **目的**：监控库存水平，优化配送路线，并建议行动；支持带优化能力的手动路线调整。
+   - **领域**：供应链 / 物流。
 
-1. **Email Agent** (Email Management Domain)
-   - **Purpose**: Monitors incoming emails, filters them, suggests responses, and sends replies after user approval; also checks and corrects new emails composed by the user.
-   - **Domain**: Personal Productivity/Communication.
+3. **医疗患者监测 Agent**（医疗领域）
+   - **目的**：监控患者生命体征，检测异常，建议干预措施，并通知医护人员；支持手动跟进请求。
+   - **领域**：医疗 / 远程医疗。
 
-2. **Supply Chain Optimization Agent** (Logistics Domain)
-   - **Purpose**: Monitors inventory levels, optimizes delivery routes, and suggests actions; allows manual route adjustments with optimization.
-   - **Domain**: Supply Chain/Logistics.
+4. **金融交易 Agent**（金融领域）
+   - **目的**：监控市场数据，基于策略建议交易，并通知交易员审批；优化手动交易请求。
+   - **领域**：金融服务 / 交易。
 
-3. **Healthcare Patient Monitoring Agent** (Healthcare Domain)
-   - **Purpose**: Monitors patient vitals, detects anomalies, suggests interventions, and notifies healthcare professionals; supports manual follow-up requests.
-   - **Domain**: Healthcare/Telemedicine.
+5. **个性化学习 Agent**（教育领域）
+   - **目的**：监控学生进度，建议个性化学习活动，并通知教师 / 学生；优化手动作业请求。
+   - **领域**：教育 / 教学。
 
-4. **Financial Trading Agent** (Finance Domain)
-   - **Purpose**: Monitors market data, suggests trades based on strategies, notifies traders for approval; optimizes manual trade requests.
-   - **Domain**: Financial Services/Trading.
+6. **血库 ERP Agent**（血库管理领域）
+   - **目的**：通过条形码追踪血液单位，管理献血者关系，通知献血者是否符合捐献资格；支持手动工作人员请求。增加库存优化、需求预测、献血者排程、质量控制和报告功能；包含用于献血者互动和洞察的 LLM 智能。
+   - **领域**：医疗 / 血库管理。
 
-5. **Personalized Learning Agent** (Education Domain)
-   - **Purpose**: Monitors student progress, suggests personalized learning activities, notifies teachers/students; optimizes manual assignment requests.
-   - **Domain**: Education/Teaching.
+7. **购物车与库存管理 Agent**（电商领域）
+   - **目的**：管理购物车、追踪库存、建议补货或定价动作；支持带动态定价、履约优化和推荐功能的手动库存请求。
+   - **领域**：电商 / 零售。
 
-6. **Blood Bank ERP Agent** (Blood Bank Management Domain)
-   - **Purpose**: Tracks blood units with barcodes, manages donor relationships, notifies donors of eligibility; supports manual staff requests. Adds inventory optimization, demand forecasting, donor scheduling, quality control, and reporting; includes LLM intelligence for donor engagement and insights.
-   - **Domain**: Healthcare/Blood Bank Management..
-   
+8. **社交媒体账号管理 Agent**（社交媒体领域）
+   - **目的**：监控账号活动，建议发帖 / 回复，并通知用户；支持带互动优化和分析的手动内容排期。
+   - **领域**：数字营销 / 社交媒体。
 
-7. **Shopping Cart and Inventory Management Agent** (E-commerce Domain)
-   - **Purpose**: Manages shopping carts, tracks inventory, suggests restocking or pricing actions; supports manual inventory requests with dynamic pricing, fulfillment optimization, and recommendations.
-   - **Domain**: E-commerce/Retail.
-
-8. **Social Media Account Management Agent** (Social Media Domain)
-   - **Purpose**: Monitors account activity, suggests posts/responses, notifies users; supports manual content schedules with engagement optimization and analytics.
-   - **Domain**: Digital Marketing/Social Media.
-
-9. **Customer Acquisition and Management Agent (LinkedIn)** (Sales Domain)
-    - **Purpose**: Identifies prospects on LinkedIn, suggests outreach messages, notifies sales reps; manages relationships and supports manual sales requests with lead scoring and content sharing.
-    - **Domain**: Customer Relationship Management (CRM)/Sales.
+9. **客户获取与管理 Agent（LinkedIn）**（销售领域）
+   - **目的**：在 LinkedIn 上识别潜在客户，建议外联消息，并通知销售代表；管理关系并支持手动销售请求，包含线索评分和内容分享。
+   - **领域**：客户关系管理（CRM）/ 销售。
 
 ---
 
-### Summary of Domains Covered
-- **Communication**: Email Agent
-- **Logistics**: Supply Chain Optimization Agent
-- **Healthcare**: Healthcare Patient Monitoring Agent, Blood Bank ERP Agent
-- **Finance**: Financial Trading Agent
-- **Smart Home**: Smart Home Energy Management Agent
-- **Education**: Personalized Learning Agent
-- **E-commerce**: Shopping Cart and Inventory Management Agent
-- **Social Media**: Social Media Account Management Agent
-- **Sales/CRM**: Customer Acquisition and Management Agent (LinkedIn)
+### 覆盖领域总结
+- **沟通**：邮件 Agent
+- **物流**：供应链优化 Agent
+- **医疗**：医疗患者监测 Agent、血库 ERP Agent
+- **金融**：金融交易 Agent
+- **智能家居**：智能家居能源管理 Agent
+- **教育**：个性化学习 Agent
+- **电商**：购物车与库存管理 Agent
+- **社交媒体**：社交媒体账号管理 Agent
+- **销售 / CRM**：客户获取与管理 Agent（LinkedIn）
 
 ---
 
-### Key Observations
-- **Variety**: We’ve covered 10 distinct agents across 9 domains, with the Blood Bank ERP Agent having two versions to explore basic and enhanced features.
-- **Automation**: Each agent leverages automation (e.g., scheduling, optimization, analytics) tailored to its domain.
-- **LLM Integration**: Starting with the enhanced Blood Bank ERP Agent, we introduced LLM intelligence for content generation, insights, and user interaction, which became a recurring theme in later examples (e.g., Shopping Cart, Social Media, LinkedIn Sales).
-- **HITL**: All agents incorporate human oversight for critical decisions, ensuring trust and control.
+### 关键观察
+- **多样性**：我们已经覆盖了 9 个领域中的 10 个不同 agent，其中血库 ERP Agent 有两个版本，用来探索基础功能和增强功能。
+- **自动化**：每个 agent 都利用了针对其领域定制的自动化能力，例如排程、优化和分析。
+- **LLM 集成**：从增强版血库 ERP Agent 开始，我们引入了用于内容生成、洞察和用户交互的 LLM 智能，这也成为后续示例中的反复主题，例如购物车、社交媒体、LinkedIn 销售。
+- **HITL**：所有 agents 都将关键决策的人类监督纳入其中，以确保信任和可控性。
 
+### 额外潜在领域与示例想法（仅简要覆盖）
 
-### Additional Potential Domains and Example Ideas (only covered in brief)
+#### 1. 农业与农场
+- **示例**：**智能灌溉与作物监测 Agent**
+  - **目的**：监控土壤湿度、天气数据和作物健康；建议灌溉计划或病虫害防治措施；通知农民审批。
+  - **自动化**：预测作物产量，自动控制水泵排程，优化化肥使用。
+  - **LLM 智能**：生成面向农民的天气影响报告（例如，“预计有雨，延迟灌溉”）或病虫害防治建议。
+  - **独特之处**：与 IoT 传感器（例如土壤探针）和季节性预测集成。
 
-#### 1. Agriculture and Farming
-- **Example**: **Smart Irrigation and Crop Monitoring Agent**
-  - **Purpose**: Monitor soil moisture, weather data, and crop health; suggest irrigation schedules or pest control actions; notify farmers for approval.
-  - **Automation**: Predict crop yield, automate water pump schedules, optimize fertilizer use.
-  - **LLM Intelligence**: Generate farmer-friendly weather impact reports (e.g., "Rain expected, delay irrigation") or pest control advice.
-  - **Unique Aspect**: Integration with IoT sensors (e.g., soil probes) and seasonal forecasting.
+#### 2. 交通与物流（超出供应链范畴）
+- **示例**：**公共交通优化 Agent**
+  - **目的**：监控公交 / 火车时刻表、乘客需求和交通状况；建议路线调整或增加车辆；通知运输管理人员。
+  - **自动化**：动态改道、自动票价调整、车辆预测性维护提醒。
+  - **LLM 智能**：撰写乘客通知（例如，“因拥堵延误，下一班公交 10 分钟后到”）或向工作人员解释时刻表变更。
+  - **独特之处**：实时公众互动与人群管理。
 
-#### 2. Transportation and Logistics (Beyond Supply Chain)
-- **Example**: **Public Transit Optimization Agent**
-  - **Purpose**: Monitor bus/train schedules, passenger demand, and traffic; suggest route adjustments or additional vehicles; notify transit managers.
-  - **Automation**: Dynamic rerouting, automated fare adjustments, predictive maintenance alerts for vehicles.
-  - **LLM Intelligence**: Craft passenger announcements (e.g., "Delay due to congestion, next bus in 10 mins") or explain schedule changes to staff.
-  - **Unique Aspect**: Real-time public interaction and crowd management.
+#### 3. 环境监测
+- **示例**：**空气质量与污染控制 Agent**
+  - **目的**：追踪空气质量传感器，建议缓解措施（例如“增加通风”），并通知当局或公众。
+  - **自动化**：预测污染峰值，自动控制空气净化器，生成合规报告。
+  - **LLM 智能**：生成公共健康建议（例如，“由于 PM2.5 较高，请避免户外活动”）或向监管者解释数据趋势。
+  - **独特之处**：聚焦公共安全与法规合规。
 
-#### 3. Environmental Monitoring
-- **Example**: **Air Quality and Pollution Control Agent**
-  - **Purpose**: Track air quality sensors, suggest mitigation actions (e.g., "Increase ventilation"), and notify authorities or citizens.
-  - **Automation**: Predict pollution spikes, automate air purifier controls, generate compliance reports.
-  - **LLM Intelligence**: Create public health advisories (e.g., "Avoid outdoor activity due to high PM2.5") or explain data trends to regulators.
-  - **Unique Aspect**: Focus on public safety and regulatory compliance.
+#### 4. 娱乐与媒体
+- **示例**：**内容推荐与审核 Agent**
+  - **目的**：监控用户观看习惯，推荐个性化内容，标记不当上传内容；通知审核员或用户。
+  - **自动化**：自动生成播放列表，安排内容发布，预测观众趋势。
+  - **LLM 智能**：撰写吸引人的内容描述（例如，“一场惊险的科幻冒险正在等着你！”）或以自然语言回复评论。
+  - **独特之处**：在个性化与内容安全之间取得平衡。
 
-#### 4. Entertainment and Media
-- **Example**: **Content Recommendation and Moderation Agent**
-  - **Purpose**: Monitor user viewing habits, suggest personalized content, flag inappropriate uploads; notify moderators or users.
-  - **Automation**: Auto-generate playlists, schedule content releases, predict viewer trends.
-  - **LLM Intelligence**: Write engaging content descriptions (e.g., "Thrilling sci-fi adventure awaits!") or moderate comments with natural responses.
-  - **Unique Aspect**: Balancing personalization with content safety.
+#### 5. 人力资源（HR）
+- **示例**：**员工入职与参与度 Agent**
+  - **目的**：监控新员工进度，建议培训模块或跟进检查，通知 HR 人员；支持手动员工支持请求。
+  - **自动化**：自动化入职流程，安排绩效评估，预测离职风险。
+  - **LLM 智能**：起草个性化欢迎邮件（例如，“欢迎你，Sarah！这是你的第一个任务”）或向员工解释培训收益。
+  - **独特之处**：聚焦员工体验与留任。
 
-#### 5. Human Resources (HR)
-- **Example**: **Employee Onboarding and Engagement Agent**
-  - **Purpose**: Monitor new hire progress, suggest training modules or check-ins, notify HR staff; allow manual requests for employee support.
-  - **Automation**: Automate onboarding workflows, schedule performance reviews, predict turnover risk.
-  - **LLM Intelligence**: Draft personalized welcome emails (e.g., "Welcome, Sarah! Here’s your first task") or explain training benefits to employees.
-  - **Unique Aspect**: Focus on employee experience and retention.
+#### 6. 房地产
+- **示例**：**物业管理与租户支持 Agent**
+  - **目的**：监控物业状况（例如维修需求），建议维修或租金调整，通知房东 / 租户。
+  - **自动化**：自动续租，预测维修成本，优化租金定价。
+  - **LLM 智能**：生成租户通知（例如，“你的空调维修已安排在明天”）或向房东解释价格变动。
+  - **独特之处**：管理实体资产与租户关系。
 
-#### 6. Real Estate
-- **Example**: **Property Management and Tenant Support Agent**
-  - **Purpose**: Monitor property conditions (e.g., maintenance needs), suggest repairs or rent adjustments, notify landlords/tenants.
-  - **Automation**: Automate lease renewals, predict maintenance costs, optimize rental pricing.
-  - **LLM Intelligence**: Generate tenant notifications (e.g., "Your AC repair is scheduled for tomorrow") or explain pricing changes to landlords.
-  - **Unique Aspect**: Managing physical assets and tenant relationships.
+#### 7. 游戏行业
+- **示例**：**游戏内活动与玩家支持 Agent**
+  - **目的**：监控玩家活动，建议游戏内活动或奖励，通知游戏管理员；处理玩家支持请求。
+  - **自动化**：平衡游戏经济，安排活动，检测作弊模式。
+  - **LLM 智能**：创建动态任务描述（例如，“踏上英雄之旅！”）或自然地回复玩家问题。
+  - **独特之处**：实时游戏世界交互与玩家参与。
 
-#### 7. Gaming Industry
-- **Example**: **In-Game Event and Player Support Agent**
-  - **Purpose**: Monitor player activity, suggest in-game events or rewards, notify game admins; handle player support requests.
-  - **Automation**: Balance game economy, schedule events, detect cheating patterns.
-  - **LLM Intelligence**: Create dynamic quest descriptions (e.g., "Embark on a heroic journey!") or respond to player queries naturally.
-  - **Unique Aspect**: Real-time game world interaction and player engagement.
+#### 8. 法律与合规
+- **示例**：**合同审查与合规 Agent**
+  - **目的**：监控合同提交，建议修订或合规检查，通知法律人员；支持手动审计请求。
+  - **自动化**：自动标记风险条款，生成合规报告，预测法律趋势。
+  - **LLM 智能**：总结合同（例如，“该条款将责任限制在 1 万美元以内”）或起草修订建议。
+  - **独特之处**：对法律语言的精确性与监管遵循要求很高。
 
-#### 8. Legal and Compliance
-- **Example**: **Contract Review and Compliance Agent**
-  - **Purpose**: Monitor contract submissions, suggest revisions or compliance checks, notify legal staff; allow manual audit requests.
-  - **Automation**: Auto-flag risky clauses, generate compliance reports, predict legal trends.
-  - **LLM Intelligence**: Summarize contracts (e.g., "This clause limits liability to $10K") or draft revision suggestions.
-  - **Unique Aspect**: Precision in legal language and regulatory adherence.
+#### 9. 旅行与旅游
+- **示例**：**旅行行程与预订 Agent**
+  - **目的**：监控航班 / 酒店可用性，建议行程调整，通知旅客；处理定制预订请求。
+  - **自动化**：优化旅行路线，自动确认预订，预测价格下降。
+  - **LLM 智能**：制定个性化旅行计划（例如，“享受巴黎风景如画的一天！”）或向旅客解释延误。
+  - **独特之处**：动态定价与客户体验导向。
 
-#### 9. Travel and Tourism
-- **Example**: **Travel Itinerary and Booking Agent**
-  - **Purpose**: Monitor flight/hotel availability, suggest itinerary adjustments, notify travelers; handle custom booking requests.
-  - **Automation**: Optimize travel routes, automate booking confirmations, predict price drops.
-  - **LLM Intelligence**: Craft personalized travel plans (e.g., "Enjoy a scenic day in Paris!") or explain delays to travelers.
-  - **Unique Aspect**: Dynamic pricing and customer experience focus.
+#### 10. 网络安全
+- **示例**：**威胁检测与响应 Agent**
+  - **目的**：监控网络流量，建议安全措施（例如封禁 IP），通知 IT 人员；支持手动威胁调查。
+  - **自动化**：自动隔离威胁，预测攻击模式，生成事件报告。
+  - **LLM 智能**：向工作人员解释威胁（例如，“检测到来自此邮件的钓鱼尝试”）或起草用户警报。
+  - **独特之处**：高风险实时响应与威胁分析。
 
-#### 10. Cybersecurity
-- **Example**: **Threat Detection and Response Agent**
-  - **Purpose**: Monitor network traffic, suggest security actions (e.g., block IP), notify IT staff; allow manual threat investigations.
-  - **Automation**: Auto-isolate threats, predict attack patterns, generate incident reports.
-  - **LLM Intelligence**: Explain threats to staff (e.g., "Phishing attempt detected from this email") or draft user alerts.
-  - **Unique Aspect**: High-stakes real-time response and threat analysis.
+#### 11. 健身与健康
+- **示例**：**个人健身与营养 Agent**
+  - **目的**：监控训练数据（例如 Fitbit），建议运动 / 营养计划，通知用户 / 教练；处理定制健身目标。
+  - **自动化**：根据进展调整计划，安排训练，预测疲劳。
+  - **LLM 智能**：创建激励信息（例如，“干得漂亮！试试这款蛋白奶昔食谱”）或解释锻炼收益。
+  - **独特之处**：个人健康追踪与行为激励。
 
-#### 11. Fitness and Wellness
-- **Example**: **Personal Fitness and Nutrition Agent**
-  - **Purpose**: Monitor workout data (e.g., Fitbit), suggest exercise/nutrition plans, notify users/coaches; handle custom fitness goals.
-  - **Automation**: Adjust plans based on progress, schedule workouts, predict fatigue.
-  - **LLM Intelligence**: Create motivational messages (e.g., "Great job! Try this protein shake recipe") or explain workout benefits.
-  - **Unique Aspect**: Personal health tracking and behavior encouragement.
+#### 12. 政府与公共服务
+- **示例**：**市民服务与许可 Agent**
+  - **目的**：监控许可申请，建议批准或后续处理，通知工作人员 / 市民；处理定制服务请求。
+  - **自动化**：自动处理简单许可，预测服务需求，生成公共报告。
+  - **LLM 智能**：起草市民回复（例如，“你的许可已获批准，下一步如下”）或解释延迟原因。
+  - **独特之处**：提升公共部门效率与透明度。
 
-#### 12. Government and Public Services
-- **Example**: **Citizen Service and Permit Agent**
-  - **Purpose**: Monitor permit applications, suggest approvals or follow-ups, notify staff/citizens; handle custom service requests.
-  - **Automation**: Auto-process simple permits, predict service demand, generate public reports.
-  - **LLM Intelligence**: Draft citizen responses (e.g., "Your permit is approved, here’s next steps") or explain delays.
-  - **Unique Aspect**: Public sector efficiency and transparency.
+#### 13. 制造业
+- **示例**：**生产线优化 Agent**
+  - **目的**：监控机器性能，建议维护或生产调整，通知主管；处理定制生产请求。
+  - **自动化**：预测停机时间，优化产出，自动采购物料。
+  - **LLM 智能**：解释设备问题（例如，“检测到轴承磨损，请安排维修”）或起草生产报告。
+  - **独特之处**：工业 IoT 与运营效率。
 
-#### 13. Manufacturing
-- **Example**: **Production Line Optimization Agent**
-  - **Purpose**: Monitor machine performance, suggest maintenance or production adjustments, notify supervisors; handle custom production requests.
-  - **Automation**: Predict downtime, optimize output, automate supply orders.
-  - **LLM Intelligence**: Explain machine issues (e.g., "Bearing wear detected, schedule repair") or draft production reports.
-  - **Unique Aspect**: Industrial IoT and operational efficiency.
+#### 14. 活动策划
+- **示例**：**活动协调与宾客管理 Agent**
+  - **目的**：监控 RSVP 和后勤，建议供应商预订或日程变更，通知策划者；处理定制活动请求。
+  - **自动化**：自动分配座位，预测出席率，优化预算。
+  - **LLM 智能**：撰写宾客邀请函（例如，“欢迎参加我们的盛会之夜！”）或向策划者解释变更。
+  - **独特之处**：实时协调人员与资源。
 
-#### 14. Event Planning
-- **Example**: **Event Coordination and Guest Management Agent**
-  - **Purpose**: Monitor RSVPs and logistics, suggest vendor bookings or schedule changes, notify planners; handle custom event requests.
-  - **Automation**: Auto-assign seats, predict attendance, optimize budgets.
-  - **LLM Intelligence**: Write guest invitations (e.g., "Join us for a gala evening!") or explain changes to planners.
-  - **Unique Aspect**: Coordination of people and resources in real-time.
-
-#### 15. Charity and Non-Profit
-- **Example**: **Donation and Volunteer Management Agent**
-  - **Purpose**: Monitor donations/volunteer sign-ups, suggest campaigns or tasks, notify organizers; handle custom outreach requests.
-  - **Automation**: Auto-thank donors, schedule volunteer shifts, predict fundraising trends.
-  - **LLM Intelligence**: Craft donor thank-yous (e.g., "Your $50 helps feed 10 families!") or volunteer instructions.
-  - **Unique Aspect**: Community engagement and resource allocation.
-
-
+#### 15. 慈善与非营利
+- **示例**：**捐赠与志愿者管理 Agent**
+  - **目的**：监控捐赠 / 志愿者报名，建议活动或任务，通知组织者；处理定制外联请求。
+  - **自动化**：自动感谢捐赠者，安排志愿者班次，预测筹款趋势。
+  - **LLM 智能**：撰写捐赠感谢信（例如，“你的 50 美元帮助了 10 个家庭”）或志愿者说明。
+  - **独特之处**：社区参与与资源分配。
 
