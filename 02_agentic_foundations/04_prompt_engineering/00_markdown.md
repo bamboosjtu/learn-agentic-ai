@@ -2,8 +2,6 @@
 
 [观看：面向 AI 提示词的 Markdown 简短教程](https://www.youtube.com/watch?v=fmEeDIpDdcI)
 
-[用 Markdown 简化你的提示词：提升清晰度的快速指南](https://nfps.ai/tutorials/prompt-with-markdown/)
-
 [Markdown 指南](https://www.markdownguide.org/)
 
 [最佳在线 Markdown 编辑器：Dillinger](https://dillinger.io/)
@@ -29,3 +27,4 @@ Markdown 对于**编写提示词和组织输出内容**都很有帮助。以下�
 **4. 便于协作：** 如果你需要和他人共享提示词（例如通过 GitHub 或其他基于文本的平台），Markdown 良好的可读性可以让协作者无需额外工具就快速理解内容和结构。
 
 总体而言，Markdown 是一种非常适合用来编写提示词的干净、结构化方式，就像它同样适合用于组织输出内容一样。
+

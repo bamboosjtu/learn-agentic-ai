@@ -4,6 +4,42 @@
 
 - https://platform.openai.com/docs/guides/reasoning
 
+> 这篇文档的核心是在讲：**推理模型适合复杂任务，但用法和普通生成模型不同，重点是给它清晰目标、留够推理空间、控制好成本。**
+>
+> **核心内容**
+> - 推理模型会先消耗一部分内部 `reasoning tokens` 再给出最终回答，适合复杂问题求解、编程、科学推理和多步 Agent 工作流。
+> - 官方建议大多数场景先用 `gpt-5.4`；更强但更慢可用 `gpt-5.4-pro`；更便宜更快可考虑 `gpt-5-mini` 或 `gpt-5-nano`。
+> - 推理模型更推荐搭配 `Responses API` 使用，而不是旧的 Chat Completions API。
+> - `reasoning.effort` 是一个调节“思考深度”的旋钮：
+>   - `none` 适合提取、路由、简单转换这类低延迟任务
+>   - `low` 适合稍微需要思考但又不想增加太多延迟的任务
+>   - `medium/high` 适合规划、编码、综合分析、复杂推理
+>   - `xhigh` 只建议在评测证明确实值得时再用
+> - 推理 token 不会保留在后续上下文里，但**会占上下文窗口并计费**，所以要关注成本和窗口上限。
+> - 可以通过 `usage.output_tokens_details.reasoning_tokens` 看模型到底用了多少推理 token。
+> - 成本控制主要靠 `max_output_tokens`。但如果设得太小，模型可能在还没产出可见答案前就因为 token 不够而返回 `incomplete`。
+> - 官方建议一开始实验时，至少预留 **25,000 tokens** 给推理和输出，再根据实际使用情况调整。
+> - 原始推理过程不会直接暴露，但可以通过 `reasoning.summary` 获取总结版推理摘要；部分场景还支持 `reasoning.encrypted_content`，用于把推理内容加密传给后续轮次。
+> - 提示词策略上，官方明确建议：
+>   - 给清楚任务、约束和输出格式
+>   - 不要过度规定中间推理步骤
+>   - 把 `reasoning.effort` 当调参项，而不是补救提示词质量的主要手段
+>   - 对 Agent / research 场景，要明确“完成标准”和“如何自我验证”
+>
+> **结论**
+> - 推理模型的价值不在“回答更长”，而在于**更擅长处理复杂、多步、需要计划和验证的任务**。
+> - 真正的使用重点不是疯狂提高 `reasoning.effort`，而是：
+>   - 选对模型
+>   - 用 `Responses API`
+>   - 给清晰任务和输出约束
+>   - 预留足够 token
+>   - 监控 `reasoning_tokens` 和 `incomplete` 状态
+> - 如果任务只是简单抽取、分类、改写，推理模型未必划算；但对于编码、规划、复杂分析和 Agent 工作流，它们通常更合适。
+>
+> 来源：
+> - https://developers.openai.com/api/docs/guides/reasoning
+> - https://platform.openai.com/docs/guides/reasoning
+
 这页文档主要在讲 **OpenAI 的推理模型（reasoning models）怎么用，以及什么时候该用**。
 
 核心内容：
@@ -46,3 +82,4 @@
 - OpenAI 官方文档：<https://developers.openai.com/api/docs/guides/reasoning>
 
 如果你要，我可以继续把这页文档整理成一版更适合开发者落地的“实操清单”。
+

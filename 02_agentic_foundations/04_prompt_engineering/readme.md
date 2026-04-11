@@ -1,133 +1,177 @@
-# Prompt Engineering In Depth
+# 深入学习提示工程
 
-**We will start with [Learn Prompting](https://learnprompting.org/docs/introduction) and then moving to the [Prompt Engineering Guide](https://www.promptingguide.ai/) as your skills and knowledge evolve.**
+**我们将从 [Learn Prompting](https://learnprompting.org/docs/introduction) 开始，随着你的技能和知识不断提升，再逐步过渡到 [Prompt Engineering Guide](https://www.promptingguide.ai/)。**
 
-## Basic Learning Path
+## 基础学习路径
 
-1. [Prompt Engineering](https://learnprompting.org/docs/basics/prompt_engineering)
-2. [Basics of Prompting](https://www.promptingguide.ai/introduction/basics)
-3. [Elements of a Prompt](https://www.promptingguide.ai/introduction/elements)
-4. [General Tips for Designing Prompts](https://www.promptingguide.ai/introduction/tips)
-5. [Examples of Prompts](https://www.promptingguide.ai/introduction/examples)
-6. [Instruction prompting](https://learnprompting.org/docs/basics/instructions)
-7. [Assigning Roles](https://learnprompting.org/docs/basics/roles)
-8. [Shot-Based Prompting](https://learnprompting.org/docs/basics/few_shot)
-9. [Parts of a Prompt: Understanding the Key Elements](https://learnprompting.org/docs/basics/prompt_structure)
-10. [How to Create Effective Prompts: Essential Tips and Best Practices](https://learnprompting.org/docs/basics/ai_prompt_tips)
-11. [Combining Prompting Techniques](https://learnprompting.org/docs/basics/combining_techniques)
-12. [Chatbots vs. LLMs](https://learnprompting.org/docs/basics/chatbot_basics)
-13. [Priming Prompt](https://learnprompting.org/docs/basics/priming_prompt)
-14. [Limitations of LLMs](https://learnprompting.org/docs/basics/pitfalls)
+1. [提示工程](https://learnprompting.org/docs/basics/prompt_engineering)
+2. [提示的基础](https://www.promptingguide.ai/introduction/basics)
+3. [提示词的组成元素](https://www.promptingguide.ai/introduction/elements)
+4. [设计提示词的一般建议](https://www.promptingguide.ai/introduction/tips)
+5. [提示词示例](https://www.promptingguide.ai/introduction/examples)
+6. [指令式提示](https://learnprompting.org/docs/basics/instructions)
+7. [分配角色](https://learnprompting.org/docs/basics/roles)
+8. [基于样例的提示](https://learnprompting.org/docs/basics/few_shot)
+9. [提示词的组成部分：理解关键元素](https://learnprompting.org/docs/basics/prompt_structure)
+10. [如何创建有效提示词：关键技巧与最佳实践](https://learnprompting.org/docs/basics/ai_prompt_tips)
+11. [组合多种提示技术](https://learnprompting.org/docs/basics/combining_techniques)
+12. [聊天机器人 vs. LLM](https://learnprompting.org/docs/basics/chatbot_basics)
+13. [预热提示（Priming Prompt）](https://learnprompting.org/docs/basics/priming_prompt)
+14. [LLM 的局限性](https://learnprompting.org/docs/basics/pitfalls)
 
-## Intermediate Learning Path
+## 中级学习路径
 
-1. [Chain-of-Thought Prompting](https://learnprompting.org/docs/intermediate/chain_of_thought) and [In Depth](https://www.promptingguide.ai/techniques/cot)
-2. [Zero-Shot Chain-of-Thought](https://learnprompting.org/docs/intermediate/zero_shot_cot)
-3. [Self-Consistency](https://learnprompting.org/docs/intermediate/self_consistency) and [In Depth](https://www.promptingguide.ai/techniques/consistency)
-4. [Generated Knowledge](https://learnprompting.org/docs/intermediate/generated_knowledge)
-5. [Prompt Chaining](https://www.promptingguide.ai/techniques/prompt_chaining)
-6. [Least-to-Most Prompting](https://learnprompting.org/docs/intermediate/least_to_most)
-7. [Revisiting Roles](https://learnprompting.org/docs/intermediate/revisiting_roles)
-8. [LLM Settings](https://learnprompting.org/docs/intermediate/configuration_hyperparameters)
-9. [Retrieval Augmented Generation (RAG)](https://www.promptingguide.ai/techniques/rag) and [RAG Reseach Findings](https://www.promptingguide.ai/research/rag)
+1. [思维链提示（Chain-of-Thought Prompting）](https://learnprompting.org/docs/intermediate/chain_of_thought) 与 [深入讲解](https://www.promptingguide.ai/techniques/cot)
+2. [零样本思维链](https://learnprompting.org/docs/intermediate/zero_shot_cot)
+3. [自一致性（Self-Consistency）](https://learnprompting.org/docs/intermediate/self_consistency) 与 [深入讲解](https://www.promptingguide.ai/techniques/consistency)
+4. [生成式知识（Generated Knowledge）](https://learnprompting.org/docs/intermediate/generated_knowledge)
+5. [提示链（Prompt Chaining）](https://www.promptingguide.ai/techniques/prompt_chaining)
+6. [从易到难提示（Least-to-Most Prompting）](https://learnprompting.org/docs/intermediate/least_to_most)
+7. [重新审视角色设定](https://learnprompting.org/docs/intermediate/revisiting_roles)
+8. [LLM 设置](https://learnprompting.org/docs/intermediate/configuration_hyperparameters)
+9. [检索增强生成（RAG）](https://www.promptingguide.ai/techniques/rag) 与 [RAG 研究发现](https://www.promptingguide.ai/research/rag)
 
-## Advanced Learning Path
+## 高级学习路径
 
-1. [Zero-Shot Prompting Techniques](https://learnprompting.org/docs/advanced/zero_shot/introduction): [Emotion Prompting](https://learnprompting.org/docs/advanced/zero_shot/emotion_prompting), [Re-reading (RE2)](https://learnprompting.org/docs/advanced/zero_shot/re_reading), [Rephrase and Respond (RaR)](https://learnprompting.org/docs/advanced/zero_shot/re_reading), [Role Prompting](https://learnprompting.org/docs/advanced/zero_shot/role_prompting), [System 2 Attention (S2A)](https://learnprompting.org/docs/advanced/zero_shot/s2a), and [SimToM](https://learnprompting.org/docs/advanced/zero_shot/simtom)
-2. [Few-Shot Prompting Techniques](https://learnprompting.org/docs/advanced/few_shot/introduction): [Self-Ask Prompting](https://learnprompting.org/docs/advanced/few_shot/self_ask), [Self-Generated In-Context Learning (SG-ICL)](https://learnprompting.org/docs/advanced/few_shot/self_generated_icl), [K-Nearest Neighbor (KNN) Prompting](https://learnprompting.org/docs/advanced/few_shot/k_nearest_neighbor_knn), [Vote-K Prompting](https://learnprompting.org/docs/advanced/few_shot/vote-k), [Prompt Mining](https://learnprompting.org/docs/advanced/few_shot/prompt_mining)
-3. [Thought Generation Techniques](https://learnprompting.org/docs/advanced/thought_generation/introduction): [Contrastive Chain-of-Thought (CoT) Prompting](https://learnprompting.org/docs/advanced/thought_generation/contrastive_cot), [Automatic Chain of Thought (Auto-CoT)](https://learnprompting.org/docs/advanced/thought_generation/automatic_chain_of_thought), [Tabular Chain-of-Thought (Tab-CoT)](https://learnprompting.org/docs/advanced/thought_generation/tabular_chain_of_thought_tab_cot), [Memory-of-Thought (MoT) Prompting](https://learnprompting.org/docs/advanced/thought_generation/memory_of_thought), [Active Prompting](https://learnprompting.org/docs/advanced/thought_generation/active_prompting), [Analogical Prompting](https://learnprompting.org/docs/advanced/thought_generation/analogical_prompting), [Complexity-Based Prompting](https://learnprompting.org/docs/advanced/thought_generation/complexity_based_prompting), [Step-Back Prompting](https://learnprompting.org/docs/advanced/thought_generation/step_back_prompting), [Thread of Thought (ThoT)](https://learnprompting.org/docs/advanced/thought_generation/thread_of_thought)
-4. [Ensembling Prompting Techniques](https://learnprompting.org/docs/advanced/ensembling/introduction): [Mixture of Reasoning Experts (MoRE)](https://learnprompting.org/docs/advanced/ensembling/mixture_of_reasoning_experts_more), [Consistency-based Self-adaptive Prompting (COSP)](https://learnprompting.org/docs/advanced/ensembling/consistency_based_self_adaptive_prompting), [Max Mutual Information (MMI) Method](https://learnprompting.org/docs/advanced/ensembling/max_mutual_information_method), [DiVeRSe (Diverse Verifier on Reasoning Step)](https://learnprompting.org/docs/advanced/ensembling/diverse_verifier_on_reasoning_step), [Prompt Paraphrasing](https://learnprompting.org/docs/advanced/ensembling/prompt_paraphrasing), [Universal Self-Adaptive Prompting (USP)](https://learnprompting.org/docs/advanced/ensembling/universal_self_adaptive_prompting), [Universal Self-Consistency](https://learnprompting.org/docs/advanced/ensembling/universal_self_consistency), [Multi-Chain Reasoning (MCR)](https://learnprompting.org/docs/advanced/ensembling/multi-chain-reasoning)
-5. [Self-Criticism Prompting Techniques](https://learnprompting.org/docs/advanced/self_criticism/introduction): [Self-Calibration](https://learnprompting.org/docs/advanced/self_criticism/self_calibration), [Self-Refine](https://learnprompting.org/docs/advanced/self_criticism/self_refine), [Reversing Chain-of-Thought (RCoT)](https://learnprompting.org/docs/advanced/self_criticism/rcot), [Self-Verification](Self-Verification), [Chain-of-Verification (CoVe)](https://learnprompting.org/docs/advanced/self_criticism/chain_of_verification), [Cumulative Reasoning (CR)](https://learnprompting.org/docs/advanced/self_criticism/cumulative_reasoning)
-6. [Decomposition Prompting Techniques](https://learnprompting.org/docs/advanced/decomposition/introduction): [Decomposed (DecomP) Prompting](https://learnprompting.org/docs/advanced/decomposition/decomp), [Plan-and-Solve (PS) Prompting](https://learnprompting.org/docs/advanced/decomposition/plan_and_solve), [Program of Thoughts Prompting](https://learnprompting.org/docs/advanced/decomposition/program_of_thoughts). [Faithful Chain-of-Thought Reasoning](https://learnprompting.org/docs/advanced/decomposition/faithful_cot), [Skeleton-of-Thought Prompting](https://learnprompting.org/docs/advanced/decomposition/skeleton_of_thoughts), [Tree of Thoughts (ToT) Prompting](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts), [Recursion of Thought Prompting](https://learnprompting.org/docs/advanced/decomposition/recursion_of_thought)
+1. [零样本提示技术](https://learnprompting.org/docs/advanced/zero_shot/introduction)：[情绪提示（Emotion Prompting）](https://learnprompting.org/docs/advanced/zero_shot/emotion_prompting)、[重复阅读（RE2）](https://learnprompting.org/docs/advanced/zero_shot/re_reading)、[重述并回答（RaR）](https://learnprompting.org/docs/advanced/zero_shot/re_reading)、[角色提示（Role Prompting）](https://learnprompting.org/docs/advanced/zero_shot/role_prompting)、[系统 2 注意力（S2A）](https://learnprompting.org/docs/advanced/zero_shot/s2a) 和 [SimToM](https://learnprompting.org/docs/advanced/zero_shot/simtom)
+2. [Few-Shot 提示技术](https://learnprompting.org/docs/advanced/few_shot/introduction)：[Self-Ask Prompting](https://learnprompting.org/docs/advanced/few_shot/self_ask)、[Self-Generated In-Context Learning（SG-ICL）](https://learnprompting.org/docs/advanced/few_shot/self_generated_icl)、[K 最近邻提示（KNN Prompting）](https://learnprompting.org/docs/advanced/few_shot/k_nearest_neighbor_knn)、[Vote-K Prompting](https://learnprompting.org/docs/advanced/few_shot/vote-k)、[Prompt Mining](https://learnprompting.org/docs/advanced/few_shot/prompt_mining)
+3. [思维生成技术](https://learnprompting.org/docs/advanced/thought_generation/introduction)：[对比式思维链提示（Contrastive CoT）](https://learnprompting.org/docs/advanced/thought_generation/contrastive_cot)、[自动思维链（Auto-CoT）](https://learnprompting.org/docs/advanced/thought_generation/automatic_chain_of_thought)、[表格式思维链（Tab-CoT）](https://learnprompting.org/docs/advanced/thought_generation/tabular_chain_of_thought_tab_cot)、[思维记忆提示（MoT）](https://learnprompting.org/docs/advanced/thought_generation/memory_of_thought)、[主动提示（Active Prompting）](https://learnprompting.org/docs/advanced/thought_generation/active_prompting)、[类比提示（Analogical Prompting）](https://learnprompting.org/docs/advanced/thought_generation/analogical_prompting)、[基于复杂度的提示（Complexity-Based Prompting）](https://learnprompting.org/docs/advanced/thought_generation/complexity_based_prompting)、[后退一步提示（Step-Back Prompting）](https://learnprompting.org/docs/advanced/thought_generation/step_back_prompting)、[思维线程（Thread of Thought, ThoT）](https://learnprompting.org/docs/advanced/thought_generation/thread_of_thought)
+4. [集成式提示技术](https://learnprompting.org/docs/advanced/ensembling/introduction)：[推理专家混合（MoRE）](https://learnprompting.org/docs/advanced/ensembling/mixture_of_reasoning_experts_more)、[基于一致性的自适应提示（COSP）](https://learnprompting.org/docs/advanced/ensembling/consistency_based_self_adaptive_prompting)、[最大互信息方法（MMI）](https://learnprompting.org/docs/advanced/ensembling/max_mutual_information_method)、[DiVeRSe（推理步骤上的多样化验证器）](https://learnprompting.org/docs/advanced/ensembling/diverse_verifier_on_reasoning_step)、[提示改写（Prompt Paraphrasing）](https://learnprompting.org/docs/advanced/ensembling/prompt_paraphrasing)、[通用自适应提示（USP）](https://learnprompting.org/docs/advanced/ensembling/universal_self_adaptive_prompting)、[通用自一致性](https://learnprompting.org/docs/advanced/ensembling/universal_self_consistency)、[多链推理（MCR）](https://learnprompting.org/docs/advanced/ensembling/multi-chain-reasoning)
+5. [自我批评提示技术](https://learnprompting.org/docs/advanced/self_criticism/introduction)：[自我校准（Self-Calibration）](https://learnprompting.org/docs/advanced/self_criticism/self_calibration)、[自我优化（Self-Refine）](https://learnprompting.org/docs/advanced/self_criticism/self_refine)、[反向思维链（RCoT）](https://learnprompting.org/docs/advanced/self_criticism/rcot)、[自我验证（Self-Verification）](Self-Verification)、[验证链（CoVe）](https://learnprompting.org/docs/advanced/self_criticism/chain_of_verification)、[累积推理（CR）](https://learnprompting.org/docs/advanced/self_criticism/cumulative_reasoning)
+6. [任务分解提示技术](https://learnprompting.org/docs/advanced/decomposition/introduction)：[分解式提示（DecomP）](https://learnprompting.org/docs/advanced/decomposition/decomp)、[规划并求解（PS）提示](https://learnprompting.org/docs/advanced/decomposition/plan_and_solve)、[思维程序提示（Program of Thoughts Prompting）](https://learnprompting.org/docs/advanced/decomposition/program_of_thoughts)、[忠实思维链推理](https://learnprompting.org/docs/advanced/decomposition/faithful_cot)、[骨架思维提示（Skeleton-of-Thought）](https://learnprompting.org/docs/advanced/decomposition/skeleton_of_thoughts)、[思维树（ToT）提示](https://learnprompting.org/docs/advanced/decomposition/tree_of_thoughts)、[递归思维提示（Recursion of Thought）](https://learnprompting.org/docs/advanced/decomposition/recursion_of_thought)
 
+## 新技术学习路径
 
-## New Techniques Learning Path
-
-1. [Self-Harmonized Chain-of-Thought (ECHO)](https://learnprompting.org/docs/new_techniques/self_harmonized_chain_of_thought)
-2. [Logic-of-Thought (LoT)](https://learnprompting.org/docs/new_techniques/logic_of_thought)
-3. [Tree of Thoughts (ToT)](https://www.promptingguide.ai/techniques/tot)
-4. [Code Prompting](https://learnprompting.org/docs/new_techniques/code_prompting)
-5. [Aligned Chain-of-Thought (AlignedCoT)](https://learnprompting.org/docs/new_techniques/aligned_cot)
-6. [End-to-End DAG-Path (EEDP) Prompting](https://learnprompting.org/docs/new_techniques/end_to_end_dag_path_prompting)
-7. [Instance-adaptive Zero-Shot Chain-of-Thought Prompting (IAP)](https://learnprompting.org/docs/new_techniques/instance_adaptive_zero_shot_chain_of_thought)
-8. [Narrative-of-Thought (NoT)](https://learnprompting.org/docs/new_techniques/narrative_of_thought)
+1. [自协调思维链（ECHO）](https://learnprompting.org/docs/new_techniques/self_harmonized_chain_of_thought)
+2. [逻辑思维（LoT）](https://learnprompting.org/docs/new_techniques/logic_of_thought)
+3. [思维树（ToT）](https://www.promptingguide.ai/techniques/tot)
+4. [代码提示（Code Prompting）](https://learnprompting.org/docs/new_techniques/code_prompting)
+5. [对齐思维链（AlignedCoT）](https://learnprompting.org/docs/new_techniques/aligned_cot)
+6. [端到端 DAG 路径提示（EEDP）](https://learnprompting.org/docs/new_techniques/end_to_end_dag_path_prompting)
+7. [实例自适应零样本思维链提示（IAP）](https://learnprompting.org/docs/new_techniques/instance_adaptive_zero_shot_chain_of_thought)
+8. [叙事式思维（NoT）](https://learnprompting.org/docs/new_techniques/narrative_of_thought)
 9. [Reflexion](https://www.promptingguide.ai/techniques/reflexion)
-10. [Multimodal CoT Prompting](https://www.promptingguide.ai/techniques/multimodalcot)
+10. [多模态 CoT 提示](https://www.promptingguide.ai/techniques/multimodalcot)
 11. [GraphPrompts](https://www.promptingguide.ai/techniques/graph)
-   
-## Techniques for Vision-Language Models
 
-1. [Prompt Learning for Vision-Language Models](https://learnprompting.org/docs/new_techniques/for_vision_language_models/prompt_learning)
-2. [Context Optimization (CoOp) for Vision-Language Models](https://learnprompting.org/docs/new_techniques/for_vision_language_models/context_optimization)
-3. [Conditional Prompt Learning (CoCoOp) for Vision-Language Models](https://learnprompting.org/docs/new_techniques/for_vision_language_models/conditional_prompt_learning)
-4. [Mixture of Prompt Learning (MoCoOp) for Vision-Language Models](https://learnprompting.org/docs/new_techniques/for_vision_language_models/mixture_of_prompt_learning)
-5. [Attention Prompting on Image](https://learnprompting.org/docs/new_techniques/for_vision_language_models/attention_prompting_on_image)
-6. [Visual Prompting for Multimodal LLMs](https://learnprompting.org/docs/new_techniques/for_multimodal_llms/visual_prompt)
+## 面向视觉-语言模型的技术
 
-
-## Agents Learning Path
-
-1. [What is prompt engineering and why it matters for AI Agents](https://medium.com/@alvaro_72265/what-is-prompt-engineering-and-why-it-matters-for-ai-agents-0c1537d64b14)
-2. [Research Findings: LLM Agents](https://www.promptingguide.ai/research/llm-agents)
-3. [Agents Introduction](https://learnprompting.org/docs/agents/introduction)
-4. [LLMs Using Tools](https://learnprompting.org/docs/agents/mrkl)
-5. [LLMs that Reason and Act (ReAct)](https://learnprompting.org/docs/agents/react) and [In Depth](https://www.promptingguide.ai/techniques/react)
-6. [Code as Reasoning](https://learnprompting.org/docs/agents/pal)
-7. [Function Calling with LLMs](https://www.promptingguide.ai/applications/function_calling)
-8. [Fine-Tuning with GPT-4o Models](https://www.promptingguide.ai/applications/finetuning-gpt4o)
+1. [用于视觉-语言模型的提示学习](https://learnprompting.org/docs/new_techniques/for_vision_language_models/prompt_learning)
+2. [视觉-语言模型的上下文优化（CoOp）](https://learnprompting.org/docs/new_techniques/for_vision_language_models/context_optimization)
+3. [视觉-语言模型的条件提示学习（CoCoOp）](https://learnprompting.org/docs/new_techniques/for_vision_language_models/conditional_prompt_learning)
+4. [视觉-语言模型的提示学习混合（MoCoOp）](https://learnprompting.org/docs/new_techniques/for_vision_language_models/mixture_of_prompt_learning)
+5. [图像注意力提示](https://learnprompting.org/docs/new_techniques/for_vision_language_models/attention_prompting_on_image)
+6. [多模态 LLM 的视觉提示](https://learnprompting.org/docs/new_techniques/for_multimodal_llms/visual_prompt)
 
 
-#### Note for Chain-of-Thought Prompting:
+## Agents 学习路径
 
-OpenAI's o1 model represents a significant advancement in AI reasoning capabilities, particularly when compared to earlier models like GPT-4o. Here's a detailed comparison focusing on the application of Chain-of-Thought (CoT) prompting:
+1. [什么是提示工程，以及它为何对 AI Agent 很重要](https://medium.com/@alvaro_72265/what-is-prompt-engineering-and-why-it-matters-for-ai-agents-0c1537d64b14)
+2. [研究发现：LLM Agents](https://www.promptingguide.ai/research/llm-agents)
+3. [Agents 入门](https://learnprompting.org/docs/agents/introduction)
+4. [会使用工具的 LLM](https://learnprompting.org/docs/agents/mrkl)
+5. [能推理并行动的 LLM（ReAct）](https://learnprompting.org/docs/agents/react) 与 [深入讲解](https://www.promptingguide.ai/techniques/react)
+6. [把代码作为推理方式](https://learnprompting.org/docs/agents/pal)
+7. [LLM 的函数调用](https://www.promptingguide.ai/applications/function_calling)
+8. [使用 GPT-4o 模型进行微调](https://www.promptingguide.ai/applications/finetuning-gpt4o)
 
-**Chain-of-Thought Prompting with GPT-4o:**
 
-- **Explicit Prompting Required:** To engage in step-by-step reasoning, users must explicitly instruct GPT-4o to "think step by step" or "show your reasoning." Without such prompts, the model may provide direct answers without detailed explanations.
+#### 关于思维链提示（Chain-of-Thought Prompting）的说明：
 
-- **Performance in Complex Tasks:** While capable, GPT-4o's effectiveness in complex reasoning tasks is limited. For instance, it solved only 13% of problems on the International Mathematics Olympiad (IMO) qualifying exam.
+OpenAI 的 o1 模型在 AI 推理能力方面代表了显著进步，尤其是与 GPT-4o 这类较早模型相比。下面是一个围绕思维链（CoT）提示应用场景的详细对比：
 
-**o1's Built-in Reasoning Capabilities:**
+**GPT-4o 的思维链提示：**
 
-- **Internal Chain-of-Thought Processing:** o1 is designed to internally process a chain of thought before responding, eliminating the need for explicit CoT prompts. This design allows o1 to handle complex problems more effectively.
+- **需要显式提示：** 如果想让 GPT-4o 进行逐步推理，用户必须明确要求它“step by step thinking”或“show your reasoning”。如果没有这类提示，模型可能会直接给出答案，而不会展示详细解释。
 
-- **Enhanced Performance:** o1 significantly outperforms GPT-4o in complex reasoning tasks. It achieved an 83% success rate on the IMO qualifying exam and ranked in the 89th percentile in Codeforces coding competitions.
+- **复杂任务表现：** 虽然 GPT-4o 具备一定能力，但在复杂推理任务中的效果仍有限。例如，在国际数学奥林匹克（IMO）资格考试问题上，它只解出了 13% 的题目。
 
-- **Reinforcement Learning Integration:** o1's training incorporated reinforcement learning, enabling it to refine its reasoning processes and adapt strategies for problem-solving.
+**o1 的内建推理能力：**
 
-**Key Differences:**
+- **内部思维链处理：** o1 被设计为在回答前先在内部完成思维链推理，因此不再需要显式的 CoT 提示。这种设计使它在处理复杂问题时更有效。
 
-- **User Interaction:** With GPT-4o, users must prompt the model to engage in detailed reasoning. In contrast, o1 autonomously employs internal reasoning, streamlining user interaction.
+- **更强的表现：** o1 在复杂推理任务中的表现显著优于 GPT-4o。它在 IMO 资格考试中达到了 83% 的成功率，并在 Codeforces 编程竞赛中进入前 89 百分位。
 
-- **Response Time and Cost:** o1's internal reasoning process requires more computational resources, leading to longer response times and higher costs compared to GPT-4o.
+- **引入强化学习：** o1 的训练过程中整合了强化学习，使其能够不断优化自身推理过程，并调整解题策略。
 
-- **Accuracy and Reliability:** o1's built-in reasoning reduces the likelihood of errors and hallucinations, making it more reliable for complex tasks.
+**关键差异：**
 
-**Considerations for Use:**
+- **用户交互方式：** 对 GPT-4o 来说，用户必须显式提示模型进行详细推理；而 o1 会自主启用内部推理，从而简化用户交互。
 
-- **Task Complexity:** For straightforward tasks, GPT-4o may suffice. However, for complex problem-solving in areas like mathematics, coding, and scientific reasoning, o1's advanced capabilities are advantageous.
+- **响应时间与成本：** o1 的内部推理过程需要更多计算资源，因此相较于 GPT-4o，响应时间更长、成本也更高。
 
-- **Resource Allocation:** Due to o1's higher computational demands and associated costs, it's essential to assess whether its enhanced reasoning aligns with your project's requirements and budget.
+- **准确性与可靠性：** o1 的内建推理能力降低了错误和幻觉出现的可能性，因此在复杂任务中更可靠。
 
-In summary, while GPT-4o can perform chain-of-thought reasoning when explicitly prompted, o1 inherently integrates this capability, offering superior performance in complex reasoning tasks. This integration simplifies user interaction and enhances accuracy, albeit with increased computational requirements.
+**使用时的考量：**
 
- 
+- **任务复杂度：** 对于简单直接的任务，GPT-4o 通常已经足够；但对于数学、编程、科学推理等复杂问题求解，o1 的高级能力更有优势。
+
+- **资源分配：** 由于 o1 对计算资源的需求更高、成本也更高，因此需要评估它增强后的推理能力是否与你的项目需求和预算相匹配。
+
+总的来说，GPT-4o 在被显式提示时也可以进行思维链推理，但 o1 是将这项能力原生集成到了模型内部，因此在复杂推理任务上有更强表现。这样既简化了用户交互，也提高了准确性，只是代价是更高的计算资源消耗。
 
  
 
-## Advanced Papers
+## 高级论文
 
-Techniques for prompting LLMs in more sophisticated ways began to take off in 2022. They coalesced in moves toward agentic AI early this year. Foundational examples of this body of work include:
+以更复杂方式提示 LLM 的技术从 2022 年开始迅速发展，并在今年早些时候逐步汇聚到 agentic AI 的方向。这个研究脉络中的一些基础代表工作包括：
 
-1. [Chain of Thought prompting](https://arxiv.org/abs/2201.11903), which asks LLMs to think step by step
-2. [Self-consistency](https://arxiv.org/abs/2203.11171), which prompts a model to generate several responses and pick the one that’s most consistent with the others
-3. [ReAct](https://research.google/blog/react-synergizing-reasoning-and-acting-in-language-models/), which interleaves reasoning and action steps to accomplish a goal
-4. [Self-Refine](https://arxiv.org/abs/2303.17651), which enables an agent to reflect on its own output
-5. [Reflexion](https://arxiv.org/abs/2303.11366), which enables a model to act, evaluate, reflect, and repeat.
-6. [Test-time compute](https://arxiv.org/abs/2408.03314), which increases the amount of processing power allotted to inference
+1. [思维链提示（Chain of Thought prompting）](https://arxiv.org/abs/2201.11903)，让 LLM 按步骤思考
+2. [自一致性（Self-consistency）](https://arxiv.org/abs/2203.11171)，让模型生成多个回答，并选择与其他回答最一致的那个
+3. [ReAct](https://research.google/blog/react-synergizing-reasoning-and-acting-in-language-models/)，将推理与行动步骤交织起来，以完成目标
+4. [Self-Refine](https://arxiv.org/abs/2303.17651)，使 agent 能够反思自己的输出
+5. [Reflexion](https://arxiv.org/abs/2303.11366)，使模型能够行动、评估、反思并重复这个过程
+6. [测试时计算（Test-time compute）](https://arxiv.org/abs/2408.03314)，在推理阶段增加分配给模型的计算资源
 
 Reference:
 
 https://www.deeplearning.ai/the-batch/issue-281/
 
 
+
+## 高级提示词技术
+
+### **RE2：Repeated Reading / 重复阅读**
+
+- 做法：要求模型先“再读一遍题目/问题”，再回答。
+- 目的：减少模型漏看条件、误解题意。
+- 适合：阅读理解、带约束的问题、数学题、长指令任务。
+- 常见写法：
+  - `Read the question again carefully before answering.`
+
+### **RaR：Rephrase and Respond / 重述并回答**
+
+- 做法：先让模型用自己的话重述用户问题，再给答案。
+- 目的：确认模型真正理解了任务，再开始作答。
+- 适合：需求容易歧义、复杂指令、多约束任务。
+- 常见流程：
+  1. 重述问题
+  2. 基于重述后的理解回答
+- 常见写法：
+  - `First rephrase the question in your own words, then answer it.`
+
+### **S2A：System 2 Attention / 系统 2 注意力**
+
+- 做法：先把原问题转换成一个只保留关键信息、去掉噪声和误导项的版本，再回答。
+- 目的：降低无关信息、干扰上下文、提示注入对模型的影响。
+- 灵感来自“System 2”式更慢、更谨慎的思考。
+- 适合：长上下文、包含噪声信息的问题、RAG、工具调用前的信息整理。
+- 本质：先“提纯问题”，再“解题”。
+
+### **SimToM：Simulation Theory of Mind / 心智模拟**
+
+- 做法：让模型只基于某个角色或主体“已知的信息”来回答，而不是用自己全局知识直接答。
+- 目的：更好处理“谁知道什么”的问题。
+- 适合：多角色叙事、知识边界推理、视角推理、ToM 类任务。
+- 例如：
+  - A 把钥匙放抽屉里离开
+  - B 把钥匙移到柜子里
+  - 问：A 回来会去哪里找？
+  - SimToM 要求模型从 A 的视角回答：`抽屉`
+
+### **一句话区别**
+
+- `RE2`：防止没看清题
+- `RaR`：防止没理解题
+- `S2A`：防止被噪声带偏
+- `SimToM`：防止混淆“谁知道什么”
