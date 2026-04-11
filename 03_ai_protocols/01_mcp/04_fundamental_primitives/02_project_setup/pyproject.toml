@@ -1,0 +1,14 @@
+[project]
+name = "02-project-setup"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastmcp>=3.2.3",
+    "httpx>=0.28.1",
+    "openai>=2.31.0",
+    "openai-agents>=0.13.6",
+    "prompt-toolkit>=3.0.52",
+    "uvicorn>=0.44.0",
+]

@@ -6,7 +6,7 @@ persistence = "save-all"
 
 [model_providers.cust]
 name = "cust"
-base_url = "https://9527code.com/v1"
+base_url = "https://9527code.com/v1/"
 env_key = "OPENAI_API_KEY"
 wire_api = "responses"
 

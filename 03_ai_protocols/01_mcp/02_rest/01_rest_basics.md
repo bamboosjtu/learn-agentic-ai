@@ -1,147 +1,147 @@
-# What is REST?
+# 什么是 REST？
 
-> REST is a **way to build web applications** so that **computers can talk to each other over the internet easily and in an organized way**.
-
----
-
-## 🔍 Is REST a technology?
-
-**No**, REST is **not** a:
-
-* Programming language
-* Software
-* Tool
-* Protocol like HTTP or FTP
-
-✅ REST is a **style or design pattern**—a **set of rules** for **how web services should work**.
+> REST 是一种 **构建 Web 应用的方式**，让 **计算机能够通过互联网以简单且有组织的方式进行通信**。
 
 ---
 
-## 📦 Real-Life Analogy
+## 🔍 REST 是一种技术吗？
 
-Imagine you're using a **food delivery app**:
+**不是**，REST **并不是**：
 
-* You search for food
-* You add items to cart
-* You place an order
-* You check order status
+* 编程语言
+* 软件
+* 工具
+* 像 HTTP 或 FTP 那样的协议
 
-All these actions are done by talking to the **backend server** using **RESTful APIs**.
-
-Each thing (food, cart, order) is a **resource**, and you're interacting with **representations** of them.
+✅ REST 是一种 **风格 / 设计模式**，也就是一组关于 **Web 服务应该如何工作** 的规则。
 
 ---
 
-## 🔑 REST Means...
+## 📦 现实生活类比
 
-| Term                 | Simple Meaning                                                                    |
+想象你正在使用一个 **外卖 App**：
+
+* 你搜索食物
+* 你把商品加入购物车
+* 你下单
+* 你查看订单状态
+
+所有这些动作，都是通过 **RESTful API** 与 **后端服务器** 交互完成的。
+
+其中每一样东西（食物、购物车、订单）都是一个 **资源（resource）**，而你实际交互的是它们的 **表示（representation）**。
+
+---
+
+## 🔑 REST 的含义是……
+
+| 术语 | 简单含义 |
 | -------------------- | --------------------------------------------------------------------------------- |
-| **Representational** | You don’t access the real object—you access a **copy** (e.g., JSON or HTML of it) |
-| **State**            | The **data** or **condition** of something (like your cart contents)              |
-| **Transfer**         | Moving that data between **client** (you) and **server** (app backend)            |
+| **Representational** | 你访问的不是对象本身，而是它的一个 **表示副本**（例如 JSON 或 HTML） |
+| **State** | 某个东西的 **数据** 或 **状态**（例如购物车里的内容） |
+| **Transfer** | 在 **客户端**（你）和 **服务器**（应用后端）之间传输这些数据 |
 
 ---
 
-## 🖼️ How REST Works – Step-by-Step
+## 🖼️ REST 如何工作：一步一步看
 
-1. **Resources** (like users, products, orders) are given **URLs** (like `api/products/1`)
-2. The **client** (browser or app) sends an HTTP request like:
+1. **资源**（如用户、商品、订单）会被赋予一个 **URL**（例如 `api/products/1`）
+2. **客户端**（浏览器或 App）发送一个 HTTP 请求，例如：
 
-   * `GET` → to read
-   * `POST` → to add
-   * `PUT` → to update
-   * `DELETE` → to delete
-3. The **server** sends back a **representation** (usually in JSON or XML)
+   * `GET` → 读取
+   * `POST` → 新增
+   * `PUT` → 更新
+   * `DELETE` → 删除
+3. **服务器** 返回一个 **表示**（通常是 JSON 或 XML）
 
 ---
 
-## 🧱 Example: REST in a Shopping App
+## 🧱 示例：购物 App 中的 REST
 
-| Action          | HTTP Method | URL           | What Happens              |
+| 动作 | HTTP 方法 | URL | 会发生什么 |
 | --------------- | ----------- | ------------- | ------------------------- |
-| See products    | `GET`       | `/products`   | Get list of all products  |
-| See one product | `GET`       | `/products/5` | Get product with ID 5     |
-| Add a product   | `POST`      | `/products`   | Add a new product         |
-| Update product  | `PUT`       | `/products/5` | Replace product with ID 5 |
-| Delete product  | `DELETE`    | `/products/5` | Remove product with ID 5  |
+| 查看商品列表 | `GET` | `/products` | 获取所有商品列表 |
+| 查看单个商品 | `GET` | `/products/5` | 获取 ID 为 5 的商品 |
+| 添加商品 | `POST` | `/products` | 新增一个商品 |
+| 更新商品 | `PUT` | `/products/5` | 替换 ID 为 5 的商品 |
+| 删除商品 | `DELETE` | `/products/5` | 删除 ID 为 5 的商品 |
 
 ---
 
-## REST Has 6 Simple Rules (called Constraints)
+## REST 有 6 条简单规则（称为约束）
 
-1. **Client-Server**: Separate frontend (browser/app) from backend (server).
-2. **Stateless**: Each request stands alone. Server doesn’t remember past requests.
-3. **Cacheable**: Responses can be stored to reduce load and speed things up.
-4. **Uniform Interface**: All resources are accessed using the same method (like GET/POST).
-5. **Layered System**: You can have layers like proxies or load balancers in between.
-6. **Code on Demand (optional)**: Server can send code (like JavaScript) to the client to run.
+1. **客户端-服务器**：将前端（浏览器 / App）与后端（服务器）分开。
+2. **无状态**：每个请求都是独立的，服务器不会记住之前的请求。
+3. **可缓存**：响应可以被缓存，以减轻负载并提升速度。
+4. **统一接口**：所有资源都通过统一方式访问（如 GET / POST）。
+5. **分层系统**：中间可以有代理、负载均衡器等层。
+6. **按需代码（可选）**：服务器可以向客户端发送可执行代码（例如 JavaScript）。
 
 ---
 
-## ✅ Summary (In Easy Words)
+## ✅ 总结（通俗版）
 
-| Term               | Meaning                                           |
+| 术语 | 含义 |
 | ------------------ | ------------------------------------------------- |
-| **REST**           | A design style for creating web services          |
-| **Not a protocol** | It uses HTTP but it's not HTTP itself             |
-| **Resource**       | Any piece of data (user, product, etc.)           |
-| **Representation** | A copy of the data (like JSON) sent to the client |
-| **Stateless**      | Every request is treated like a brand-new one     |
+| **REST** | 一种创建 Web 服务的设计风格 |
+| **不是协议** | 它会使用 HTTP，但它本身不是 HTTP |
+| **资源** | 任意一项数据（用户、商品等） |
+| **表示** | 发送给客户端的数据副本（例如 JSON） |
+| **无状态** | 每次请求都会被当作全新的请求处理 |
 
 ---
 
-## What Does HATEOAS Mean?
+## HATEOAS 是什么意思？
 
-HATEOAS stands for:
+HATEOAS 全称是：
 
 > **Hypermedia As The Engine Of Application State**
 
-🟢 It's a **part of REST** that says:
+🟢 它是 REST 的一部分，意思是：
 
-> The **server should guide the client** by sending links in its responses, so the client knows **what to do next** — **just like how you browse a website**.
-
----
-
-## 📖 Real-Life Analogy: Browsing a Website
-
-Think about how you use a website:
-
-1. You land on the **homepage**
-2. You see **links** like "About", "Products", "Contact"
-3. You **click a link** to go to the next page
-4. You don’t need to **memorize URLs** — you just follow the links provided
-
-✅ That’s **exactly what HATEOAS means for computers talking via REST APIs**.
+> **服务器应该通过在响应中发送链接来引导客户端**，让客户端知道 **下一步可以做什么**，就像你浏览网站一样。
 
 ---
 
-## 🤖 In REST APIs (Without HATEOAS vs With HATEOAS)
+## 📖 现实类比：浏览网站
 
-### ❌ Without HATEOAS:
+想想你平时如何使用一个网站：
 
-The client must already know:
+1. 你进入 **首页**
+2. 你看到 **链接**，例如 “About”、“Products”、“Contact”
+3. 你 **点击链接** 前往下一页
+4. 你不需要 **记住所有 URL**，只需要跟着页面提供的链接走
 
-* All the URLs (`/users`, `/orders`, `/cart`)
-* What it’s allowed to do
-
-It’s like someone saying:
-
-> “Go to `store.com/api/products`, then `store.com/api/cart`, and then `store.com/api/checkout`”
-> Even before you start.
-
-This is **fragile**. If URLs change, the client breaks.
+✅ 这正是 **HATEOAS 在 REST API 中的含义**。
 
 ---
 
-### ✅ With HATEOAS:
+## 🤖 在 REST API 中（无 HATEOAS vs 有 HATEOAS）
 
-You only start with **one known URL**, like:
+### ❌ 没有 HATEOAS：
+
+客户端必须预先知道：
+
+* 所有 URL（如 `/users`、`/orders`、`/cart`）
+* 自己被允许做什么
+
+这就像别人一开始就告诉你：
+
+> “先去 `store.com/api/products`，然后去 `store.com/api/cart`，最后去 `store.com/api/checkout`”
+> 甚至在你真正开始之前就要全部记住。
+
+这种方式 **很脆弱**。如果 URL 改了，客户端就会失效。
+
+---
+
+### ✅ 有 HATEOAS：
+
+你只需要知道 **一个起始 URL**，例如：
 
 ```
 GET /api
 ```
 
-And the server replies with:
+服务器返回：
 
 ```json
 {
@@ -153,15 +153,15 @@ And the server replies with:
 }
 ```
 
-🔗 Now the **client follows these links**, like a **map**.
+🔗 这样客户端就可以像看 **地图** 一样，继续沿着这些链接往下走。
 
-> It’s like the **server says: “Here’s what you can do next!”**
+> 这就像服务器在说：**“这是你接下来可以做的事情！”**
 
 ---
 
-## 🔄 Example in REST API (JSON)
+## 🔄 REST API 中的 JSON 示例
 
-Let’s say you get a user profile:
+假设你获取了一个用户资料：
 
 ```json
 {
@@ -176,101 +176,101 @@ Let’s say you get a user profile:
 }
 ```
 
-✅ Now the client knows:
+✅ 现在客户端就知道：
 
-* How to view this user
-* How to update/delete the user
-* How to get their orders
+* 如何查看这个用户
+* 如何更新 / 删除这个用户
+* 如何获取该用户的订单
 
-And it doesn’t need to memorize anything!
+而且完全不需要提前硬编码所有路径。
 
 ---
 
-## 🔑 Why is HATEOAS Useful?
+## 🔑 HATEOAS 为什么有用？
 
-| Benefit         | Simple Explanation                                     |
+| 好处 | 简单说明 |
 | --------------- | ------------------------------------------------------ |
-| 🔄 Flexible     | Server can change URLs without breaking the client     |
-| 🧭 Discoverable | Clients don’t need a full guide or list of all actions |
-| 🔐 Secure       | Server controls what links/actions to show             |
-| 🔧 Evolvable    | New features can be added without updating the client  |
+| 🔄 灵活 | 服务器可以修改 URL，而不必让客户端失效 |
+| 🧭 可发现 | 客户端不需要完整文档或所有操作列表 |
+| 🔐 更安全 | 服务器可以控制展示哪些链接 / 操作 |
+| 🔧 可演进 | 不更新客户端也能新增功能 |
 
 ---
 
-## 📝 Summary
+## 📝 总结
 
-| Term                         | Simple Meaning                               |
+| 术语 | 简单含义 |
 | ---------------------------- | -------------------------------------------- |
-| **HATEOAS**                  | Server tells the client what it can do next  |
-| **Hypermedia**               | Links (like in websites) in the API response |
-| **Client starts with 1 URL** | And discovers others by following links      |
-| **Less breakable**           | Client doesn’t rely on hardcoded URLs        |
+| **HATEOAS** | 服务器告诉客户端下一步可以做什么 |
+| **Hypermedia** | API 响应中的链接，像网站里的超链接 |
+| **客户端只需一个起点 URL** | 后续其他资源通过链接逐步发现 |
+| **更不容易失效** | 客户端不依赖硬编码 URL |
 
 ---
 
-## 📦 Think of HATEOAS like this:
+## 📦 你可以这样理解 HATEOAS：
 
-> **The server is a tour guide** — it doesn’t give you the whole city map at once, but at every step, it tells you what places you can go next.
-
----
-Sure! Let’s explain **Idempotence** in **very simple and easy words**, so you can understand it without any confusion. We'll also use real-life examples. 😊
+> **服务器就像一个导游**，它不会一开始就把整张城市地图全塞给你，而是在每一步都告诉你接下来可以去哪里。
 
 ---
-
-## What is Idempotence?
-
-> **Idempotence** means:
-> “Doing the same action **many times** has the **same effect** as doing it **once**.”
+当然可以。下面用 **非常简单的方式** 解释 **Idempotence（幂等性）**，并配合现实生活例子来理解。
 
 ---
 
-### 🧃 Real-Life Example: Light Switch
+## 什么是幂等性（Idempotence）？
 
-Imagine you walk into a room and **turn off the light**:
-
-* 🔁 If you turn it off **once**, the light goes off ✅
-* 🔁 If you turn it off **5 times**, it's still off ✅
-
-➡️ Same result, no matter how many times you repeat the action
-✅ This is **idempotent**
+> **幂等性** 的意思是：
+> “同一个动作 **重复做很多次**，结果和 **做一次** 是一样的。”
 
 ---
 
-### 🍽️ Another Example: Canceling a food order
+### 🧃 现实例子：关灯
 
-Let’s say you cancel your food order:
+想象你走进房间，把灯 **关掉**：
 
-* You cancel once → Order is canceled
-* You cancel again → It’s **still** canceled, nothing changes
+* 🔁 关一次，灯灭了 ✅
+* 🔁 连续关 5 次，灯还是灭的 ✅
 
-✅ **Idempotent**
-
-But now imagine you **place an order**:
-
-* You press “Place Order” once → 1 pizza ordered 🍕
-* You press it 3 times → 3 pizzas ordered 😱
-
-❌ **Not idempotent**
+➡️ 不管重复多少次，结果都一样。
+✅ 这就是 **幂等的**
 
 ---
 
-## 🌐 In HTTP (Web Terms)
+### 🍽️ 另一个例子：取消外卖订单
 
-Here’s how **HTTP methods** behave regarding idempotence:
+假设你取消一个订单：
+
+* 取消一次 → 订单已取消
+* 再取消一次 → 订单 **仍然** 是取消状态，没有变化
+
+✅ 这是 **幂等的**
+
+但如果你是 **下单**：
+
+* 点一次 “下单” → 订了 1 个披萨 🍕
+* 连点 3 次 → 可能订了 3 个披萨 😱
+
+❌ 这就 **不是幂等的**
 
 ---
 
-### ✅ **Idempotent Methods**
+## 🌐 在 HTTP 里怎么理解？
 
-| Method      | What It Does         | Why It's Idempotent                                                            |
+下面是不同 **HTTP 方法** 在幂等性上的表现：
+
+---
+
+### ✅ **幂等的方法**
+
+| 方法 | 作用 | 为什么是幂等的 |
 | ----------- | -------------------- | ------------------------------------------------------------------------------ |
-| **GET**     | Get data (read only) | Getting the same data many times doesn’t change it                             |
-| **HEAD**    | Get only headers     | Like GET, but no body – doesn’t change anything                                |
-| **OPTIONS** | Ask what’s allowed   | Just asks a question, doesn’t modify anything                                  |
-| **PUT**     | Replace data         | Sending the same data multiple times replaces it again – result stays the same |
-| **DELETE**  | Delete resource      | Deleting once or 10 times = still deleted                                      |
+| **GET** | 获取数据（只读） | 重复获取同一份数据不会改变它 |
+| **HEAD** | 只获取头部 | 和 GET 类似，不会修改任何内容 |
+| **OPTIONS** | 询问允许哪些操作 | 只是问问题，不会修改资源 |
+| **PUT** | 替换数据 | 多次发送同一份数据，最终结果不变 |
+| **DELETE** | 删除资源 | 删除一次和删除十次，结果都是“已删除” |
 
-✅ Example:
+✅ 例子：
 
 ```http
 PUT /users/1
@@ -279,18 +279,18 @@ PUT /users/1
 }
 ```
 
-Sending this 100 times is the same as sending it once.
+把这段请求发送 100 次，效果和发送 1 次是一样的。
 
 ---
 
-### ❌ **Non-idempotent Methods**
+### ❌ **非幂等的方法**
 
-| Method    | What It Does        | Why It’s Not Idempotent                          |
+| 方法 | 作用 | 为什么不是幂等的 |
 | --------- | ------------------- | ------------------------------------------------ |
-| **POST**  | Create a new item   | Each request usually creates a **new** item      |
-| **PATCH** | Modify part of data | Can be idempotent, but only if handled carefully |
+| **POST** | 创建新项目 | 每次请求通常都会创建一个 **新的** 项目 |
+| **PATCH** | 部分修改数据 | 有时可以做到幂等，但要看具体实现 |
 
-🚫 Example:
+🚫 例子：
 
 ```http
 POST /users
@@ -299,27 +299,26 @@ POST /users
 }
 ```
 
-Sending this 3 times might create **3 users** → **Not idempotent**
+发送 3 次，可能会创建 **3 个用户** → **不是幂等的**
 
 ---
 
-## ✅ Summary Table
+## ✅ 总结表
 
-| Method  | Idempotent?  | Why?                           |
+| 方法 | 是否幂等 | 原因 |
 | ------- | ------------ | ------------------------------ |
-| GET     | ✅ Yes        | Reads only                     |
-| HEAD    | ✅ Yes        | Reads headers                  |
-| OPTIONS | ✅ Yes        | Just asks, doesn’t do          |
-| PUT     | ✅ Yes        | Replaces existing data         |
-| DELETE  | ✅ Yes        | Still deleted after many tries |
-| POST    | ❌ No         | Adds new items                 |
-| PATCH   | ⚠️ Sometimes | Depends on how it's used       |
+| GET     | ✅ 是 | 只读 |
+| HEAD    | ✅ 是 | 只读取头部 |
+| OPTIONS | ✅ 是 | 只是查询，不会修改 |
+| PUT     | ✅ 是 | 替换已有数据 |
+| DELETE  | ✅ 是 | 多次执行后仍是已删除 |
+| POST    | ❌ 否 | 会新增数据 |
+| PATCH   | ⚠️ 有时 | 取决于具体实现方式 |
 
 ---
 
-## 📦 Final Tip
+## 📦 最后一个记忆技巧
 
-> If **repeating a request doesn’t change the result**, it’s **idempotent**.
-> If it **adds more data or creates new things**, it’s **not idempotent**.
-
+> 如果 **重复请求不会改变最终结果**，它就是 **幂等的**。
+> 如果它会 **新增更多数据** 或 **创建更多东西**，那它就 **不是幂等的**。
 

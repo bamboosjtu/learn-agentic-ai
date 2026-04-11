@@ -114,7 +114,6 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ```bash
 uv --version
-
 ```
 
 ---

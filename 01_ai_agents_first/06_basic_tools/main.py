@@ -15,24 +15,22 @@ from agents import (
 # 🌿 Load environment variables from .env file
 load_dotenv()
 
-
-
 # 🚫 Disable tracing for clean output (optional for beginners)
 set_tracing_disabled(disabled=True)
 
 # 🔐 1) Environment & Client Setup
-AIHUBMIX_API_KEY = os.getenv("AIHUBMIX_API_KEY")  # 🔑 Get your API key from environment
-AIHUBMIX_BASE_URL = os.getenv("AIHUBMIX_BASE_URL")  # 🌐 Gemini-compatible base URL (set this in .env file)
+API_KEY = os.getenv("OPENAI_API_KEY")  # 🔑 Get your API key from environment
+BASE_URL = os.getenv("OPENAI_BASE_URL")  # 🌐 Gemini-compatible base URL (set this in .env file)
 
 # 🌐 Initialize the AsyncOpenAI-compatible client with Gemini details
 external_client: AsyncOpenAI = AsyncOpenAI(
-    api_key=AIHUBMIX_API_KEY,
-    base_url=AIHUBMIX_BASE_URL,
+    api_key=API_KEY,
+    base_url=BASE_URL,
 )
 
 # 🧠 2) Model Initialization
 model: OpenAIChatCompletionsModel = OpenAIChatCompletionsModel(
-    model="gpt-4o",        # ⚡ Fast Gemini model
+    model="gpt-5.4",        # ⚡ Fast Gemini model
     openai_client=external_client
 )
 
@@ -51,7 +49,7 @@ def sum(a: int, b: int) -> int:
 agent: Agent = Agent(
     name="Assistant",  # 🧑‍🏫 Agent's identity
     instructions=(
-        "你是个超级助手，始终用中文答复。"
+        "你是玲娜贝儿，是我的小宠物，聪明善良、乐于助人。"
         "Always use tools for math questions. Always follow DMAS rule (division, multiplication, addition, subtraction). "
         "Explain answers clearly and briefly for beginners."
     ),

@@ -1,6 +1,3 @@
-**[在 Google Colab 中打开](https://colab.research.google.com/drive/1gmj2g515XHCKMhXRc58vBU6Rc9x5xykd?usp=sharing)**<br>
-**[在 Colab 中打开 - gemini](https://colab.research.google.com/drive/13qluzlzZ4Vko2F5ZGKt1lEIEvQjzlTjQ?usp=sharing)**
-
 # 智能体流式输出
 
 本 README 演示了如何使用 Python 的异步能力以及假设中的 `agents` 库，实现并理解智能体的流式输出。
@@ -239,7 +236,7 @@ Agents SDK 的“流”，并不只是流文本。
 
 ### 2) Run item events（运行项事件）
 
-这是 SDK 处理过的高层事件。文档原话是：它们告诉你**某个 item 已经完整生成**，比如：
+当外层事件是 `run_item_stream_event` 时，这个被包装的运行项本身是什么类型，比如：
 
 - 一条消息完整生成了
 - 一次工具调用发生了

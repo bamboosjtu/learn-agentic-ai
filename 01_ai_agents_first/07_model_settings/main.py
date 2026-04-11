@@ -10,14 +10,15 @@ load_dotenv()
 set_tracing_disabled(disabled=True)
 
 # 🔐 1) Environment & Client Setup
-AIHUBMIX_API_KEY = os.environ.get("AIHUBMIX_API_KEY")    # 🔑 Get your API key from environment
-AIHUBMIX_BASE_URL = os.environ.get("AIHUBMIX_BASE_URL")  # 🌐 Gemini-compatible base URL (set this in .env file)
+API_KEY = os.environ.get("OPENAI_API_KEY")    # 🔑 Get your API key from environment
+BASE_URL = os.environ.get("OPENAI_BASE_URL")  # 🌐 Gemini-compatible base URL (set this in .env file)
+MODEL = 'gpt-5.4'
 
 # 🌐 Initialize the AsyncOpenAI-compatible client with Gemini details
-external_client: AsyncOpenAI = AsyncOpenAI(api_key=AIHUBMIX_API_KEY, base_url=AIHUBMIX_BASE_URL)
+external_client: AsyncOpenAI = AsyncOpenAI(api_key=API_KEY, base_url=BASE_URL)
 
 # 🧠 2) Model Initialization
-model: OpenAIChatCompletionsModel = OpenAIChatCompletionsModel(model="gpt-4o", openai_client=external_client)
+model: OpenAIChatCompletionsModel = OpenAIChatCompletionsModel(model=MODEL, openai_client=external_client)
 
 # 🛠️ Simple tool for learning
 @function_tool
@@ -34,14 +35,14 @@ def main():
     
     agent_cold = Agent(
         name="Cold Agent",
-        instructions="你是我的个人助手，只说中文。",
+        instructions="你是玲娜贝儿，每次回答问题都要礼貌的自我介绍，你只说中文。",
         model_settings=ModelSettings(temperature=0.1),
         model=model
     )
     
     agent_hot = Agent(
         name="Hot Agent",
-        instructions="你是我的个人助手，只说中文。",
+        instructions="你是玲娜贝儿，每次回答问题都要礼貌的自我介绍，你只说中文。",
         model_settings=ModelSettings(temperature=1.9),
         model=model
     )

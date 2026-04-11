@@ -10,27 +10,27 @@ load_dotenv()
 set_tracing_disabled(disabled=True)
 
 # 🔐 Setup Gemini client
-API_KEY = os.getenv("AIHUBMIX_API_KEY")
-BASE_URL = os.getenv("AIHUBMIX_BASE_URL")
+API_KEY = os.getenv("OPENAI_API_KEY")
+BASE_URL = os.getenv("OPENAI_BASE_URL")
 
 external_client = AsyncOpenAI(api_key=API_KEY, base_url=BASE_URL)
-model = OpenAIChatCompletionsModel(model="gpt-4o", openai_client=external_client)
+model = OpenAIChatCompletionsModel(model="gpt-5.4", openai_client=external_client)
 
 def main():
     """Learn Dynamic Instructions with simple examples."""
     print("🎭 Dynamic Instructions: Make Your Agent Adapt")
     print("=" * 50)
     
-    # 🎯 Example 1: Basic Dynamic Instructions
+    # 🎯 Example 1: 动态提示词基础用法
     print("\n🎭 Example 1: Basic Dynamic Instructions")
     print("-" * 40)
     
     def basic_dynamic(context: RunContextWrapper, agent: Agent) -> str:
         """Basic dynamic instructions function."""
-        return f"You are {agent.name}. Be helpful and friendly. 必须说中文。"
+        return f"你叫{agent.name}，是我的好朋友，必须说中文。"
     
     agent_basic = Agent(
-        name="Dynamic Agent",
+        name="小乖狐",
         instructions=basic_dynamic,
         model=model
     )
@@ -39,7 +39,7 @@ def main():
     print("Basic Dynamic Agent:")
     print(result.final_output)
     
-    # 🎯 Example 2: Context-Aware Instructions
+    # 🎯 Example 2: Context-aware（消息次数） 动态提示词
     print("\n🎭 Example 2: Context-Aware Instructions")
     print("-" * 40)
     
@@ -48,11 +48,11 @@ def main():
         message_count = len(getattr(context, 'messages', []))
         
         if message_count == 0:
-            return "You are a welcoming assistant. Introduce yourself! 必须说中文。"
+            return "你叫玲娜贝儿，是我的好朋友，说话前必须先来一段100字的自我介绍! 必须说英文。"
         elif message_count < 3:
-            return "You are a helpful assistant. Be encouraging and detailed. 必须说中文。"
+            return "你叫玲娜贝儿，是我的好朋友，说话预期要有激情、待人要热情。必须说中文。"
         else:
-            return "You are an experienced assistant. Be concise but thorough. 必须说中文。"
+            return "你叫玲娜贝儿，是我的好朋友，说话要不耐烦，要表达想吃鸡腿的诉求，必须说日文。"
     
     agent_context = Agent(
         name="Context Aware Agent",
@@ -69,7 +69,7 @@ def main():
     print("\nSecond message:")
     print(result2.final_output)
     
-    # 🎯 Example 3: Time-Based Instructions
+    # 🎯 Example 3: 时间相关 动态提示词
     print("\n🎭 Example 3: Time-Based Instructions")
     print("-" * 40)
     
@@ -82,12 +82,12 @@ def main():
         if 6 <= current_hour < 12:
             return f"You are {agent.name}. Good morning! Be energetic and positive. 必须说中文。"
         elif 12 <= current_hour < 17:
-            return f"You are {agent.name}. Good afternoon! Be focused and productive. "
+            return f"You are {agent.name}. Good afternoon! Be focused and productive. speak in english。"
         else:
-            return f"You are {agent.name}. Good evening! Be calm and helpful. 必须说中文。"
+            return f"You are {agent.name}. Good evening! Be calm and helpful. 必须说日文。"
     
     agent_time = Agent(
-        name="Time Aware Agent",
+        name="沙川妲己",
         instructions=time_based,
         model=model
     )
@@ -109,11 +109,11 @@ def main():
             self.interaction_count += 1
             
             if self.interaction_count == 1:
-                return "You are a learning assistant. This is our first interaction - be welcoming! 必须说中文。"
+                return "You are a learning assistant. This is our first interaction - be welcoming! 必须说英文。"
             elif self.interaction_count <= 3:
                 return f"You are a learning assistant. This is interaction #{self.interaction_count} - build on our conversation. 必须说中文。"
             else:
-                return f"You are an experienced assistant. We've had {self.interaction_count} interactions - be efficient. 必须说中文。"
+                return f"You are an experienced assistant. We've had {self.interaction_count} interactions - be efficient. 必须说日文。"
     
     instruction_gen = StatefulInstructions()
     
@@ -124,7 +124,7 @@ def main():
     )
     
     # Test multiple interactions
-    for i in range(3):
+    for i in range(5):
         result = Runner.run_sync(agent_stateful, f"Question {i+1}: Tell me about AI")
         print(f"Interaction {i+1}:")
         print(result.final_output[:100] + "...")

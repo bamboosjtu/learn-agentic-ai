@@ -1,153 +1,153 @@
-# 🌐 What is HTTP?
+# 🌐 什么是 HTTP？
 
-**HTTP** stands for **HyperText Transfer Protocol**.
+**HTTP** 是 **HyperText Transfer Protocol（超文本传输协议）** 的缩写。
 
-* It is a **way for computers to talk to each other** over the **internet**.
-* Specifically, it is how your **browser (like Chrome)** asks for things like web pages, and how the **server** responds with what you asked for.
+* 它是 **计算机之间在互联网上彼此通信的一种方式**。
+* 更具体地说，它描述了你的 **浏览器（例如 Chrome）** 如何请求网页等内容，以及 **服务器** 如何返回你请求的结果。
 
-📌 Think of it like this:
+📌 可以这样理解：
 
-> You (the browser) go to a **restaurant** (the server), look at the **menu** (webpage), and tell the **waiter** (HTTP) what you want. The waiter goes to the kitchen (server logic) and brings you the dish (response like HTML, JSON, image, etc.).
-
----
-
-## Why is HTTP important?
-
-Every time you:
-
-* Open a website
-* Submit a form
-* Login to a website
-* Watch a video
-
-You're using **HTTP** in the background!
+> 你（浏览器）走进一家 **餐厅**（服务器），看着 **菜单**（网页），再告诉 **服务员**（HTTP）你想要什么。服务员去厨房（服务器逻辑）取餐，再把菜品（响应，例如 HTML、JSON、图片等）端给你。
 
 ---
 
-## 🔄 The HTTP Request-Response Cycle (Very Important!)
+## 为什么 HTTP 很重要？
 
-This is the **heart of HTTP**. It’s like a **conversation** between two people:
+每当你：
 
-### 👤 1. Client (You / Your Browser)
+* 打开一个网站
+* 提交一个表单
+* 登录一个网站
+* 观看一个视频
 
-You are the **client**. You want something, like a webpage.
-
-### 🧑‍🍳 2. Server (The Website’s Backend)
-
-The server is like a **kitchen**. It prepares and gives you what you asked for.
-
----
-
-### ⚙️ Step-by-step: How it works
-
-Let’s say you visit `https://example.com`.
-
-### 📨 Step 1: Client Sends Request
-
-Your browser sends a **request** to the server. The request includes:
-
-* **Method** (What action you want):
-
-  * `GET`: Get something (like a webpage)
-  * `POST`: Send something (like a form)
-* **URL** (What you want to access)
-* **Headers** (Extra info like who you are, your browser type, etc.)
-* **Body** (Only sometimes—used when you're sending data, like login info)
-
-### 🖥️ Step 2: Server Gets the Request
-
-The server receives the request and decides:
-
-* What is being asked?
-* Is it allowed?
-* Where is the data?
-* Should it return a file? or a web page? or an error?
-
-### 📬 Step 3: Server Sends Response
-
-The server sends a **response** back. It contains:
-
-* **Status Code**: Tells what happened
-
-  * `200 OK`: Everything went well
-  * `404 Not Found`: Page not found
-  * `500 Internal Server Error`: Something broke
-* **Headers**: Info like file type (HTML, JSON, image), server info
-* **Body**: The actual content (HTML page, JSON data, error message, etc.)
-
-### 💻 Step 4: Browser Shows Result
-
-Your browser processes the response and shows you the **website** or **data**.
+背后都在使用 **HTTP**！
 
 ---
 
-## 🔄 Connection Management (Does it stay open?)
+## 🔄 HTTP 请求-响应循环（非常重要！）
 
-* **HTTP/1.1**: Usually keeps the connection open (`keep-alive`) so it doesn’t need to reconnect every time.
-* **HTTP/2**: More efficient, supports multiple requests at once.
-* **HTTP/3 (QUIC)**: Even faster and more secure (uses UDP instead of TCP).
+这是 **HTTP 的核心**。它就像两个人之间的一次 **对话**：
+
+### 👤 1. 客户端（你 / 你的浏览器）
+
+你就是 **客户端**。你想得到某样东西，比如一个网页。
+
+### 🧑‍🍳 2. 服务器（网站后端）
+
+服务器就像 **厨房**。它负责准备并返回你请求的内容。
 
 ---
 
-## Summary Table
+### ⚙️ 分步骤说明：它是如何工作的
 
-| Part            | What It Does    | Example                 |
+假设你访问 `https://example.com`。
+
+### 📨 第 1 步：客户端发送请求
+
+你的浏览器会向服务器发送一个 **请求（request）**。请求中通常包含：
+
+* **Method（方法）**：你想执行什么操作：
+
+  * `GET`：获取某些内容（例如网页）
+  * `POST`：提交某些内容（例如表单）
+* **URL**：你想访问的目标
+* **Headers（头部）**：额外信息，例如你是谁、你的浏览器类型等
+* **Body（消息体）**：并非总有。当你需要发送数据时才使用，例如登录信息
+
+### 🖥️ 第 2 步：服务器收到请求
+
+服务器接收到请求后，会判断：
+
+* 请求的是什么？
+* 允许访问吗？
+* 数据在哪里？
+* 应该返回文件、网页，还是错误信息？
+
+### 📬 第 3 步：服务器发送响应
+
+服务器会返回一个 **响应（response）**。其中包含：
+
+* **Status Code（状态码）**：说明发生了什么
+
+  * `200 OK`：一切正常
+  * `404 Not Found`：页面不存在
+  * `500 Internal Server Error`：服务器内部出错
+* **Headers（头部）**：例如文件类型（HTML、JSON、图片）、服务器信息等
+* **Body（消息体）**：实际内容（HTML 页面、JSON 数据、错误消息等）
+
+### 💻 第 4 步：浏览器展示结果
+
+浏览器会处理响应，并把 **网站页面** 或 **数据** 展示给你。
+
+---
+
+## 🔄 连接管理（连接会一直保持吗？）
+
+* **HTTP/1.1**：通常会保持连接打开（`keep-alive`），这样就不必每次都重新建立连接。
+* **HTTP/2**：效率更高，支持同时发送多个请求。
+* **HTTP/3（QUIC）**：更快、更安全（底层使用 UDP 而不是 TCP）。
+
+---
+
+## 总结表
+
+| 部分 | 作用 | 示例 |
 | --------------- | --------------- | ----------------------- |
-| **Client**      | Sends request   | Your browser            |
-| **Server**      | Sends response  | Google’s server         |
-| **Request**     | Ask for data    | `GET /index.html`       |
-| **Response**    | Gives back data | `200 OK + HTML`         |
-| **Method**      | What you want   | GET, POST               |
-| **Status Code** | Result          | 200, 404                |
-| **Header**      | Extra info      | Content-Type: text/html |
-| **Body**        | Main content    | Webpage, image, etc.    |
+| **客户端** | 发送请求 | 你的浏览器 |
+| **服务器** | 发送响应 | Google 的服务器 |
+| **请求** | 索取数据 | `GET /index.html` |
+| **响应** | 返回数据 | `200 OK + HTML` |
+| **方法** | 你想执行的动作 | GET、POST |
+| **状态码** | 结果 | 200、404 |
+| **头部** | 额外信息 | Content-Type: text/html |
+| **消息体** | 主要内容 | 网页、图片等 |
 
 ---
 
-## Common HTTP Status Codes
+## 常见 HTTP 状态码
 
-| Code | Meaning                                      |
-| ---- | -------------------------------------------- |
-| 200  | OK – Success                                 |
-| 201  | Created – New resource made                  |
-| 400  | Bad Request – You sent something wrong       |
-| 401  | Unauthorized – You need to log in            |
-| 403  | Forbidden – You can’t access this            |
-| 404  | Not Found – Page doesn’t exist               |
-| 500  | Server Error – Something broke on the server |
-
----
-
-## Conclusion
-
-HTTP is like a **postal system for the web**. You send a letter (request), and the post office (server) sends back a reply (response).
-
-Once you understand **request → response** flow, you're already halfway into understanding how the web works.
-
-
-## ✅ 2. Structure of an HTTP Message
-
-Whenever your browser talks to a server (like when loading a website), they exchange **HTTP messages**.
-
-There are **two types** of messages:
-
-* 📤 **Request** → Sent by the client (browser)
-* 📥 **Response** → Sent by the server
+| 代码 | 含义 |
+| ---- | ---- |
+| 200  | OK，成功 |
+| 201  | Created，已创建新资源 |
+| 400  | Bad Request，请求有误 |
+| 401  | Unauthorized，需要先登录 |
+| 403  | Forbidden，没有访问权限 |
+| 404  | Not Found，页面不存在 |
+| 500  | Server Error，服务器内部错误 |
 
 ---
 
-### ✉️ Structure (Applies to Both Requests and Responses)
+## 结论
 
-| Part           | What It Is                    | Example                                   |
+HTTP 就像是 **Web 的邮政系统**。你寄出一封信（请求），邮局（服务器）再寄回回复（响应）。
+
+一旦你理解了 **request → response（请求 → 响应）** 的流程，你就已经掌握了 Web 工作原理的一半。
+
+
+## ✅ 2. HTTP 消息的结构
+
+每当浏览器与服务器通信时（例如加载网站），它们交换的都是 **HTTP 消息**。
+
+HTTP 消息分为 **两种**：
+
+* 📤 **请求（Request）** → 由客户端（浏览器）发送
+* 📥 **响应（Response）** → 由服务器发送
+
+---
+
+### ✉️ 结构（请求和响应都适用）
+
+| 部分 | 含义 | 示例 |
 | -------------- | ----------------------------- | ----------------------------------------- |
-| **Start Line** | First line (action or status) | `GET /home HTTP/1.1` or `HTTP/1.1 200 OK` |
-| **Headers**    | Key-value pairs (extra info)  | `Content-Type: text/html`                 |
-| **Blank Line** | Separates headers from body   | Just one empty line                       |
-| **Body**       | Actual content (optional)     | HTML, JSON, file, etc.                    |
+| **起始行** | 第一行（动作或状态） | `GET /home HTTP/1.1` 或 `HTTP/1.1 200 OK` |
+| **头部** | 键值对（附加信息） | `Content-Type: text/html` |
+| **空行** | 分隔头部与消息体 | 一行空白行 |
+| **消息体** | 实际内容（可选） | HTML、JSON、文件等 |
 
 ---
 
-### 📤 Request Example (from browser to server):
+### 📤 请求示例（从浏览器到服务器）：
 
 ```http
 GET /about HTTP/1.1
@@ -157,11 +157,11 @@ Accept: text/html
 
 ```
 
-✅ No body here because we’re just requesting a page.
+✅ 这里没有消息体，因为我们只是请求一个页面。
 
 ---
 
-### 📥 Response Example (from server to browser):
+### 📥 响应示例（从服务器到浏览器）：
 
 ```http
 HTTP/1.1 200 OK
@@ -171,71 +171,69 @@ Content-Length: 38
 <html><body>Hello, World!</body></html>
 ```
 
-✅ This time the **body** is included — the actual web page.
+✅ 这次包含了 **消息体**，也就是真正的网页内容。
 
 ---
 
-### 🧠 Summary of Each Part
+### 🧠 各部分总结
 
-| Part           | Meaning                                                 |
+| 部分 | 含义 |
 | -------------- | ------------------------------------------------------- |
-| **Start Line** | Tells what’s happening (GET request or 200 OK response) |
-| **Headers**    | Extra details like what kind of data is being sent      |
-| **Empty Line** | A required separator between headers and body           |
-| **Body**       | The actual stuff being sent (page content, data, etc.)  |
+| **起始行** | 说明当前发生了什么（例如 GET 请求，或 200 OK 响应） |
+| **头部** | 额外细节，例如发送的数据类型 |
+| **空行** | 头部和消息体之间必须存在的分隔线 |
+| **消息体** | 实际发送的内容（页面内容、数据等） |
 
 ---
 
-## ✅ 3. Common HTTP Methods (also called Verbs)
+## ✅ 3. 常见 HTTP 方法（也叫 Verbs）
 
-These are **actions** that a client can request from the server. Think of them like **commands**.
+这些是客户端可以向服务器发出的 **动作**。你可以把它们理解成不同的 **命令**。
 
-### 🔨 List of Common Methods (with Examples)
+### 🔨 常见方法列表（含示例）
 
-| Method      | What It Does                      | Simple Example                             |
+| 方法 | 作用 | 简单示例 |
 | ----------- | --------------------------------- | ------------------------------------------ |
-| **GET**     | Get data or a page                | `GET /home` → Fetch home page              |
-| **POST**    | Send data to server (like a form) | `POST /signup` → Create new account        |
-| **PUT**     | Update (replace) a resource       | `PUT /user/1` → Replace user info          |
-| **DELETE**  | Remove a resource                 | `DELETE /user/1` → Delete user 1           |
-| **HEAD**    | Just get headers, no body         | Check if a file exists                     |
-| **OPTIONS** | Ask server what methods it allows | For CORS (cross-origin requests)           |
-| **PATCH**   | Partially update a resource       | `PATCH /user/1` → Update user’s email only |
+| **GET** | 获取数据或页面 | `GET /home` → 获取首页 |
+| **POST** | 向服务器发送数据（例如表单） | `POST /signup` → 创建新账号 |
+| **PUT** | 更新（整体替换）某个资源 | `PUT /user/1` → 替换用户信息 |
+| **DELETE** | 删除资源 | `DELETE /user/1` → 删除用户 1 |
+| **HEAD** | 只获取头部，不要消息体 | 检查文件是否存在 |
+| **OPTIONS** | 询问服务器允许哪些方法 | 用于 CORS（跨域请求） |
+| **PATCH** | 对资源做部分更新 | `PATCH /user/1` → 只更新用户邮箱 |
 
 ---
 
-### 🧃 Analogy: Ordering at a Café
+### 🧃 类比：在咖啡馆点单
 
-| Action                                | HTTP Method        |
+| 动作 | HTTP 方法 |
 | ------------------------------------- | ------------------ |
-| Looking at the menu                   | `GET /menu`        |
-| Placing an order                      | `POST /order`      |
-| Changing your whole order             | `PUT /order/5`     |
-| Cancelling your order                 | `DELETE /order/5`  |
-| Asking what payment types they accept | `OPTIONS /payment` |
-| Asking for receipt only (no food)     | `HEAD /receipt`    |
-| Changing only 1 item in your order    | `PATCH /order/5`   |
+| 查看菜单 | `GET /menu` |
+| 下单 | `POST /order` |
+| 整体修改订单 | `PUT /order/5` |
+| 取消订单 | `DELETE /order/5` |
+| 询问支持哪些支付方式 | `OPTIONS /payment` |
+| 只要收据，不要食物 | `HEAD /receipt` |
+| 只修改订单中的 1 样东西 | `PATCH /order/5` |
 
 ---
 
-## 🎯 Final Recap
+## 🎯 最后回顾
 
-### Structure of HTTP Message:
+### HTTP 消息结构：
 
-* Start line → Command or response
-* Headers → Extra info
-* Empty line → Divider
-* Body → Actual data (optional)
+* 起始行 → 命令或响应状态
+* 头部 → 额外信息
+* 空行 → 分隔线
+* 消息体 → 实际数据（可选）
 
-### HTTP Methods:
+### HTTP 方法：
 
-* **GET**: Read
-* **POST**: Create
-* **PUT**: Replace
-* **PATCH**: Modify
-* **DELETE**: Remove
-* **HEAD**: Only metadata
-* **OPTIONS**: Ask capabilities
-
----
+* **GET**：读取
+* **POST**：创建 / 提交
+* **PUT**：替换
+* **PATCH**：修改
+* **DELETE**：删除
+* **HEAD**：仅元数据
+* **OPTIONS**：询问支持的能力
 

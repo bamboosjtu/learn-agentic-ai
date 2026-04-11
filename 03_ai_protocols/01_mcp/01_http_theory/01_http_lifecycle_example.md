@@ -1,15 +1,15 @@
-# 🔧 Hands-on Example
+# 🔧 动手示例
 
-Let’s simulate **you visiting a webpage**.
-We’ll break it down as if you're using a browser (client), and the website is hosted on a server.
-
----
-
-### Scenario: You open `https://example.com/hello`
+让我们模拟一下 **你访问一个网页** 的过程。
+我们会把它拆解成浏览器（客户端）和网站服务器之间的交互。
 
 ---
 
-### 📤 HTTP Request (sent from browser to server)
+### 场景：你打开 `https://example.com/hello`
+
+---
+
+### 📤 HTTP 请求（从浏览器发往服务器）
 
 ```http
 GET /hello HTTP/1.1
@@ -18,17 +18,17 @@ User-Agent: Chrome/123.0
 Accept: text/html
 ```
 
-This means:
+这表示：
 
-* `GET`: You are requesting to **get** a page
-* `/hello`: This is the path you're trying to access on the site
-* `Host`: You're talking to `example.com`
-* `User-Agent`: Your browser type
-* `Accept`: You prefer to receive `text/html` (webpages)
+* `GET`：你正在请求 **获取** 一个页面
+* `/hello`：这是你要访问的网站路径
+* `Host`：你正在与 `example.com` 通信
+* `User-Agent`：你的浏览器类型
+* `Accept`：你希望接收 `text/html`（网页）
 
 ---
 
-### 📥 HTTP Response (sent from server back to browser)
+### 📥 HTTP 响应（服务器返回给浏览器）
 
 ```http
 HTTP/1.1 200 OK
@@ -38,56 +38,56 @@ Content-Length: 38
 <html><body>Hello, World!</body></html>
 ```
 
-This means:
+这表示：
 
-* `200 OK`: Success, page found
-* `Content-Type`: It's sending back HTML content
-* `Content-Length`: The size of the page
-* The body: Actual webpage content
+* `200 OK`：成功，页面已找到
+* `Content-Type`：返回的是 HTML 内容
+* `Content-Length`：页面大小
+* 消息体（body）：真正的网页内容
 
-Your browser sees this and **shows you the page** with `Hello, World!`.
+浏览器收到后，就会 **把页面展示出来**，你会看到 `Hello, World!`。
 
 ---
 
-## Simple Visual Diagram
+## 简单可视化示意图
 
-Here's how the **Request-Response Cycle** works:
+下面是 **请求-响应循环** 的工作方式：
 
 ```
-┌────────────┐       HTTP Request        ┌───────────────┐
-│  Browser   │ ───────────────────────▶ │    Server     │
-│ (Client)   │                          │ (example.com) │
+┌────────────┐       HTTP 请求            ┌───────────────┐
+│  浏览器    │ ───────────────────────▶ │    服务器      │
+│ （客户端） │                          │ (example.com) │
 └────────────┘                          └───────────────┘
      ▲                                        │
-     │       HTTP Response (HTML Page)        ▼
+     │       HTTP 响应（HTML 页面）           ▼
 ┌────────────┐ ◀────────────────────── ┌───────────────┐
-│  You see   │                          │    Sends:     │
+│  你看到     │                          │    返回：      │
 │ "Hello 🌍" │                          │   200 OK      │
-└────────────┘                          │ HTML Page     │
+└────────────┘                          │ HTML 页面     │
                                        └───────────────┘
 ```
 
 ---
 
-## Try It Yourself with `curl`
+## 用 `curl` 自己试试
 
-If you have a terminal (like on Linux, Mac, or Git Bash on Windows), try this command:
+如果你有终端（例如 Linux、macOS，或 Windows 上的 Git Bash），可以试试这个命令：
 
 ```bash
 curl -v https://example.com
 ```
 
-It will show you:
+它会显示：
 
-* The full request
-* The full response
-* The HTML content received
+* 完整请求
+* 完整响应
+* 返回的 HTML 内容
 
 ---
 
-## Key Takeaway
+## 关键结论
 
-* HTTP is a **conversation** between a **browser (client)** and a **website (server)**.
-* You send a **request** (asking for a page or data), and the server sends a **response** (content or error).
-* This happens every time you load any website.
+* HTTP 是 **浏览器（客户端）** 与 **网站（服务器）** 之间的一次 **对话**。
+* 你发送一个 **请求**（请求页面或数据），服务器返回一个 **响应**（内容或错误）。
+* 每次你加载任何网站时，背后都会发生这个过程。
 

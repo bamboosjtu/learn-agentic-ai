@@ -1,25 +1,25 @@
-# ✅ What is `curl`?
+# ✅ 什么是 `curl`？
 
-* `curl` is a command-line tool that lets you send **HTTP requests** and see the **responses**.
-* Works on Linux, macOS, and Windows (with Git Bash or WSL).
-
----
-
-## Let's pretend we’re interacting with a simple test server:
-
-We'll use [https://reqres.in](https://reqres.in), a **fake REST API** made for testing HTTP requests.
+* `curl` 是一个命令行工具，可以让你发送 **HTTP 请求**，并查看对应的 **响应**。
+* 它可运行在 Linux、macOS 和 Windows（搭配 Git Bash 或 WSL）上。
 
 ---
 
-## 1️⃣ **GET** – Retrieve data
+## 假设我们正在与一个简单的测试服务器交互：
 
-Get the list of users:
+我们将使用 [https://reqres.in](https://reqres.in)，这是一个专门用于测试 HTTP 请求的 **模拟 REST API**。
+
+---
+
+## 1️⃣ **GET**：获取数据
+
+获取用户列表：
 
 ```bash
 curl https://reqres.in/api/users?page=2
 ```
 
-➡️ You’ll get a response like:
+➡️ 你会得到类似下面的响应：
 
 ```json
 {
@@ -34,13 +34,13 @@ curl https://reqres.in/api/users?page=2
 }
 ```
 
-✅ This is just like opening a webpage and reading its content.
+✅ 这就像是打开一个网页并读取其中的内容。
 
 ---
 
-## 2️⃣ **POST** – Send data (e.g., signup)
+## 2️⃣ **POST**：发送数据（例如注册）
 
-Create a new user:
+创建一个新用户：
 
 ```bash
 curl -X POST https://reqres.in/api/users \
@@ -48,7 +48,7 @@ curl -X POST https://reqres.in/api/users \
   -d '{"name": "Wania", "job": "Developer"}'
 ```
 
-➡️ You’ll get a response like:
+➡️ 你会得到类似下面的响应：
 
 ```json
 {
@@ -59,13 +59,13 @@ curl -X POST https://reqres.in/api/users \
 }
 ```
 
-✅ This simulates submitting a form to create a new account.
+✅ 这模拟了提交表单来创建一个新账号的过程。
 
 ---
 
-## 3️⃣ **PUT** – Update (replace) data
+## 3️⃣ **PUT**：更新（整体替换）数据
 
-Update the user completely:
+完整更新该用户：
 
 ```bash
 curl -X PUT https://reqres.in/api/users/2 \
@@ -73,7 +73,7 @@ curl -X PUT https://reqres.in/api/users/2 \
   -d '{"name": "Wania", "job": "Senior Dev"}'
 ```
 
-➡️ Response:
+➡️ 响应：
 
 ```json
 {
@@ -83,13 +83,13 @@ curl -X PUT https://reqres.in/api/users/2 \
 }
 ```
 
-✅ This replaces the old job with "Senior Dev".
+✅ 这会把原来的职位整体替换成 `"Senior Dev"`。
 
 ---
 
-## 4️⃣ **PATCH** – Partially update data
+## 4️⃣ **PATCH**：部分更新数据
 
-Update only one field (e.g., just the job):
+只更新一个字段（例如仅更新职位）：
 
 ```bash
 curl -X PATCH https://reqres.in/api/users/2 \
@@ -97,7 +97,7 @@ curl -X PATCH https://reqres.in/api/users/2 \
   -d '{"job": "Engineer"}'
 ```
 
-➡️ Response:
+➡️ 响应：
 
 ```json
 {
@@ -106,31 +106,31 @@ curl -X PATCH https://reqres.in/api/users/2 \
 }
 ```
 
-✅ This changes only the job, not the name.
+✅ 这只会修改职位，不会改动名字。
 
 ---
 
-## 5️⃣ **DELETE** – Remove a resource
+## 5️⃣ **DELETE**：删除资源
 
-Delete a user:
+删除一个用户：
 
 ```bash
 curl -X DELETE https://reqres.in/api/users/2
 ```
 
-➡️ Response: *(no body, just status `204 No Content`)*
+➡️ 响应：*(没有消息体，只有状态 `204 No Content`)*
 
-✅ This tells the client that the user was deleted successfully.
+✅ 这表示客户端可以确认该用户已被成功删除。
 
 ---
 
-## 6️⃣ **HEAD** – Get only headers (no content)
+## 6️⃣ **HEAD**：只获取头部（不获取内容）
 
 ```bash
 curl -I https://reqres.in/api/users/2
 ```
 
-➡️ You get:
+➡️ 你会得到：
 
 ```
 HTTP/1.1 200 OK
@@ -139,27 +139,27 @@ Content-Length: 123
 ...
 ```
 
-✅ Used when you want to check metadata without downloading the whole page/data.
+✅ 当你只想检查元数据，而不想下载整个页面或数据时，这很有用。
 
 ---
 
-## 7️⃣ **OPTIONS** – Ask what methods are allowed
+## 7️⃣ **OPTIONS**：询问允许使用哪些方法
 
 ```bash
 curl -X OPTIONS https://reqres.in/api/users/2 -i
 ```
 
-➡️ You’ll get:
+➡️ 你会得到：
 
 ```
 Allow: GET, POST, PUT, PATCH, DELETE, OPTIONS
 ```
 
-✅ This tells the browser or client what’s allowed on this endpoint.
+✅ 这会告诉浏览器或客户端，这个端点允许哪些操作。
 
 ---
 
-## 📝 Summary Table
+## 📝 总结表
 
 | Method  | curl Command             |
 | ------- | ------------------------ |
